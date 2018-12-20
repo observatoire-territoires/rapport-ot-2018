@@ -117,6 +117,14 @@
 	}
 
 
+	.test{
+		margin-left: 5em;
+		left:2em;
+		width: 2em;
+	}
+
+
+
 	  }
   
   
@@ -184,10 +192,6 @@
 	}
 
 	nav:hover .nav-text-menu:hover{
-		color: #689d6a;
-	}
-
-	.nav-text-menu:hover{
 		color: #689d6a;
 	}
 
