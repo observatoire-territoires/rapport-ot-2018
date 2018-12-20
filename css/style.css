@@ -1,0 +1,314 @@
+
+
+/*All devices
+  %%%%   %%%%  %%%%%  %%%%%% %%%%%% %%  %% 
+ %%     %%  %% %%  %% %%     %%     %%% %% 
+  %%%%  %%     %%%%%  %%%%   %%%%   %% %%% 
+     %% %%  %% %%  %% %%     %%     %%  %% 
+  %%%%   %%%%  %%  %% %%%%%% %%%%%% %%  %% 
+...........................................
+*/
+
+@media all{
+
+	html {
+		scroll-behavior: smooth;
+	  }
+
+	body{
+		color: #fff;
+		background-color: #282828;
+	}
+
+	*:focus {
+		outline: none;
+	}
+
+	body{
+		font-family: "MontserratWeb";
+		font-size: 1.125em;
+	}
+
+	a{
+		text-decoration: none;
+	}
+
+	.all-niv{
+		display: flex;
+		flex-direction: column;
+	}
+
+
+	/*Application style sur le global*/
+	/*-------------------------------*/
+
+	.global{
+		position: relative;
+		padding: 0;
+		z-index: 10;
+	}
+
+
+
+
+	/*Application style sur le niveau 2*/
+	/*--------------------------------*/
+
+
+
+	.niv2 p{
+		font-size: 1em;
+		line-height: 1.5;
+	}
+
+	.niv2 h2{
+		font-family: 'latoWebMedium';
+		font-size: 1.7em;
+	}
+
+
+	/*Application style sur le niveau 1*/
+	/*--------------------------------*/
+
+	.niv1{
+		min-height: 100vh;
+	}
+
+
+	.niv1-h-intro-all{
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	#niv1-h-intro-1 h1{
+		text-align: center;
+		font-size: 3em;
+		font-family: "LatoWebBold"
+	}
+
+	#niv1-h-intro-2{
+		display: flex;
+		justify-content: center;
+	}
+
+	#niv1-h-intro-2 button{
+		font-size: 0.75em;
+		letter-spacing: 0.1em;
+		line-height: 1.2;
+		font-family: "LatoWebMedium";
+		text-transform: uppercase;
+		max-width: 15em;
+		cursor:pointer;
+		border:0;
+		color: #fff;
+		background-color: #282828;
+	}
+
+	#niv1-h-intro-2 button a{
+		color: #fff;
+	}
+	
+	#niv1-h-intro-2 button div{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+
+	  }
+  
+  
+  
+
+  
+  
+/*Desktop devices
+ %%%%%  %%%%%%  %%%%  %%  %% %%%%%%  %%%%  %%%%%  
+ %%  %% %%     %%     %% %%    %%   %%  %% %%  %% 
+ %%  %% %%%%    %%%%  %%%%     %%   %%  %% %%%%%  
+ %%  %% %%         %% %% %%    %%   %%  %% %%     
+ %%%%%  %%%%%%  %%%%  %%  %%   %%    %%%%  %%     
+..................................................
+*/
+  
+  @media only screen and (min-width:1024px){
+  
+	article{
+		padding-left:2em;
+	}
+
+	/*Application style sur la barre de navigation*/
+	/*--------------------------------------------*/
+
+	nav{
+		position: fixed;
+		display: flex;
+		top: 0;
+		left: 0;
+		z-index: 20;
+		height: 100vh;
+		max-width: 2em;
+		width: auto;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 72px 1vw 72px 1.2em;
+		background-color: #fff;
+		transition: max-width .5s cubic-bezier(.5,0,.5,1);
+	}
+
+	nav ul{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		white-space: nowrap;
+	}
+
+	.accueil_ot{
+		margin-bottom: 2em;
+	}
+
+	.nav-bullet{
+		margin: 0 0 1em;
+	}
+
+	.nav-link-menu{
+		transition: all .3s ease-out;
+		color:  #000;
+	}
+
+	nav:hover .nav-text-menu{
+		color: #000;
+	}
+
+	nav:hover .nav-text-menu:hover{
+		color: #689d6a;
+	}
+
+	.nav-text-menu:hover{
+		color: #689d6a;
+	}
+
+
+
+	nav:hover{
+		max-width: 100%;
+		width: auto;
+	}
+
+	ul li::before {
+		content: "";
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		border: 1px solid #689d6a;
+		border-radius: 50%;
+		transition: background .15s ease-out;
+		margin-left: -32px;
+		cursor: pointer;
+	}
+
+	.nav-text-menu{
+		font-family: 'latoWeb';
+		font-size: 0.8em;
+		text-transform: uppercase;
+		color: transparent;
+		transition: color .2s ease-out;
+	}
+
+  
+
+
+
+	/*Application style sur le niveau 2*/
+	/*--------------------------------*/
+
+	.niv2{
+		display: flex;
+		flex-direction: row;
+	}
+
+	.niv2 main, .niv2 aside{
+		flex:1;
+	}
+
+	.niv2 p{
+		padding-right: 4em;
+	}
+
+	.niv2 h2{
+		font-family: 'latoWebMedium';
+		font-size: 1.7em;
+	}
+
+	.niv2 section{
+		min-height: 100vh;
+		padding: 15vh 0.5em 1.3em 5em;
+	}
+
+
+
+
+  }
+  
+
+/*Mobile devices
+ %%   %%  %%%%  %%%%%  %%%%%% %%     %%%%%% 
+ %%% %%% %%  %% %%  %%   %%   %%     %%     
+ %% % %% %%  %% %%%%%    %%   %%     %%%%   
+ %%   %% %%  %% %%  %%   %%   %%     %%     
+ %%   %%  %%%%  %%%%%  %%%%%% %%%%%% %%%%%% 
+ ...........................................
+*/
+  
+  
+  @media (min-width:320px) and (max-width:1024px){
+  
+	article{
+		padding-top:2.5em;
+	}
+
+
+  nav{
+	  position: fixed;
+	  display:flex;
+	  flex-direction: row;
+	  justify-content: space-between;
+	  align-items: center;
+	  width: 100%;
+	  top: 0;
+	  left: 0;
+	  background: #fff;
+	  padding: 1vw 72px .2em 72px;
+  }
+  
+  .nav-bullet{
+	  display: none;
+  }
+
+
+/*Application style sur le niveau 2*/
+	/*--------------------------------*/
+
+	.niv2 section{
+		min-height: 100vh;
+		padding: 15vh 2em 1.3em 2em;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
