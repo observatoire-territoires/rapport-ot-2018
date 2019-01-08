@@ -17,6 +17,9 @@
     fill: #f0f0f0;
   }
 
+  .scroll-graphic object{
+    width: 100%;
+  }
 
 
 
@@ -25,31 +28,56 @@
 
 
 
-/*All devices
-  %%%%   %%%%  %%%%%  %%%%%% %%%%%% %%  %% 
- %%     %%  %% %%  %% %%     %%     %%% %% 
-  %%%%  %%     %%%%%  %%%%   %%%%   %% %%% 
-     %% %%  %% %%  %% %%     %%     %%  %% 
-  %%%%   %%%%  %%  %% %%%%%% %%%%%% %%  %% 
-...........................................
+/*Desktop devices
+ %%%%%  %%%%%%  %%%%  %%  %% %%%%%%  %%%%  %%%%%  
+ %%  %% %%     %%     %% %%    %%   %%  %% %%  %% 
+ %%  %% %%%%    %%%%  %%%%     %%   %%  %% %%%%%  
+ %%  %% %%         %% %% %%    %%   %%  %% %%     
+ %%%%%  %%%%%%  %%%%  %%  %%   %%    %%%%  %%     
+..................................................
 */
 
 
 @media only screen and (min-width:1024px){
 
-#c-01-section1{
-  position: sticky;
-  top:15vh;
-  padding: 15vh 2em 0em 0em;
-  margin-top: 5em;
-}
+
+  /*All section*/
+
+  .scroll-graphic{
+    position: sticky;
+    top:15vh;
+    padding: 15vh 2em 0em 0em;
+  }
 
 
-}
+  .scroll-graphic object{
+    position: inherit;
+    top: inherit;
+  }
+
+  /*Section 3*/
+  #c-04-section3, #c-05-section3{
+    display: none;
+  }
+
+  /*Section 4*/
+  #c-07-section4{
+    display: none;
+  }
+
+    /*Section 5*/
+    #c-09-section5{
+      display: none;
+    }
 
 
+    /*Section 6*/
+    #c-11-section6{
+      display: none;
+    }
 
 
+    
 /*Mobile devices
  %%   %%  %%%%  %%%%%  %%%%%% %%     %%%%%% 
  %%% %%% %%  %% %%  %%   %%   %%     %%     

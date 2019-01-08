@@ -49,24 +49,6 @@
 	}
 
 
-
-
-	/*Application style sur le niveau 2*/
-	/*--------------------------------*/
-
-
-
-	.niv2 p{
-		font-size: 1em;
-		line-height: 1.5;
-	}
-
-	.niv2 h2{
-		font-family: 'latoWebMedium';
-		font-size: 1.7em;
-	}
-
-
 	/*Application style sur le niveau 1*/
 	/*--------------------------------*/
 
@@ -117,6 +99,20 @@
 	}
 
 
+	/*Application style sur le niveau 2*/
+	/*--------------------------------*/
+
+
+
+	.niv2 p{
+		font-size: 1em;
+		line-height: 1.5;
+	}
+
+	.niv2 h2{
+		font-family: 'latoWebMedium';
+		font-size: 1.7em;
+	}
 
 
 
@@ -151,12 +147,12 @@
 	/*Application style sur le niveau 2*/
 	/*--------------------------------*/
 
-	.niv2{
+	.scroll{
 		display: flex;
 		flex-direction: row;
 	}
 
-	.niv2 main, .niv2 aside{
+	.scroll-text, .scroll-graphic{
 		flex:1;
 	}
 
@@ -169,12 +165,13 @@
 		font-size: 1.7em;
 	}
 
-	.niv2 section{
-		min-height: 100vh;
-		padding: 15vh 0.5em 1.3em 5em;
+	.niv2-c-section{
+		padding: 15vh 0.5em 0em 5em;
 	}
 
-
+	.niv2-c-section:last-child{
+		min-height: 100vh;
+	}
 
 
   }
@@ -201,9 +198,9 @@
 /*Application style sur le niveau 2*/
 	/*--------------------------------*/
 
-	.niv2 section{
+	.niv2-c-section{
 		min-height: 100vh;
-		padding: 15vh 2em 1.3em 2em;
+		padding: 0vh 2em 0em 2em;
 	}
 
 
