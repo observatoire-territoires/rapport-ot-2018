@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="../css/svg.css" ?>
+
+<svg id="svg-01-section1"
+	 viewBox="0 0 425.197 212.081"
+     xmlns="http://www.w3.org/2000/svg">		
+	
+	<g id="DROITE_5_">
+		<g id="PT4_x5F_brouillon">
+			<rect x="347.578" y="103.033" fill="#F1F9FB" width="56.546" height="84.015"/>
+			<rect x="9.626" y="102.425" fill="#EFEFEF" width="97.757" height="84.622"/>
+			<rect x="151.635" y="102.425" fill="#EFEFEF" width="136.865" height="84.622"/>
+			<polyline fill="#D9D9D9" points="151.973,190.674 219.982,197.424 288.405,190.674 		"/>
+			<polyline fill="#D9D9D9" points="9.626,190.674 58.356,197.424 107.383,190.674 		"/>
+		</g>
+		<g id="axis_9_">
+			<g id="h_x5F_axis_-_copie_2_1_">
+			</g>
+			<g id="v_x5F_axis_-_copie_2_1_">
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="348.201" y1="110.556" x2="404.124" y2="110.556"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="348.201" y1="127.403" x2="404.124" y2="127.403"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="348.201" y1="144.25" x2="404.124" y2="144.25"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="348.201" y1="161.097" x2="404.124" y2="161.097"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="348.201" y1="177.944" x2="404.124" y2="177.944"/>
+			</g>
+		</g>
+		<g id="label_11_">
+		</g>
+		<g id="h_x5F_axis_3_">
+			
+				<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="370.456" y1="103.033" x2="370.456" y2="187.048"/>
+			
+				<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="348.17" y1="103.033" x2="348.17" y2="187.048"/>
+			
+				<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="392.742" y1="103.033" x2="392.742" y2="187.048"/>
+		</g>
+		<g id="ticks_9_">
+			<g id="h_x5F_axis_-_copie_2_2_">
+			</g>
+			<g id="label_13_">
+			</g>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="347.037" y1="110.556" x2="348.119" y2="110.556"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="347.037" y1="127.403" x2="348.119" y2="127.403"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="347.037" y1="144.25" x2="348.119" y2="144.25"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="347.037" y1="161.097" x2="348.119" y2="161.097"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="347.037" y1="177.944" x2="348.119" y2="177.944"/>
+		</g>
+		<g id="courbe_4_">
+		</g>
+		<g id="POINT_3_">
+		</g>
+		<g id="HISTO_3_">
+			<g id="axis_-_copie_2_1_">
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="151.95" y1="187.047" x2="151.95" y2="101.515"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="183.386" y1="187.047" x2="183.386" y2="101.515"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="214.822" y1="187.047" x2="214.822" y2="101.515"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="246.258" y1="187.047" x2="246.258" y2="101.515"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="288.405" y1="101.795" x2="288.405" y2="187.047"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="277.597" y1="101.795" x2="277.597" y2="187.047"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="151.973" y1="110.556" x2="288.5" y2="110.556"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="151.973" y1="127.416" x2="288.5" y2="127.416"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="151.973" y1="144.276" x2="288.5" y2="144.276"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="151.973" y1="161.136" x2="288.5" y2="161.136"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="151.973" y1="177.997" x2="288.5" y2="177.997"/>
+			</g>
+			<g id="label_-_copie_2_1_">
+				<g>
+					
+						<text transform="matrix(1 0 0 1 272.3291 97.1409)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'">20 %</text>
+				</g>
+				<g>
+					
+						<text transform="matrix(1 0 0 1 148.5479 97.1399)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'" >0 %</text>
+				</g>
+				<g>
+					
+						<text transform="matrix(1 0 0 1 180.1753 97.1399)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'">5 %</text>
+				</g>
+				<g>
+					
+						<text transform="matrix(1 0 0 1 210.2398 97.1399)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'">10 %</text>
+				</g>
+				<g>
+					
+						<text transform="matrix(1 0 0 1 241.8692 97.1409)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'">15 %</text>
+				</g>
+			</g>
+			<g id="ticks_-_copie_2_1_">
+				
+					<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="277.599" y1="103.336" x2="277.599" y2="101.515"/>
+				
+					<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="246.258" y1="103.336" x2="246.258" y2="101.515"/>
+				
+					<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="214.822" y1="103.336" x2="214.822" y2="101.515"/>
+				
+					<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="183.386" y1="103.336" x2="183.386" y2="101.515"/>
+				
+					<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="151.781" y1="103.336" x2="151.781" y2="101.515"/>
+			</g>
+			<g id="rect_-_copie_2_1_">
+			</g>
+			<g id="rect_8_">
+				<rect x="151.781" y="103.612" fill="#7DBD9F" width="60.799" height="13.887"/>
+				<rect x="212.58" y="103.612" fill="#F8C352" width="23.802" height="13.887"/>
+				<rect x="236.382" y="103.612" fill="#F18757" width="32.066" height="13.887"/>
+				<rect x="268.448" y="103.612" fill="#E85855" width="7.446" height="13.887"/>
+				<rect x="151.95" y="120.406" fill="#7DBD9F" width="58.046" height="13.887"/>
+				<rect x="209.991" y="120.406" fill="#F8C352" width="24.741" height="13.887"/>
+				<rect x="234.733" y="120.406" fill="#F18757" width="31.739" height="13.887"/>
+				<rect x="266.476" y="120.406" fill="#E85855" width="6.315" height="13.887"/>
+				<rect x="151.95" y="137.333" fill="#7DBD9F" width="66.109" height="13.887"/>
+				<rect x="218.059" y="137.333" fill="#F8C352" width="25.134" height="13.887"/>
+				<rect x="243.193" y="137.333" fill="#F18757" width="35.161" height="13.887"/>
+				<rect x="278.354" y="137.333" fill="#E85855" width="7.572" height="13.887"/>
+				<rect x="151.971" y="154.108" fill="#7DBD9F" width="69.138" height="13.887"/>
+				<rect x="221.109" y="154.108" fill="#F8C352" width="22.605" height="13.887"/>
+				<rect x="243.715" y="154.108" fill="#F18757" width="29.491" height="13.887"/>
+				<rect x="273.205" y="154.108" fill="#E85855" width="8.087" height="13.887"/>
+				<rect x="151.95" y="170.94" fill="#7DBD9F" width="57.443" height="13.887"/>
+				<rect x="209.393" y="170.94" fill="#F8C352" width="18.926" height="13.887"/>
+				<rect x="228.32" y="170.94" fill="#F18757" width="25.653" height="13.887"/>
+				<rect x="253.972" y="170.94" fill="#E85855" width="7.315" height="13.887"/>
+			</g>
+		</g>
+	</g>
+	<g id="GAUCHE_5_">
+		<g id="axis_8_">
+			<g id="v_x5F_axis_-_copie_2">
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="76.068" y1="187.113" x2="76.068" y2="101.956"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="44.681" y1="187.113" x2="44.681" y2="101.956"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="13.293" y1="187.113" x2="13.293" y2="101.956"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="107.453" y1="101.956" x2="107.474" y2="187.047"/>
+			</g>
+			<g id="h_x5F_axis_-_copie_2">
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="107.453" y1="161.094" x2="9.626" y2="161.094"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="107.453" y1="144.222" x2="9.626" y2="144.222"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="107.453" y1="177.966" x2="9.626" y2="177.966"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="107.453" y1="127.349" x2="9.626" y2="127.349"/>
+				
+					<line fill="none" stroke="#D9D9D9" stroke-width="0.5" stroke-miterlimit="10" x1="107.453" y1="110.477" x2="9.626" y2="110.477"/>
+			</g>
+		</g>
+		<g id="ticks_8_">
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="150.423" y1="110.556" x2="151.95" y2="110.556"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="150.423" y1="127.388" x2="151.95" y2="127.388"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="150.423" y1="144.22" x2="151.95" y2="144.22"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="150.423" y1="161.052" x2="151.95" y2="161.052"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="107.453" y1="103.336" x2="107.453" y2="101.515"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="76.068" y1="103.336" x2="76.068" y2="101.515"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="44.681" y1="103.336" x2="44.681" y2="101.515"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="13.293" y1="103.336" x2="13.293" y2="101.515"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="107.383" y1="110.556" x2="108.91" y2="110.556"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="107.383" y1="127.388" x2="108.91" y2="127.388"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="107.383" y1="144.22" x2="108.91" y2="144.22"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="107.383" y1="161.052" x2="108.91" y2="161.052"/>
+		</g>
+		<g id="label_10_">
+			<g>
+				<text transform="matrix(1 0 0 1 115.061 112.8014)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >1988-1992</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 115.0612 129.4922)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >1992-1996</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 115.061 146.1824)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >1997-2001</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 115.0612 162.8726)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >2002-2006</text>
+			</g>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="150.423" y1="177.884" x2="151.95" y2="177.884"/>
+			
+				<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="107.383" y1="177.884" x2="108.91" y2="177.884"/>
+			<g>
+				<text transform="matrix(1 0 0 1 115.0612 179.562)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >2009-2013</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 311.2273 112.8014)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >1988-1992</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 311.2275 129.4922)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >1992-1996</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 311.2273 146.1824)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >1997-2001</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 311.2275 162.8726)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >2002-2006</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 311.2275 179.562)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >2009-2013</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 97.2786 97.1399)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'" >0 %</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 65.6219 97.1399)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'" >5 %</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 32.8631 97.1399)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'" >10 %</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 1.6678 97.1399)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'" >15 %</text>
+			</g>
+		</g>
+		<g id="rect_7_">
+			<rect x="38.58" y="120.406" fill="#7B7FBD" width="68.975" height="13.887"/>
+			<rect x="43.278" y="103.691" fill="#7B7FBD" width="64.276" height="13.887"/>
+			<rect x="33.86" y="137.276" fill="#7B7FBD" width="73.694" height="13.887"/>
+			<rect x="42.284" y="154.193" fill="#7B7FBD" width="65.27" height="13.887"/>
+			<rect x="50.082" y="170.94" fill="#7B7FBD" width="57.473" height="13.887"/>
+		</g>
+	</g>
+	<g id="HABILLAGE_3_">
+		<g id="titre_3_">
+		</g>
+		<text transform="matrix(1 0 0 1 35.7636 77.3099)" font-family="'HelveticaNeueLTStd-LtCn'" >Arrivée depuis l’étranger</text>
+		<text transform="matrix(1 0 0 1 35.757 66.5382)" font-family="'HelveticaNeueLTStd-LtCn'" >Changement de région en France</text>
+		<text transform="matrix(1 0 0 1 35.757 55.7666)" font-family="'HelveticaNeueLTStd-LtCn'" >Changement de département dans la même région</text>
+		<text transform="matrix(1 0 0 1 35.757 44.995)" font-family="'HelveticaNeueLTStd-LtCn'" >Changement de commune dans le même département</text>
+		<text transform="matrix(1 0 0 1 35.757 34.2235)" font-family="'HelveticaNeueLTStd-LtCn'" >Changement de logement dans la même commune</text>
+		<rect x="4.5" y="2.499" fill="none" width="261.972" height="18.521"/>
+		<text transform="matrix(1 0 0 1 4.5 8.2113)"><tspan x="0" y="0" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-MdCn'" font-size="8px">Taux de mobilité résidentielle des ménages (mobilités sur 4 ans) entre 1988 et 2013</tspan><tspan x="0" y="9.6" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" font-size="8px">En %</tspan></text>
+		<rect x="302.523" y="2.499" fill="none" width="127.524" height="46.748"/>
+		<text transform="matrix(1 0 0 1 302.5225 8.2113)"><tspan x="0" y="0" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-MdCn'" font-size="8px">Part des mobilités longues dans </tspan><tspan x="0" y="8" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-MdCn'" font-size="8px">l’ensemble des changements de </tspan><tspan x="0" y="16" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-MdCn'" font-size="8px">logement (mobilités sur 4 ans) entre </tspan><tspan x="0" y="24" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-MdCn'" font-size="8px">1988 et 2013</tspan><tspan x="0" y="33.6" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" font-size="8px">En %</tspan></text>
+		<rect x="12.151" y="70.79" fill="#E85654" width="18.709" height="6.52"/>
+		<rect x="12.151" y="60.019" fill="#F18757" width="18.709" height="6.52"/>
+		<rect x="12.151" y="49.247" fill="#F8C352" width="18.709" height="6.52"/>
+		<rect x="12.151" y="38.475" fill="#7DBD9F" width="18.709" height="6.52"/>
+		<rect x="12.151" y="27.704" fill="#7B7FBD" width="18.709" height="6.52"/>
+		
+			<rect x="319.64" y="51.241" transform="matrix(6.123234e-17 -1 1 6.123234e-17 262.1644 378.5326)" fill="#EA5392" width="1.417" height="13.887"/>
+		<rect x="333.699" y="53.677" fill="none" width="94.014" height="21.122"/>
+		<text transform="matrix(1 0 0 1 333.6995 58.6754)"><tspan x="0" y="0" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >Mobilités ayant occasionné un </tspan><tspan x="0" y="7" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >changement de département, de </tspan><tspan x="0" y="14" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-LtCn'" >région, voire de pays</tspan></text>
+	</g>
+	<g id="rectangle_x5F_pt4">
+	</g>
+	<g id="value_2_">
+	</g>
+	<text transform="matrix(1 0 0 1 39.2619 206.3513)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-Cn'" >Mobilité courte</text>
+	<text transform="matrix(1 0 0 1 185.34 206.3517)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-Cn'" >Mobilité moyenne à longue</text>
+	<g>
+		<text transform="matrix(1 0 0 1 119.4923 97.1879)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-MdCn'" >Période</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 344.4499 97.1875)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'" >30 %</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 366.9274 97.1875)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'" >35 %</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 389.0749 97.1875)" fill="#f0f0f0" font-family="'Chalet-LondonNineteenSixty'" >40 %</text>
+	</g>
+	<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="348.17" y1="103.382" x2="348.17" y2="101.562"/>
+	<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="370.456" y1="103.382" x2="370.456" y2="101.562"/>
+	<line fill="none" stroke="#f0f0f0" stroke-width="1.07" stroke-linejoin="round" stroke-miterlimit="10" x1="392.742" y1="103.382" x2="392.742" y2="101.562"/>
+	<rect x="364.565" y="103.661" fill="#EA5392" width="1.417" height="13.887"/>
+	<rect x="360.109" y="120.472" fill="#EA5392" width="1.417" height="13.887"/>
+	<rect x="360.109" y="137.477" fill="#EA5392" width="1.417" height="13.887"/>
+	<rect x="351.197" y="154.108" fill="#EA5392" width="1.417" height="13.887"/>
+	<rect x="351.197" y="171.053" fill="#EA5392" width="1.417" height="13.887"/>
+	<text transform="matrix(1 0 0 1 371.8285 112.753)" fill="#8C3257" font-family="'HelveticaNeueLTStd-MdCn'" >34 %</text>
+	<text transform="matrix(1 0 0 1 365.7786 129.5644)" fill="#8C3257" font-family="'HelveticaNeueLTStd-MdCn'" >33 %</text>
+	<text transform="matrix(1 0 0 1 365.7779 146.5701)" fill="#8C3257" font-family="'HelveticaNeueLTStd-MdCn'" >33 %</text>
+	<text transform="matrix(1 0 0 1 356.8661 163.2004)" fill="#8C3257" font-family="'HelveticaNeueLTStd-MdCn'" >31 %</text>
+	<text transform="matrix(1 0 0 1 356.8664 180.1451)" fill="#8C3257" font-family="'HelveticaNeueLTStd-MdCn'" >31 %</text>
+	<g>
+		<text transform="matrix(1 0 0 1 320.0895 97.1879)" fill="#f0f0f0" font-family="'HelveticaNeueLTStd-MdCn'" >Période</text>
+	</g>
+</svg>

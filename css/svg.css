@@ -9,9 +9,40 @@
 ...........................................
 */
 
+@media all{
+
+  
+  text{
+    font-size: 0.5em;
+    fill: #f0f0f0;
+  }
+
+
+
+
+}
+
+
+
+
+/*All devices
+  %%%%   %%%%  %%%%%  %%%%%% %%%%%% %%  %% 
+ %%     %%  %% %%  %% %%     %%     %%% %% 
+  %%%%  %%     %%%%%  %%%%   %%%%   %% %%% 
+     %% %%  %% %%  %% %%     %%     %%  %% 
+  %%%%   %%%%  %%  %% %%%%%% %%%%%% %%  %% 
+...........................................
+*/
+
 
 @media only screen and (min-width:1024px){
 
+#c-01-section1{
+  position: sticky;
+  top:15vh;
+  padding: 15vh 2em 0em 0em;
+  margin-top: 5em;
+}
 
 
 }
@@ -30,7 +61,5 @@
   
   
 @media (min-width:320px) and (max-width:1024px){
-  
-
 
 }
