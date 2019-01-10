@@ -87,23 +87,21 @@ function handleStepEnter(response) {
 let notesStep = document.querySelectorAll(".notes-step");
 let notesBoxRef = document.querySelectorAll(".notes-box-ref");
 
-
 let noteIsInViewport = function(elem){
 	let bounding = elem.getBoundingClientRect();
 	return (
 		bounding.top >= 0 &&
 		bounding.left >= 0 &&
 		bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
-		bounding.bottom <= (window.innerWidth || document.documentElement.clientHeight)
+		bounding.bottom <= (window.innerHeight  || document.documentElement.clientHeight)
 	);		
 };
-
 
 //->Here the event--------------
 //------------------------------
 
+
 document.addEventListener("scroll",function(){
-	console.log(notesStep[0].getBoundingClientRect().top);
 	for (let i=0;i<notesStep.length;i++){
 		if (noteIsInViewport(notesStep[i])){
 			//is in viewport

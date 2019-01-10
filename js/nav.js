@@ -1,22 +1,10 @@
 console.log("Etat du document : " + document.readyState);
 	
-
-let navLinkMenu = document.querySelectorAll(".nav-link-menu");
 let navBulletMenu = document.querySelectorAll(".nav-bullet-menu");
 let niv1HIntro2Button = document.querySelector(".niv1-h-intro-2-button");
-let niv1CHeader = document.querySelector("#niv1-c-header");
-let niv2CSection1 = document.querySelector("#niv2-c-section1");
-let niv2CSection2 = document.querySelector("#niv2-c-section2");
-let niv2CSection3 = document.querySelector("#niv2-c-section3");
-let niv2CSection4 = document.querySelector("#niv2-c-section4");
-let niv2CSection5 = document.querySelector("#niv2-c-section5");
-let niv2CSection6 = document.querySelector("#niv2-c-section6");
-let niv2CSection7 = document.querySelector("#niv2-c-section7");
-let niv2CSection8 = document.querySelector("#niv2-c-section8");
-let niv2CSection9 = document.querySelector("#niv2-c-section9");
-
-
 let sectionNavBullet = document.querySelectorAll(".section-nav-bullet");
+
+
 
 //ALTERNATIVE 1 & ALTERNATIVE 2 could enter in competition :)
 
@@ -71,10 +59,14 @@ niv1HIntro2Button.addEventListener("click",function(){
 //ALTERNATIVE 2 : COLOR BULLET SCROLL EVENT
 
 //Color on scroll
+Array.from(sectionNavBullet).forEach((el,i)=>{
+	console.log(el);
+})
+
 
 let intersectionCallback = function(entries){
 
-	entries.forEach((entry,i) =>{
+	entries.forEach((entry) =>{
 
 		function navScrollColor(i){
 			if (entry.boundingClientRect.top<=1 && entry.boundingClientRect.bottom>=0){
@@ -88,41 +80,12 @@ let intersectionCallback = function(entries){
 			}
 		}
 
-		switch(entry.target){
-		case niv1CHeader:
-			navScrollColor(0);
-			break;
-		case niv2CSection1:
-			navScrollColor(1);
-			break;
-		case niv2CSection2:
-			navScrollColor(2);
-			break;
-		case niv2CSection3:
-			navScrollColor(3);
-			break;
-		case niv2CSection4:
-			navScrollColor(4);
-			break;
-		case niv2CSection5:
-			navScrollColor(5);
-			break;
-		case niv2CSection6:
-			navScrollColor(6);
-			break;
-		case niv2CSection7:
-			navScrollColor(7);
-			break;
-		case niv2CSection8:
-			navScrollColor(8);
-			break;
-		case niv2CSection9:
-			navScrollColor(9);
-			break;
-
-		} 
+		Array.from(sectionNavBullet).forEach((el,i)=>{
+			if (el==entry.target){
+				navScrollColor(i);
+			}
+		});	
 	});
-
 };
 
 function thresholdList(){
@@ -149,16 +112,9 @@ let io_nav = new IntersectionObserver(intersectionCallback, observerOptions);
 
 //->Here the event--------------
 //------------------------------
-io_nav.observe(niv1CHeader);
-io_nav.observe(niv2CSection1);
-io_nav.observe(niv2CSection2);
-io_nav.observe(niv2CSection3);
-io_nav.observe(niv2CSection4);
-io_nav.observe(niv2CSection5);
-io_nav.observe(niv2CSection6);
-io_nav.observe(niv2CSection7);
-io_nav.observe(niv2CSection8);
-io_nav.observe(niv2CSection9);
+Array.from(sectionNavBullet).forEach((el)=>{
+	io_nav.observe(el);
+})
 
 	
 
