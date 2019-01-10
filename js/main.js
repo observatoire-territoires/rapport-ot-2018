@@ -80,33 +80,42 @@ function handleStepEnter(response) {
 
 
 
-/*
-//SCROLLAMA LAMA
+//FOOTER NOTE
 
-function handleStepEnter(){
-	c01Section1.style.position = "sticky";
-}
+//Display div when note apparead in viewport
 
-function handleStepExit(){
-	c01Section1.style.position = "relative";
-}
+let notesStep = document.querySelectorAll(".notes-step");
+let notesBoxRef = document.querySelectorAll(".notes-box-ref");
 
 
-// instantiate the scrollama
-const scroller = scrollama();
+let noteIsInViewport = function(elem){
+	let bounding = elem.getBoundingClientRect();
+	return (
+		bounding.top >= 0 &&
+		bounding.left >= 0 &&
+		bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+		bounding.bottom <= (window.innerWidth || document.documentElement.clientHeight)
+	);		
+};
 
 
+//->Here the event--------------
+//------------------------------
 
-// setup the instance, pass callback functions
-scroller
-	.setup({
-		step: "#niv2-c-section1",
-		debug: true,
-		offset: 1
-	})
-	.onStepEnter(handleStepEnter)
-	.onStepExit(handleStepExit);
-*/
+document.addEventListener("scroll",function(){
+	console.log(notesStep[0].getBoundingClientRect().top);
+	for (let i=0;i<notesStep.length;i++){
+		if (noteIsInViewport(notesStep[i])){
+			//is in viewport
+			notesBoxRef[i].classList.add("notes-box-div-visible");
+		} else {
+			//is not in viewport
+			notesBoxRef[i].classList.remove("notes-box-div-visible");
+		}
+	}
+});
+
+
 
 
 
@@ -144,6 +153,10 @@ function deplaceElementSmallDevice() {
 		breakC11Section6.parentNode.insertBefore(c06Section4,breakC11Section6.nextSibling);
 	
 		console.log("petit écran");
+		
+
+
+		
 	}
 
 	if (largeMedia==true){
@@ -177,6 +190,13 @@ function deplaceElementSmallDevice() {
 }
 
 
+
+
+
+
+//->Here the event--------------
+//------------------------------
+	
 //If windows is resized, real-time
 window.addEventListener("resize",()=>{
 	deplaceElementSmallDevice();
@@ -188,4 +208,3 @@ document.onreadystatechange = function(){
 		deplaceElementSmallDevice();
 	}
 };
-

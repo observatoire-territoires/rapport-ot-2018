@@ -124,7 +124,43 @@
 		  color: #adc285; 
 	  }
 
+	  .notes-number-link:hover{
+		  color: #5c7829;
 	  }
+
+
+	  .notes-box{
+		  border-top: 1px solid rgb(255,255,255);
+		  position: fixed;
+		  z-index: 100;
+		  max-height: 60%;
+		  bottom:-1px;
+		  background-color: #282828;
+		  margin-left: -5em;
+		  padding-left: 5em;
+		  font-size: 0.85em;
+		  width: 100%;
+	  }
+
+	  .notes-box-div-visible{
+		display: block !important;
+	}
+
+
+		.notes-box-ref{
+		  display: none;
+		  color: #fff;
+		  margin-right: 13vw;
+		  
+	  }
+
+	  .notes-box .c-notes-number{
+		  display:block;
+	  }
+
+
+
+	}
   
   
   
