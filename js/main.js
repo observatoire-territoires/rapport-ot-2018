@@ -6,6 +6,14 @@ let breakC02Section2 = document.querySelector("#break-c-02-section2");
 let breakC03Section3 = document.querySelector("#break-c-03-section3");
 let breakC04Section3 = document.querySelector("#break-c-04-section3");
 let breakC05Section3 = document.querySelector("#break-c-05-section3");
+let breakC06Section4 = document.querySelector("#break-c-06-section4");
+let breakC07Section4 = document.querySelector("#break-c-07-section4");
+let breakC08Section5 = document.querySelector("#break-c-08-section5");
+let breakC09Section5 = document.querySelector("#break-c-09-section5");
+let breakC10Section6 = document.querySelector("#break-c-10-section6");
+let breakC11Section6 = document.querySelector("#break-c-11-section6");
+
+
 
 let scrollNumber = document.querySelectorAll(".scroll-number");
 
@@ -72,18 +80,6 @@ function handleStepEnter(response) {
 
 
 
-scroller
-	.setup({
-		container: ".scroll",
-		graphic: ".scroll-graphic",
-		text: ".scroll-text",
-		step: ".break",
-		debug: false,
-		offset: 0.33
-	})
-	.onStepEnter(handleStepEnter);
-
-
 /*
 //SCROLLAMA LAMA
 
@@ -118,7 +114,7 @@ scroller
 //-----------------------------------------------------
 //-----------------------------------------------------
 
-/*
+
 
 function deplaceElementSmallDevice() {
 
@@ -136,11 +132,16 @@ function deplaceElementSmallDevice() {
 	if (largeMedia==false){
 
 		breakC01Section1.parentNode.insertBefore(c01Section1,breakC01Section1.nextSibling);
-	//	breakC02Section2.parentNode.insertBefore(c02Section2,breakC02Section2.nextSibling);
-	//	breakC03Section3.parentNode.insertBefore(c03Section3,breakC03Section3.nextSibling);
-	//	breakC04Section3.parentNode.insertBefore(c04Section3,breakC04Section3.nextSibling);
-	//	breakC05Section3.parentNode.insertBefore(c05Section3,breakC05Section3.nextSibling);
-		
+		breakC02Section2.parentNode.insertBefore(c02Section2,breakC02Section2.nextSibling);
+		breakC03Section3.parentNode.insertBefore(c03Section3,breakC03Section3.nextSibling);
+		breakC04Section3.parentNode.insertBefore(c04Section3,breakC04Section3.nextSibling);
+		breakC05Section3.parentNode.insertBefore(c05Section3,breakC05Section3.nextSibling);
+		breakC06Section4.parentNode.insertBefore(c06Section4,breakC06Section4.nextSibling);
+		breakC07Section4.parentNode.insertBefore(c06Section4,breakC07Section4.nextSibling);
+		breakC08Section5.parentNode.insertBefore(c06Section4,breakC08Section5.nextSibling);
+		breakC09Section5.parentNode.insertBefore(c06Section4,breakC09Section5.nextSibling);
+		breakC10Section6.parentNode.insertBefore(c06Section4,breakC10Section6.nextSibling);
+		breakC11Section6.parentNode.insertBefore(c06Section4,breakC11Section6.nextSibling);
 	
 		console.log("petit écran");
 	}
@@ -148,8 +149,27 @@ function deplaceElementSmallDevice() {
 	if (largeMedia==true){
 
 		scrollNumber[0].append(c01Section1);
+		scrollNumber[1].append(c02Section2);
+		scrollNumber[2].append(c03Section3);
+		scrollNumber[2].append(c04Section3);
+		scrollNumber[2].append(c05Section3);
+		scrollNumber[3].append(c06Section4);
+		scrollNumber[3].append(c07Section4);
+		scrollNumber[4].append(c08Section5);
+		scrollNumber[4].append(c09Section5);
+		scrollNumber[5].append(c10Section6);
+		scrollNumber[5].append(c11Section6);
 
-
+		scroller
+			.setup({
+				container: ".scroll",
+				graphic: ".scroll-graphic",
+				text: ".scroll-text",
+				step: ".break",
+				debug: false,
+				offset: 0.33
+			})
+			.onStepEnter(handleStepEnter);
 
 		console.log("grand écran");
 	}
@@ -169,4 +189,3 @@ document.onreadystatechange = function(){
 	}
 };
 
-*/

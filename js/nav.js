@@ -12,7 +12,11 @@ let niv2CSection4 = document.querySelector("#niv2-c-section4");
 let niv2CSection5 = document.querySelector("#niv2-c-section5");
 let niv2CSection6 = document.querySelector("#niv2-c-section6");
 let niv2CSection7 = document.querySelector("#niv2-c-section7");
+let niv2CSection8 = document.querySelector("#niv2-c-section8");
+let niv2CSection9 = document.querySelector("#niv2-c-section9");
 
+
+let sectionNavBullet = document.querySelectorAll(".section-nav-bullet");
 
 //ALTERNATIVE 1 & ALTERNATIVE 2 could enter in competition :)
 
@@ -70,7 +74,7 @@ niv1HIntro2Button.addEventListener("click",function(){
 
 let intersectionCallback = function(entries){
 
-	entries.forEach(entry =>{
+	entries.forEach((entry,i) =>{
 
 		function navScrollColor(i){
 			if (entry.boundingClientRect.top<=1 && entry.boundingClientRect.bottom>=0){
@@ -109,6 +113,13 @@ let intersectionCallback = function(entries){
 		case niv2CSection7:
 			navScrollColor(7);
 			break;
+		case niv2CSection8:
+			navScrollColor(8);
+			break;
+		case niv2CSection9:
+			navScrollColor(9);
+			break;
+
 		} 
 	});
 
@@ -116,7 +127,7 @@ let intersectionCallback = function(entries){
 
 function thresholdList(){
 	let thresholds = [];
-	const numSteps = 1500;
+	const numSteps = 2500;
 
 	for (let i=1;i<=numSteps;i++){
 		let ratio = i/numSteps;
@@ -146,6 +157,9 @@ io_nav.observe(niv2CSection4);
 io_nav.observe(niv2CSection5);
 io_nav.observe(niv2CSection6);
 io_nav.observe(niv2CSection7);
+io_nav.observe(niv2CSection8);
+io_nav.observe(niv2CSection9);
+
 	
 
 
