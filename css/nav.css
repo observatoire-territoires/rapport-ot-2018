@@ -11,8 +11,8 @@
 
 @media all{
 
-
-
+	nav{
+		z-index: 200;
 	  }
   
   
@@ -40,13 +40,12 @@
 		display: flex;
 		top: 0;
 		left: 0;
-		z-index: 200;
 		height: 100vh;
 		max-width: 2em;
 		width: auto;
 		flex-direction: column;
 		align-items: flex-start;
-		padding: 72px 1vw 72px 1.2em;
+		padding: 72px 1em 72px 1.2em;
 		background-color: #fff;
 		transition: max-width .5s cubic-bezier(.5,0,.5,1);
 		overflow: hidden;

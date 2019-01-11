@@ -13,8 +13,6 @@ let breakC09Section5 = document.querySelector("#break-c-09-section5");
 let breakC10Section6 = document.querySelector("#break-c-10-section6");
 let breakC11Section6 = document.querySelector("#break-c-11-section6");
 
-
-
 let scrollNumber = document.querySelectorAll(".scroll-number");
 
 let c01Section1 = document.querySelector("#c-01-section1");

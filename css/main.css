@@ -72,7 +72,28 @@
 		background: #fefee0;
 		color: black;
 		min-height: 100vh;
+		box-shadow: inset 0px 0px 20px 5px rgba(50, 50, 50, 0.4);
+		margin-left: 2em;
 	}
+
+	#section-interlude-wallpaper1{
+		background-image: url(../img/interlude-1.jpg);
+		background-size:100% 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+
+	}
+
+	.interlude-text{
+		background: rgba(254, 254, 254, 08);
+		color: black;
+		margin-top:15vh;
+		margin-bottom: 15vh;
+		margin-right: 5em;
+	}
+
+
+
 
 	/*Application style sur le niveau 2*/
 	/*--------------------------------*/
@@ -121,12 +142,21 @@
 		  font-family: "MontserratWebLight";
 		  font-style: italic;
 		  font-weight: normal;
-		  color: #adc285; 
+		  color: #ffadad; 
 	  }
 
 	  .notes-number-link:hover{
-		  color: #5c7829;
+		  color: #ff3333;
 	  }
+
+	  .notes-external-link{
+		  color: #ffadad; 
+	  }
+
+	  .notes-external-link:hover{
+		color: #ff3333;
+	}
+
 
 
 	  .notes-box{
@@ -222,7 +252,7 @@
 	}
 	
 	
-		.scroll-graphic object{
+	.scroll-graphic object{
 		position: inherit;
 		top: inherit;
 	}
@@ -297,11 +327,6 @@
 	#c-11-section6{
 		display: block;
 	}
-
-
-
-
-
 
 
 
