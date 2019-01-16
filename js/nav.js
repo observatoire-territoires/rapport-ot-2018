@@ -9,44 +9,47 @@ let sectionNavBullet = document.querySelectorAll(".section-nav-bullet");
 //ALTERNATIVE 1 & ALTERNATIVE 2 could enter in competition :)
 
 /*
-		//ALTERNATIVE 1 : COLOR BULLET CLICK EVENT
+//ALTERNATIVE 1 : COLOR BULLET CLICK EVENT
 
+let navLinkMenu = document.querySelectorAll(".nav-link-menu");
 
-		//Color on click nav link
-		function navColor() {
-			for(let i = 0; i < navLinkMenu.length; i++){
-				if(this != navLinkMenu[i]){
-					navBulletMenu[i].style.backgroundColor = "#fff";
-				} else {
-					navBulletMenu[i].style.backgroundColor = "#779933";
-				}
-			}
+//Color on click nav link
+function navColor() {
+	for(let i = 0; i < navLinkMenu.length; i++){
+		if(this != navLinkMenu[i]){
+			navBulletMenu[i].style.backgroundColor = "#fff";
+		} else {
+			navBulletMenu[i].style.backgroundColor = "#779933";
 		}
+	}
+}
 
-		//->Here the event--------------
-		//------------------------------
-		Array.from(navLinkMenu).forEach((el)=>{
-			el.addEventListener("click",navColor);
-		});
-
-
-		//Color on click header button
-		function navButtonColor() {
-			navBulletMenu[1].style.backgroundColor = "#779933";
-			let navBulletMenuCopy = Array.from(navBulletMenu);
-			navBulletMenuCopy.splice(1,1);
-
-			navBulletMenuCopy.forEach((el)=>{
-				el.style.backgroundColor = "#fff";
-			});
-		}
+//->Here the event--------------
+//------------------------------
+Array.from(navLinkMenu).forEach((el)=>{
+	el.addEventListener("click",navColor);
+});
 
 
-		//->Here the event--------------
-		//------------------------------
-		niv1HIntro2Button.addEventListener("click",navButtonColor);
-		*/
+//Color on click header button
+function navButtonColor() {
+	navBulletMenu[1].style.backgroundColor = "#779933";
+	let navBulletMenuCopy = Array.from(navBulletMenu);
+	navBulletMenuCopy.splice(1,1);
 
+	navBulletMenuCopy.forEach((el)=>{
+		el.style.backgroundColor = "#fff";
+	});
+}
+
+
+//->Here the event--------------
+//------------------------------
+niv1HIntro2Button.addEventListener("click",navButtonColor);
+	
+}
+
+*/
 
 //CLICK BUTTON INTRO
 
@@ -57,6 +60,45 @@ niv1HIntro2Button.addEventListener("click",function(){
 
 
 //ALTERNATIVE 2 : COLOR BULLET SCROLL EVENT
+
+//with boundingrect
+function alternativeColorBullet(){
+	
+	let navBulletMenu = document.querySelectorAll(".nav-bullet-menu");
+
+	let sectionIsInViewport = function(elem){
+		let bounding = elem.getBoundingClientRect();
+		return (
+			bounding.top <= 10 &&
+			bounding.bottom >= 10
+		);		
+
+	};
+
+	for (let i=0;i<sectionNavBullet.length;i++){
+		if (sectionIsInViewport(sectionNavBullet[i])){
+			//is in viewport
+			navBulletMenu[i].classList.add("nav-bullet-menu-visible");
+		} else {
+			//is not in viewport
+			navBulletMenu[i].classList.remove("nav-bullet-menu-visible");
+		}
+	}
+
+	document.addEventListener("scroll",function(){
+		for (let i=0;i<sectionNavBullet.length;i++){
+			if (sectionIsInViewport(sectionNavBullet[i])){
+				//is in viewport
+				navBulletMenu[i].classList.add("nav-bullet-menu-visible");
+			} else {
+				//is not in viewport
+				navBulletMenu[i].classList.remove("nav-bullet-menu-visible");
+			}
+		}
+	});
+}
+
+//with interaction observer
 
 //Color on scroll
 
@@ -103,13 +145,23 @@ let observerOptions = {
 	threshold: thresholdList()
 };
 
-let io_nav = new IntersectionObserver(intersectionCallback, observerOptions);
+
 
 //->Here the event--------------
 //------------------------------
-Array.from(sectionNavBullet).forEach((el)=>{
-	io_nav.observe(el);
-});
+
+
+if("IntersectionObserver" in window) {
+	//it is ok, client web can observe
+	let io_nav = new IntersectionObserver(intersectionCallback, observerOptions);
+
+	Array.from(sectionNavBullet).forEach((el)=>{
+		io_nav.observe(el);
+	});
+} else{
+	//client web not implement intersetion observer
+	alternativeColorBullet();
+}
 
 	
 

@@ -85,6 +85,7 @@ function handleStepEnter(response) {
 let notesStep = document.querySelectorAll(".notes-step");
 let notesBoxRef = document.querySelectorAll(".notes-box-ref");
 
+//already declared in nav.js
 let noteIsInViewport = function(elem){
 	let bounding = elem.getBoundingClientRect();
 	return (
@@ -94,6 +95,8 @@ let noteIsInViewport = function(elem){
 		bounding.bottom <= (window.innerHeight  || document.documentElement.clientHeight)
 	);		
 };
+
+
 
 //->Here the event--------------
 //------------------------------
