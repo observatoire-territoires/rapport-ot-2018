@@ -73,29 +73,49 @@
 		color: black;
 		min-height: 100vh;
 		box-shadow: inset 0px 0px 20px 5px rgba(50, 50, 50, 0.4);
-		margin-left: 2em;
 	}
 
 	#section-interlude-wallpaper1{
 		background: url(../img/interlude-1.jpg) center 0 no-repeat fixed;
-		background-size:100% 100%;
+		min-height:100vh;
+		overflow: hidden;
+		background-size:cover;
 	}
 
 
 	#section-interlude-wallpaper2{
-		background: url(../img/interlude-1.jpg) center 0 no-repeat fixed;
-		background-size:100% 100%;
+		background: url(../img/interlude-2.jpg) center 0 no-repeat fixed;
+		min-height:100vh;
+		overflow: hidden;
+		background-size:cover;
 	}
 
 	.interlude-text{
 		background: rgba(254, 254, 254, 08);
 		color: black;
-		margin-top:15vh;
-		margin-bottom: 15vh;
-		margin-right: 5em;
+		font-family: "MontserratWebMedium";
+		font-weight: normal;
+		margin-bottom: 60vh;
+		padding: 3em;
 	}
 
+	#interlude-text1 p:first-child{
+		border-top: 1px solid #000;
+		padding-top: 20px;
 
+	}
+
+	#interlude-text1 p:last-child{
+		border-bottom: 1px solid #000;
+		padding-bottom: 20px;
+	}
+
+	#interlude-text2 p{
+		border-top: 1px solid #000;
+		padding-top: 20px;
+		border-bottom: 1px solid #000;
+		padding-bottom: 20px;
+	}
 
 
 	/*Application style sur le niveau 2*/
@@ -209,7 +229,7 @@
 ..................................................
 */
   
-  @media only screen and (min-width:1024px){
+@media only screen and (min-width:1024px){
   
 	article{
 		padding-left:2em;
@@ -279,7 +299,11 @@
 		#c-11-section6{
 		display: none;
 	}
-	
+
+	/*Interlude*/
+	.section-interlude{
+			margin-left: 2em;
+		}
 
   }
   
@@ -330,7 +354,6 @@
 	#c-11-section6{
 		display: block;
 	}
-
 
 
 

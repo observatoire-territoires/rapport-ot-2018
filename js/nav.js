@@ -59,17 +59,12 @@ niv1HIntro2Button.addEventListener("click",function(){
 //ALTERNATIVE 2 : COLOR BULLET SCROLL EVENT
 
 //Color on scroll
-Array.from(sectionNavBullet).forEach((el,i)=>{
-	console.log(el);
-})
-
 
 let intersectionCallback = function(entries){
 
 	entries.forEach((entry) =>{
-
 		function navScrollColor(i){
-			if (entry.boundingClientRect.top<=1 && entry.boundingClientRect.bottom>=0){
+			if (entry.boundingClientRect.top<=10 && entry.boundingClientRect.bottom>=-10){
 				navBulletMenu[i].style.backgroundColor = "#779933";
 				let navBulletMenuCopy = Array.from(navBulletMenu);
 				navBulletMenuCopy.splice(i,1);
@@ -114,7 +109,7 @@ let io_nav = new IntersectionObserver(intersectionCallback, observerOptions);
 //------------------------------
 Array.from(sectionNavBullet).forEach((el)=>{
 	io_nav.observe(el);
-})
+});
 
 	
 

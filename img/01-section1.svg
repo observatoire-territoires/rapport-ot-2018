@@ -2022,19 +2022,19 @@
 </g>
 <g id="text">
 	<g id="label">
-		<text transform="matrix(1 0 0 1 148.0075 269.2246)" fill="#AFAFB0" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">887 sont restées dans le même logement</text>
-		<text transform="matrix(1 0 0 1 220.8215 37.543)" fill="#5B5E8A" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">40 sont restées dans la même commune</text>
-		<text transform="matrix(1 0 0 1 220.8165 65.8862)" fill="#61937C" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">41 ont changé de commune mais sont restées dans le même département</text>
-		<text transform="matrix(1 0 0 1 124.3477 94.2357)" fill="#C29B41" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">12 ont changé de département au sein de la même région</text>
-		<text transform="matrix(1 0 0 1 137.2143 122.5822)" fill="#BD6C45" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">16 ont changé de région</text>
-		<text transform="matrix(1 0 0 1 98.6144 150.9288)" fill="#B34641" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">4 sont arrivées de l’étranger</text>
+		<text transform="matrix(1 0 0 1 148.0075 269.2246)" fill="#AFAFB0" font-family="'HelveticaNeueLTStd-LtCn'" >887 sont restées dans le même logement</text>
+		<text transform="matrix(1 0 0 1 220.8215 37.543)" fill="#5B5E8A" font-family="'HelveticaNeueLTStd-LtCn'" >40 sont restées dans la même commune</text>
+		<text transform="matrix(1 0 0 1 220.8165 65.8862)" fill="#61937C" font-family="'HelveticaNeueLTStd-LtCn'" >41 ont changé de commune mais sont restées dans le même département</text>
+		<text transform="matrix(1 0 0 1 124.3477 94.2357)" fill="#C29B41" font-family="'HelveticaNeueLTStd-LtCn'" >12 ont changé de département au sein de la même région</text>
+		<text transform="matrix(1 0 0 1 137.2143 122.5822)" fill="#BD6C45" font-family="'HelveticaNeueLTStd-LtCn'" >16 ont changé de région</text>
+		<text transform="matrix(1 0 0 1 98.6144 150.9288)" fill="#B34641" font-family="'HelveticaNeueLTStd-LtCn'" >4 sont arrivées de l’étranger</text>
 		<g>
 			<rect x="14.339" y="67.162" fill="none" width="42.172" height="48.479"/>
-			<text transform="matrix(1 0 0 1 15.7487 72.1596)"><tspan x="0" y="0" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">113 ont changé </tspan><tspan x="0.438" y="8.4" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">de logement au </tspan><tspan x="-0.917" y="16.8" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">cours de l’année </tspan><tspan x="5.81" y="25.2" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">précédente</tspan><tspan x="0.133" y="33.6" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">(soit 11 % de la </tspan><tspan x="6.08" y="42" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" font-size="7px">population)</tspan></text>
+			<text transform="matrix(1 0 0 1 15.7487 72.1596)"><tspan x="0" y="0" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" >113 ont changé </tspan><tspan x="0.438" y="8.4" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" >de logement au </tspan><tspan x="-0.917" y="16.8" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" >cours de l’année </tspan><tspan x="5.81" y="25.2" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" >précédente</tspan><tspan x="0.133" y="33.6" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" >(soit 11 % de la </tspan><tspan x="6.08" y="42" fill="#333333" font-family="'HelveticaNeueLTStd-LtCn'" >population)</tspan></text>
 		</g>
 	</g>
 	<rect x="3.564" y="4.952" fill="none" width="313.961" height="8.508"/>
 	
-		<text id="title" transform="matrix(1 0 0 1 3.5641 11.2756)" fill="#333333" font-family="'Chalet-NewYorkNineteenSixty'" font-size="8.5px">En 2014, sur 1 000 personnes résidant en France...</text>
+		<text id="title" transform="matrix(1 0 0 1 3.5641 11.2756)" fill="#333333" font-family="'Chalet-NewYorkNineteenSixty'" >En 2014, sur 1 000 personnes résidant en France...</text>
 </g>
 </svg>
