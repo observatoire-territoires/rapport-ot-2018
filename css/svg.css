@@ -11,48 +11,119 @@
 
 @media all{
 
-  
-  text{
-    font-size: 0.5em;
-    fill: #f0f0f0;
+
+
+
+}
+
+
+
+
+/*4 steps for svg text
+max px
+  800 px
+  620 px
+  480 px
+  320 px
+min px
+*/
+
+
+/*
+db       .d8b.  d8888b.  d888b  d88888b 
+88      d8' `8b 88  `8D 88' Y8b 88'     
+88      88ooo88 88oobY' 88      88ooooo 
+88      88~~~88 88`8b   88  ooo 88~~~~~ 
+88booo. 88   88 88 `88. 88. ~8~ 88.     
+Y88888P YP   YP 88   YD  Y888P  Y88888P    
+..................................................
+*/
+@media only screen and (min-width:800px){
+
+  text, tspan{
+    font-size:  08px;
+    fill: #b4854f;
   }
 
 
 }
 
 
+/*
+.d888b.  .d88b.   .d88b.  
+88   8D .8P  88. .8P  88. 
+`VoooY' 88  d'88 88  d'88 
+.d~~~b. 88 d' 88 88 d' 88 
+88   8D `88  d8' `88  d8' 
+`Y888P'  `Y88P'   `Y88P' 
+*/                                              
+                                                
+@media (min-width:620px) and (max-width:800px){
 
-
-/*Desktop devices
- %%%%%  %%%%%%  %%%%  %%  %% %%%%%%  %%%%  %%%%%  
- %%  %% %%     %%     %% %%    %%   %%  %% %%  %% 
- %%  %% %%%%    %%%%  %%%%     %%   %%  %% %%%%%  
- %%  %% %%         %% %% %%    %%   %%  %% %%     
- %%%%%  %%%%%%  %%%%  %%  %%   %%    %%%%  %%     
-..................................................
-*/
-
-
-@media only screen and (min-width:1024px){
+    
+  text, tspan{
+    font-size:  10px;
+    fill: #f0f0f0;
+  }
 
 
 }
 
     
-/*Mobile devices
- %%   %%  %%%%  %%%%%  %%%%%% %%     %%%%%% 
- %%% %%% %%  %% %%  %%   %%   %%     %%     
- %% % %% %%  %% %%%%%    %%   %%     %%%%   
- %%   %% %%  %% %%  %%   %%   %%     %%     
- %%   %%  %%%%  %%%%%  %%%%%% %%%%%% %%%%%% 
- ...........................................
+/*
+   dD   .d888b.  .d88b.  
+  d8'   VP  `8D .8P  88. 
+ d8'       odD' 88  d'88 
+d8888b.  .88'   88 d' 88 
+88' `8D j88.    `88  d8' 
+`8888P  888888D  `Y88P' 
 */
-  
-  
-@media (min-width:320px) and (max-width:1024px){
 
-  
+@media (min-width:480px) and (max-width:620px){
+
+  text, tspan{
+    font-size: 12px;
+    fill: #c8c8e8;
+  }
+
+}
 
 
+
+
+
+/*
+  j88D  .d888b.  .d88b.  
+ j8~88  88   8D .8P  88. 
+j8' 88  `VoooY' 88  d'88 
+V88888D .d~~~b. 88 d' 88 
+    88  88   8D `88  d8' 
+    VP  `Y888P'  `Y88P'  
+*/
+
+@media (min-width:320px) and (max-width:480px){
+
+  text, tspan{
+    font-size: 16px;
+    fill: #f3a561;
+  }
+
+
+}
+
+/*
+d8888b. .d888b.  .d88b.  
+VP  `8D VP  `8D .8P  88. 
+  oooY'    odD' 88  d'88 
+  ~~~b.  .88'   88 d' 88 
+db   8D j88.    `88  d8' 
+Y8888P' 888888D  `Y88P' 
+*/
+@media only screen and (max-width:320px){
+
+  text, tspan{
+    font-size: 18px;
+    fill: #818181;
+  }
 
 }

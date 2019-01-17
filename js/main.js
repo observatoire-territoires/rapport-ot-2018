@@ -93,7 +93,7 @@ let noteIsInViewport = function(elem){
 		bounding.left >= 0 &&
 		bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
 		bounding.bottom <= (window.innerHeight  || document.documentElement.clientHeight)
-	);		
+	);
 };
 
 

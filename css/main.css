@@ -259,7 +259,7 @@
 	}
 
 	.niv2-c-section{
-		padding: 15vh 0.5em 0em 5em;
+		padding: 3em 0.5em 3em 5em;
 	}
 
 	.niv2-c-section:last-child{
@@ -271,7 +271,7 @@
 	.scroll-graphic{
 		position: sticky;
 		top:15vh;
-		padding: 15vh 2em 0em 0em;
+		padding: 1em 2em 0em 0em;
 	}
 	
 	
