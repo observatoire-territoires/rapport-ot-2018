@@ -50,15 +50,15 @@ function graph1(){
 		.domain(["immob", "mob_com", "mob_dep", "mob_reg", "mob_france", "mob_all"])
 		.range(["#eaeaea", "#7b7fbc", "#7dbd9f", "#f8c351", "#f18757", "#e85754"]);
 
-	const promise1 = d3.csv("../data/data-01.csv");
 	
-	Promise.all([promise1]).then(function(data){
 	
-		console.log(data[0]); 
+	d3.csv("../data/data-01.csv").then(function(data){
+	
+		console.log(data); 
 
 		//generate circles
 		let circles = svg.selectAll(".people")
-			.data(data[0])
+			.data(data)
 			.enter().append("circle")
 			.attr("class", "people")
 			.attr("r",2)
@@ -75,7 +75,7 @@ function graph1(){
 
 		//moves the SVG circles used to make the bubbles
 		//to their new positions
-		simulation.nodes(data[0])
+		simulation.nodes(data)
 			.on("tick", ticked);
 
 
