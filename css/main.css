@@ -137,6 +137,10 @@
 	.scroll-graphic object{
 		width: 100%;
 	  }
+
+	#c-svg-01{
+		width: 100%;
+	}
 	
 	/*Application sur les notes de bas de page*/
 
@@ -211,11 +215,20 @@
 		  display:block;
 	  }
 
-
-
+	  /*Application sur les boutons des graphiques*/
+	  .button{
+		  min-width: 130px;
+		  text-align: center;
+		  text-decoration: none;
+		  color: rgb(117, 148, 163);
+		  padding: 0.6em;
+	  }
 	}
   
-  
+	.button.active {
+		background: #000;
+		color: #fff;
+	  }
   
 
   
@@ -276,6 +289,11 @@
 	
 	
 	.scroll-graphic object{
+		position: inherit;
+		top: inherit;
+	}
+
+	#c-svg-01{
 		position: inherit;
 		top: inherit;
 	}

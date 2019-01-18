@@ -188,22 +188,19 @@ function deplaceElementSmallDevice() {
 
 }
 
-
-
-
-
-
 //->Here the event--------------
 //------------------------------
 	
 //If windows is resized, real-time
 window.addEventListener("resize",()=>{
 	deplaceElementSmallDevice();
+
 });
 
 //If document is complete, press F5 or on location
 document.onreadystatechange = function(){
 	if (document.readyState == "complete"){
 		deplaceElementSmallDevice();
+
 	}
 };
