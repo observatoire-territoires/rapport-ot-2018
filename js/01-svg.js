@@ -55,9 +55,10 @@ function graph1(){
 	
 		console.log(data); 
 
+		//ENTER
 		//generate circles
 		let circles = svg.selectAll(".people")
-			.data(data)
+			.data(data, ((d)=>{ return d.id;}))
 			.enter().append("circle")
 			.attr("class", "people")
 			.attr("r",2)
@@ -94,7 +95,7 @@ function graph1(){
 		}
 
 
-		let typeMobilityCenters = {
+		let propMobilityCenters = {
 			"0":{x: 50-getWidthSVG(0)/4, y: height/2},
 			"1":{x: 50+getWidthSVG(0)/4, y: height/2}
 		};
@@ -103,10 +104,22 @@ function graph1(){
 		* Provides a x value for each node to be used with the split by year
 		* x force.
 		*/
-		function nodeMobilityPos(d) {
-			return typeMobilityCenters[d.value].x;
+		function nodePropMobilityPos(d) {
+			return propMobilityCenters[d.value].x;
 		}
 
+
+		let typeMobilityCenters = {
+			"mob_com":{x: -2*getWidthSVG(0)/6, y: height/2},
+			"mob_dep":{x: -getWidthSVG(0)/6, y: height/2},
+			"mob_reg":{x: getWidthSVG(0)/2, y: height/2},
+			"mob_france":{x: getWidthSVG(0)/6, y: height/2},
+			"mob_all":{x: 2*getWidthSVG(0)/6, y: height/2}
+		}
+
+		function nodeTypeMobilityPos(d){
+			return typeMobilityCenters[d.type_mob].x;
+		}
 
 		//GroupCircles
 		function groupCircles(){
@@ -120,13 +133,26 @@ function graph1(){
 		//SplitCircles
 		function splitCircles(){
 			//reset the 'x' force to draw the circles to their year centers
-			simulation.force("x", d3.forceX().strength(0.05).x(nodeMobilityPos));
+			simulation.force("x", d3.forceX().strength(0.05).x(nodePropMobilityPos));
 			//reset the alpha value and restart the simulation
 			simulation.alpha(1).restart();
 		}
 
 
+		//Five circle
+		function fiveCircles(){
 
+			let dataFiltered = data.filter((d)=>{
+				return d.type_mob != "immob";
+			});	
+	
+
+
+			//reset the 'x' force to draw the circles to their year centers
+			simulation.force("x", d3.forceX().strength(0.05).x(nodeTypeMobilityPos));
+			//reset the alpha value and restart the simulation
+			simulation.alpha(1).restart();
+		}
 
 		//Sets up the layout buttons to allow for toggling between view modes
 
@@ -179,8 +205,52 @@ function graph1(){
 				.attr("width", "100%")
 				.attr("transform", "translate(" + getWidthSVG(0)/2 +  "," + height/2 + ")");
 
-			
+
 		}
+
+
+
+
+
+
+		//initialize the scrollama
+		//Parallax
+		const scroller = scrollama();
+
+		function handleStepEnter(response) {
+
+			switch(response.index){
+			case 0:
+
+				break;
+			case 1:
+				fiveCircles();
+				break;
+			}
+		}
+
+		function handleStepExit(response){
+			switch(response.index){
+			case 0:
+				console.log("Je suis sorti de l'élément");
+				break;
+			}
+		}
+
+
+		scroller
+			.setup({
+				container: ".scroll",
+				graphic: ".scroll-graphic",
+				text: ".scroll-text",
+				step: ".break-01",
+				debug: false,
+				offset: 0.33
+			})
+			.onStepEnter(handleStepEnter)
+			.onStepExit(handleStepExit);
+
+
 
 
 

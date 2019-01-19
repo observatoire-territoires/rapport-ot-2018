@@ -27,54 +27,6 @@ let c09Section5 = document.querySelector("#c-09-section5");
 let c10Section6 = document.querySelector("#c-10-section6");
 let c11Section6 = document.querySelector("#c-11-section6");
 
-//initialize the scrollama
-const scroller = scrollama();
-
-function handleStepEnter(response) {
-
-	switch(response.index){
-	case 0:
-		c03Section3.style.display = "block";
-		c04Section3.style.display = "none";
-		c05Section3.style.display = "none";
-		break;
-	case 1:
-		c03Section3.style.display = "none";
-		c04Section3.style.display = "block";
-		c05Section3.style.display = "none";
-		break;
-	case 2:
-		c03Section3.style.display = "none";
-		c04Section3.style.display = "none";
-		c05Section3.style.display = "block";
-		break;
-	case 3:
-		c06Section4.style.display = "block";
-		c07Section4.style.display = "none";
-		break;
-	case 4:
-		c06Section4.style.display = "none";
-		c07Section4.style.display = "block";
-		break;
-	case 5:
-		c08Section5.style.display = "none";
-		c09Section5.style.display = "block";
-		break;
-	case 6:
-		c08Section5.style.display = "block";
-		c09Section5.style.display = "none";
-		break;
-	case 7:
-		c10Section6.style.display = "none";
-		c11Section6.style.display = "block";
-		break;
-	case 8:
-		c10Section6.style.display = "block";
-		c11Section6.style.display = "none";
-		break;
-	}
-}
-
 
 
 
@@ -172,16 +124,7 @@ function deplaceElementSmallDevice() {
 		scrollNumber[5].append(c10Section6);
 		scrollNumber[5].append(c11Section6);
 
-		scroller
-			.setup({
-				container: ".scroll",
-				graphic: ".scroll-graphic",
-				text: ".scroll-text",
-				step: ".break",
-				debug: false,
-				offset: 0.33
-			})
-			.onStepEnter(handleStepEnter);
+		
 
 		console.log("grand écran");
 	}
