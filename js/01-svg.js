@@ -184,8 +184,10 @@ function graph1(){
 
 
 
-	}); //import data
-
+	}) //import data
+		.catch(function(error){
+			console.log(error);
+		});
 
 
 
