@@ -2,8 +2,7 @@
 function getWidthSVG(i){
 	const elem = document.querySelectorAll(".scroll-graphic svg");
 	return elem[i].getBoundingClientRect().width;
-};
-
+}
 
 
 function graph1(){
@@ -95,17 +94,80 @@ function graph1(){
 		}
 
 
-		//called once for each node and provides
-		//the appropriate x position for that node
-		function nodeTypeMob(d){
-			return 
+		let typeMobilityCenters = {
+			"0":{x: 50-getWidthSVG(0)/4, y: height/2},
+			"1":{x: 50+getWidthSVG(0)/4, y: height/2}
+		};
+
+		/*
+		* Provides a x value for each node to be used with the split by year
+		* x force.
+		*/
+		function nodeMobilityPos(d) {
+			return typeMobilityCenters[d.value].x;
 		}
+
+
+		//GroupCircles
+		function groupCircles(){
+			//reset the 'x' force to draw the circles to the center
+			simulation.force("x", d3.forceX().strength(0.05));
+			//reset the alpha value and restart the simulation
+			simulation.alpha(1).restart();
+		}
+
+
+		//SplitCircles
+		function splitCircles(){
+			//reset the 'x' force to draw the circles to their year centers
+			simulation.force("x", d3.forceX().strength(0.05).x(nodeMobilityPos));
+			//reset the alpha value and restart the simulation
+			simulation.alpha(1).restart();
+		}
+
+
+
+
+		//Sets up the layout buttons to allow for toggling between view modes
+
+		function setupButtons(){
+			d3.select("#toolbar-01")
+				.selectAll(".button")
+				.on("click", function(){
+
+					//remove active class from all buttons
+					d3.selectAll(".button").classed("active", false);
+
+					//find the button just clicked
+					let button = d3.select(this);
+
+					//set it as the active button
+					button.classed("active", true);
+
+					//get the id of the buttton
+					let buttonId = button.attr("id");
+
+					buttonId === "by-type-mobility" ? splitCircles(): groupCircles();
+
+					// Toggle the bubble chart based on
+					// the currently clicked button
+					//toggleDisplay(buttonId);
+				});
+		}
+		//setup the buttons
+		setupButtons();
+
+
+
+
 
 
 		//Resize SVG, responsive
 		d3.select(window)
 			.on("resize", ()=>{
 				resize();
+
+
 			});
 
 
@@ -117,15 +179,19 @@ function graph1(){
 				.attr("width", "100%")
 				.attr("transform", "translate(" + getWidthSVG(0)/2 +  "," + height/2 + ")");
 
-
-
 			
 		}
 
 
 
+	}); //import data
 
-	});
+
+
+
+
+
+
 
 } //function graph1
 
@@ -133,27 +199,3 @@ function graph1(){
 
 graph1();
 
-
-
-//Sets up the layout buttons to allow for toggling between view modes
-
-function setupButtons(){
-	d3.select("#toolbar-01")
-		.selectAll(".button")
-		.on("click", function(){
-
-			//remove active class from all buttons
-			d3.selectAll(".button").classed("active", false);
-
-			//find the button just clicked
-			let button = d3.select(this);
-
-			//set it as the active button
-			button.classed("active", true);
-
-			//get the id of the buttton
-			let buttonId = button.attr("id");
-		});
-}
-//setup the buttons
-setupButtons();
