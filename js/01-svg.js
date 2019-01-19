@@ -51,7 +51,7 @@ function graph1(){
 
 	
 	
-	d3.csv("../data/data-01.csv").then(function(data){
+	d3.csv("data/data-01.csv").then(function(data){
 	
 		console.log(data); 
 
