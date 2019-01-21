@@ -58,7 +58,7 @@ function graph1(){
 		//ENTER
 		//generate circles
 		let circles = svg.selectAll(".people")
-			.data(data, ((d)=>{ return d.id;}))
+			.data(data, ((d)=>{ return d;}))
 			.enter().append("circle")
 			.attr("class", "people")
 			.attr("r",2)
@@ -114,7 +114,8 @@ function graph1(){
 			"mob_dep":{x: -getWidthSVG(0)/6, y: height/2},
 			"mob_reg":{x: getWidthSVG(0)/2, y: height/2},
 			"mob_france":{x: getWidthSVG(0)/6, y: height/2},
-			"mob_all":{x: 2*getWidthSVG(0)/6, y: height/2}
+			"mob_all":{x: 2*getWidthSVG(0)/6, y: height/2},
+			"immob":{x:0,y:0}
 		}
 
 		function nodeTypeMobilityPos(d){
@@ -142,10 +143,7 @@ function graph1(){
 		//Five circle
 		function fiveCircles(){
 
-			let dataFiltered = data.filter((d)=>{
-				return d.type_mob != "immob";
-			});	
-	
+
 
 
 			//reset the 'x' force to draw the circles to their year centers
@@ -221,7 +219,7 @@ function graph1(){
 
 			switch(response.index){
 			case 0:
-
+				console.log("Je suis entré 1er texte section1");
 				break;
 			case 1:
 				fiveCircles();
@@ -232,7 +230,7 @@ function graph1(){
 		function handleStepExit(response){
 			switch(response.index){
 			case 0:
-				console.log("Je suis sorti de l'élément");
+				console.log("Je suis sorti 1er texte section1");
 				break;
 			}
 		}
@@ -270,4 +268,3 @@ function graph1(){
 
 
 graph1();
-
