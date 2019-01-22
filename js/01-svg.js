@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 
 function getWidthSVG(i){
 	const elem = document.querySelectorAll(".scroll-graphic svg");
@@ -19,10 +20,11 @@ function graph1(){
 	let svg = d3.select("#c-svg-01")
 		.append("svg")
 		.attr("height", height)
-		.attr("width", "100%")
-		.append("g")
-		.attr("transform", "translate(" + getWidthSVG(0)/2 +  "," + height/2 + ")");
+		.attr("width", "100%");
+		
 
+	let g = svg.append("g")
+		.attr("transform", "translate(" + getWidthSVG(0)/2 +  "," + height/2 + ")");
 
 	//initiate format number
 	/*Initiate format number*/
@@ -53,40 +55,43 @@ function graph1(){
 	
 	d3.csv("data/data-01.csv").then(function(data){
 	
-		console.log(data); 
+		
 
-		//ENTER
-		//generate circles
-		let circles = svg.selectAll(".people")
-			.data(data, ((d)=>{ return d;}))
-			.enter().append("circle")
-			.attr("class", "people")
-			.attr("r",2)
-			.attr("fill",((d)=>{return fillColor(d.type_mob);}));
+		let circles = g.append("g")
+			.selectAll(".people");
 
 
-		//event click circles
-		circles
-			.on("click", ((d)=>{
-				console.log(d);
-			}));
+		function updateData(myData){
 
+			
+			// Apply the general update pattern to the circles
+			circles = circles.data(myData);
 
+			circles.exit().remove();
 
-		//moves the SVG circles used to make the bubbles
-		//to their new positions
-		simulation.nodes(data)
-			.on("tick", ticked);
+			circles = circles
+				.enter().append("circle")
+				.attr("class", "people")
+				.attr("r",2)
+				.attr("fill",((d)=>{return fillColor(d.type_mob);}))
+				.merge(circles);
 
+			//moves the SVG circles used to make the bubbles
+			//to their new positions
+			simulation.nodes(myData)
+				.on("tick", ticked);
 
+		} //update data
+		
 		/*
 		* Callback function that is called after every tick of the
 		* force simulation.
 		* Here we do the acutal repositioning of the SVG circles
 		* based on the current x and y values of their bound node data.
 		* These x and y values are modified by the force simulation.
+		* This function joins the nodes array to circle elements
+		* and updates their positions
 		*/
-
 
 		function ticked(){
 			circles
@@ -94,6 +99,11 @@ function graph1(){
 				.attr("cy", ((d)=>{return d.y;}));
 		}
 
+		//event click circles
+		circles
+			.on("click", ((d)=>{
+				console.log(d);
+			}));
 
 		let propMobilityCenters = {
 			"0":{x: 50-getWidthSVG(0)/4, y: height/2},
@@ -109,30 +119,25 @@ function graph1(){
 		}
 
 
-		let typeMobilityCenters = {
-			"mob_com":{x: -2*getWidthSVG(0)/6, y: height/2},
-			"mob_dep":{x: -getWidthSVG(0)/6, y: height/2},
-			"mob_reg":{x: getWidthSVG(0)/2, y: height/2},
-			"mob_france":{x: getWidthSVG(0)/6, y: height/2},
-			"mob_all":{x: 2*getWidthSVG(0)/6, y: height/2},
-			"immob":{x:0,y:0}
-		}
 
-		function nodeTypeMobilityPos(d){
-			return typeMobilityCenters[d.type_mob].x;
-		}
 
 		//GroupCircles
 		function groupCircles(){
+
+			updateData(data);
 			//reset the 'x' force to draw the circles to the center
 			simulation.force("x", d3.forceX().strength(0.05));
 			//reset the alpha value and restart the simulation
 			simulation.alpha(1).restart();
+
+
 		}
 
 
 		//SplitCircles
 		function splitCircles(){
+
+			updateData(data);
 			//reset the 'x' force to draw the circles to their year centers
 			simulation.force("x", d3.forceX().strength(0.05).x(nodePropMobilityPos));
 			//reset the alpha value and restart the simulation
@@ -142,10 +147,22 @@ function graph1(){
 
 		//Five circle
 		function fiveCircles(){
+			let data2 = data.filter((d)=>{return d.value == "1"})
+			updateData(data2);
 
-
-
-
+			let typeMobilityCenters = {
+				"mob_com":{x: -2*getWidthSVG(0)/6, y: height/2},
+				"mob_dep":{x: -getWidthSVG(0)/6, y: height/2},
+				"mob_reg":{x: 0, y: height/2},
+				"mob_france":{x: getWidthSVG(0)/6, y: height/2},
+				"mob_all":{x: 2*getWidthSVG(0)/6, y: height/2},
+				"immob":{x:0,y:0}
+			};
+	
+			function nodeTypeMobilityPos(d){
+				return typeMobilityCenters[d.type_mob].x;
+			}
+			
 			//reset the 'x' force to draw the circles to their year centers
 			simulation.force("x", d3.forceX().strength(0.05).x(nodeTypeMobilityPos));
 			//reset the alpha value and restart the simulation
@@ -200,7 +217,9 @@ function graph1(){
 			console.log(getWidthSVG(0));
 
 			svg
-				.attr("width", "100%")
+				.attr("width", "100%");
+
+			g
 				.attr("transform", "translate(" + getWidthSVG(0)/2 +  "," + height/2 + ")");
 
 
@@ -249,7 +268,7 @@ function graph1(){
 			.onStepExit(handleStepExit);
 
 
-
+		updateData(data);
 
 
 	}) //import data
@@ -261,7 +280,7 @@ function graph1(){
 
 
 
-
+	
 
 } //function graph1
 
