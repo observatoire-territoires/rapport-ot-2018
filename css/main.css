@@ -216,22 +216,41 @@
 	  }
 
 	  /*Application sur les boutons des graphiques*/
+
+	  .toolbar{
+		  margin-top: 2em;
+		  margin-bottom: 2em;
+	  }
+
 	  .button{
 		  min-width: 130px;
 		  text-align: center;
 		  text-decoration: none;
-		  color: rgb(117, 148, 163);
-		  padding: 0.6em;
+		  color: #ffadaf;
+		  padding: 0.3em 0.5em 0.3em 0.5em;
 		  cursor: pointer;
+		  text-transform: uppercase;
+		  border-radius:1em;
+		  transition: all 80ms linear;
+		  user-select: none;
+		  font-size: 0.8em;
+		  margin: 0.5em;
+		  font-family: "MontserratWebMedium";
+		  font-style: normal;
+		  letter-spacing: 0.05em;
+		  
 	  }
 	}
   
 	.button.active {
-		background: #000;
-		color: #fff;
+		background: #fff;
+		color: #ff3333;
 	  }
   
-
+	  .button:hover{
+		background: #fff;
+		color: #ff3333;
+	  }
   
   
 /*Desktop devices
