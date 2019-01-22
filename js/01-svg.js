@@ -43,7 +43,7 @@ function graph1(){
 		.force("x", d3.forceX().strength(0.05))
 		.force("y", d3.forceY().strength(0.05))
 		.force("collide", d3.forceCollide(5))
-		.velocityDecay(0.2);
+		.velocityDecay(0.3);
 
 
 	//color circles
