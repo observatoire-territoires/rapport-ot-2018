@@ -69,7 +69,7 @@
 	/*--------------------------------*/
 
 	.section-interlude{
-		background: #fefee0;
+		background: #969696;
 		color: black;
 		min-height: 100vh;
 		box-shadow: inset 0px 0px 20px 5px rgba(50, 50, 50, 0.4);
@@ -220,6 +220,7 @@
 	  .toolbar{
 		  margin-top: 2em;
 		  margin-bottom: 2em;
+		  margin-left: 1.5em;
 	  }
 
 
@@ -227,7 +228,7 @@
 		  min-width: 130px;
 		  text-align: center;
 		  text-decoration: none;
-		  color: #ffadaf;
+		  color: #ffadad;
 		  padding: 0.3em 0.5em 0.3em 0.5em;
 		  cursor: pointer;
 		  text-transform: uppercase;
@@ -242,60 +243,171 @@
 	}
   
 	.button.active {
-		background: #fff;
-		color: #ff3333;
+		border: 2px solid white;
+		color: #ffadad;
 	  }
   
 	  .button:hover{
-		background: #fff;
-		color: #bda5a5;
+		border: 2px solid white;
+		color: #ff3333;
 	  }
   
 
 	  #toolbar-03{
 		  display: flex;
-		  flex-direction: row;
+		  flex-direction: row;	  
 	  }
 
 	  #c-input-03{
 		  width: 70%;
 	  }
 
+	   /*Application sur le slider*/
+
+
 	  .slider{
 		  -webkit-appearance: none;
 		  appearance: none;
 		  width: 100%;
-		  height: 20px;
-		  outline: none;
-		  background: #ffadaf;
-		  opacity: 0.7;
 		  transition: background 0.2s;
-		  cursor: pointer;
+		  border-radius: 25px;
+		  margin-top: 0.6em;
 	  }
 
-	  .slider:hover{
-		  background: #ff3333;
+	  .slider:focus{
+		outline: none;
+	  }
+
+	  .slider:focus {
+		outline: none;
+	  }
+
+	  .slider::-webkit-slider-runnable-track {
+		width: 100%;
+		height: 12.8px;
+		cursor: pointer;
+		animation: 0.2s;
+		box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+		background: #ffadad;
+		border-radius: 25px;
+		border: 0px solid #000101;
 	  }
 
 	  .slider::-webkit-slider-thumb {
+		box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+		border: 0px solid #000000;
+		height: 20px;
+		width: 39px;
+		border-radius: 7px;
+		background: #969696;
+		cursor: pointer;
 		-webkit-appearance: none;
-		appearance: none;
-		height:30px;
-		width: 20px;
-		background: #fff;
-	}
+		margin-top: -3.6px;
+	  }
+	  .slider:focus::-webkit-slider-runnable-track {
+		background: #ffadad;
+	  }
 
-	.slider::-moz-range-thumb {
-		-webkit-appearance: none;
-		appearance: none;
-		height:30px;
-		width: 20px;
-		background: #fff;
-	}
+	  .slider:hover::-webkit-slider-runnable-track{
+		background: #ff3333;
+	  }
+
+	  .slider::-moz-range-track {
+		width: 100%;
+		height: 12.8px;
+		cursor: pointer;
+		animation: 0.2s;
+		box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+		background: #ffadad;
+		border-radius: 25px;
+		border: 0px solid #000101;
+	  }
+
+	  .slider:hover::-moz-range-track{
+			background: #ff3333;
+		  }
+
+
+	  .slider::-moz-range-thumb {
+		box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+		border: 0px solid #000000;
+		height: 20px;
+		width: 39px;
+		border-radius: 7px;
+		background: #969696;
+		cursor: pointer;
+	  }
+
+	  .slider::-ms-track {
+		width: 100%;
+		height: 12.8px;
+		cursor: pointer;
+		animation: 0.2s;
+		background: transparent;
+		border-color: transparent;
+		border-width: 39px 0;
+		color: transparent;
+	  }
+	  .slider::-ms-fill-lower {
+		background: #ffadad;
+		border: 0px solid #000101;
+		border-radius: 50px;
+		box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+	  }
+
+	  .slider:hover::-ms-fill-lower{
+		background: #ff3333;
+	  }
+
+	  .slider::-ms-fill-upper {
+		background: #ffadad;
+		border: 0px solid #000101;
+		border-radius: 50px;
+		box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+	  }
+
+	  .slider:hover::-ms-fill-upper{
+		background: #ff3333;
+	  }
+
+
+	  .slider::-ms-thumb {
+		box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+		border: 0px solid #000000;
+		height: 20px;
+		width: 39px;
+		border-radius: 7px;
+		background: #969696;
+		cursor: pointer;
+	  }
+
+
+	  .slider:focus::-ms-fill-lower {
+		background: #ffadad;
+	  }
+
+
+	  .slider:focus::-ms-fill-upper {
+		background: #ffadad;
+	  }
+
+
+	  #output-03-bullet{
+		  position: relative;
+		  display: block;
+		  text-align: center;
+		  transform-origin: center center;
+		  width:100px;
+		  margin-left: -33px;
+	  }
+
+
 
 	  #c-output-03{
 		  margin-left: 2em;
+		  display: none;
 	  }
+
   
 /*Desktop devices
  %%%%%  %%%%%%  %%%%  %%  %% %%%%%%  %%%%  %%%%%  
@@ -437,6 +549,15 @@
 		display: block;
 	}
 
+	/*Application sur le container du slider*/
+	#toolbar-03{
+		margin-right: 1.5em;	 
+		justify-content: center; 
+	}
+
+	#c-input-03{
+		width: 80%;
+	}
 
 
 
