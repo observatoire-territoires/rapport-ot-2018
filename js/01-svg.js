@@ -1,5 +1,3 @@
-/* eslint-disable semi */
-
 function getWidthSVG(i){
 	const elem = document.querySelectorAll(".scroll-graphic svg");
 	return elem[i].getBoundingClientRect().width;

@@ -138,7 +138,7 @@
 		width: 100%;
 	  }
 
-	#c-svg-01{
+	#c-svg-01, #c-svg-06{
 		width: 100%;
 	}
 	
@@ -221,6 +221,9 @@
 		  margin-top: 2em;
 		  margin-bottom: 2em;
 		  margin-left: 1.5em;
+		  display: flex;
+		  flex-direction: row;
+		  flex-wrap: wrap;
 	  }
 
 
@@ -240,6 +243,7 @@
 		  font-family: "MontserratWebMedium";
 		  font-style: normal;
 		  letter-spacing: 0.05em;
+		  white-space: nowrap;
 	}
   
 	.button.active {
@@ -408,6 +412,9 @@
 		  display: none;
 	  }
 
+
+	}
+
   
 /*Desktop devices
  %%%%%  %%%%%%  %%%%  %%  %% %%%%%%  %%%%  %%%%%  
@@ -469,9 +476,11 @@
 		top: inherit;
 	}
 
-	#c-svg-01{
+	#c-svg-01, #c-svg-06{
 		position: inherit;
 		top: inherit;
+		min-width: "320px";
+		max-width: "1024px";
 	}
 	
 		/*Section 3*/

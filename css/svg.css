@@ -11,12 +11,33 @@
 
 @media all{
 
+  text, tspan{
+    font-family: "MontserratWebMedium";
+    font-style: normal;
+  }
+
+
+  .y_axis text{
+    text-anchor: end;
+  }
 
 
 
-}
+  /*svg-06*/
 
+  .tick line{
+    stroke: #fffff0;
+  }
 
+  .line{
+    fill: none;
+    stroke-width:2px;
+  }
+
+  .y_axis :nth-child(5) line{
+    stroke-dasharray: 5px;
+    stroke-width: 2px;
+  }
 
 
 /*4 steps for svg text
