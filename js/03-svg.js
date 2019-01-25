@@ -79,6 +79,44 @@ object03.addEventListener("load", function() {
 	});
 
 
+	//initialize the scrollama
+	//Parallax
+	const scroller = scrollama();
+
+	function handleStepEnter(response) {
+
+		switch(response.index){
+		case 0:
+			svg.style.opacity = "1";
+			break;
+		}
+	}
+
+	function handleStepExit(response){
+		switch(response.index){
+		case 0:
+			svg.style.opacity = "0";
+			break;
+		}
+	}
+
+
+	scroller
+		.setup({
+			container: ".scroll",
+			graphic: ".scroll-graphic",
+			text: ".scroll-text",
+			step: ".break-03",
+			debug: false,
+			offset: 0.33
+		})
+		.onStepEnter(handleStepEnter)
+		.onStepExit(handleStepExit);
+
+
+
+
+
 	
 }); //load listener
 
@@ -92,3 +130,5 @@ window.addEventListener("resize",()=>{
 	deplaceOutputBullet();
 
 });
+
+

@@ -2,7 +2,7 @@ function graph6(){
 
 
 	//sizing
-	let margin = {top:20, right:20, bottom:20, left: 25};
+	let margin = {top:20, right:0, bottom:40, left: 40};
 
 	let width = 600;
 	let height = 400;
@@ -128,6 +128,9 @@ function graph6(){
 			.call(xAxis)
 			.select(".domain").remove();
 
+		svg.select(".x_axis")
+			.selectAll("text")
+			.attr("y", 15);
 
 		//Call y axis
 		svg
@@ -139,11 +142,11 @@ function graph6(){
 
 		svg.select(".y_axis")
 			.selectAll("line")
-			.attr("stroke-dasharray", "3");
+			.attr("stroke-width", "0.5px");
 	
 		svg.select(".y_axis")
 			.selectAll("text")
-			.attr("x",-2)
+			.attr("x",-10)
 			.attr("dy",3);
 
 
@@ -277,7 +280,9 @@ function graph6(){
 
 
 
-}
+
+
+} //function graph6
 
 
 graph6();

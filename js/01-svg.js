@@ -145,7 +145,7 @@ function graph1(){
 
 		//Five circle
 		function fiveCircles(){
-			let data2 = data.filter((d)=>{return d.value == "1"})
+			let data2 = data.filter((d)=>{return d.value == "1";});
 			updateData(data2);
 
 			let typeMobilityCenters = {
