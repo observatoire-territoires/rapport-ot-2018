@@ -127,7 +127,7 @@ let intersectionCallback = function(entries){
 
 function thresholdList(){
 	let thresholds = [];
-	const numSteps = 2500;
+	const numSteps = 3500;
 
 	for (let i=1;i<=numSteps;i++){
 		let ratio = i/numSteps;

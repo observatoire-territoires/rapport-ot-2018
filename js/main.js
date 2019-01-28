@@ -112,6 +112,7 @@ function deplaceElementSmallDevice() {
 
 	if (largeMedia==true){
 
+/*
 		scrollNumber[0].append(c01Section1);
 		scrollNumber[1].append(c02Section2);
 		scrollNumber[2].append(c03Section3);
@@ -123,7 +124,7 @@ function deplaceElementSmallDevice() {
 		scrollNumber[4].append(c09Section5);
 		scrollNumber[5].append(c10Section6);
 		scrollNumber[5].append(c11Section6);
-
+*/
 		
 
 		console.log("grand écran");

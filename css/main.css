@@ -471,20 +471,20 @@
 	}
 	
 	
-	.scroll-graphic object{
-		position: inherit;
+	#c-01-section1, #c-03-section3, #c-04-section3, #c-06-section4{
+		position: sticky;
 		top: inherit;
 	}
 
+
+
 	#c-svg-01, #c-svg-04, #c-svg-06{
-		position: inherit;
-		top: inherit;
 		min-width: "320px";
 		max-width: "1024px";
 	}
 	
 		/*Section 3*/
-		#c-04-section3, #c-05-section3{
+		#c-05-section3{
 		display: none;
 	}
 	

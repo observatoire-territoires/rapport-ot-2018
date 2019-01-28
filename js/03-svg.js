@@ -106,7 +106,7 @@ object03.addEventListener("load", function() {
 			container: ".scroll",
 			graphic: ".scroll-graphic",
 			text: ".scroll-text",
-			step: ".break-03",
+			step: ".break-section3",
 			debug: false,
 			offset: 0.33
 		})

@@ -22,6 +22,17 @@
   }
 
 
+  /*svg-04*/
+  .path04{
+    fill: none;
+    pointer-events: all;
+  }
+
+  .cells g:hover circle{
+    fill: red;
+  }
+
+
 
   /*svg-06*/
 
