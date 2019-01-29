@@ -23,12 +23,12 @@
 
 
   /*svg-04*/
-  .path04{
+  .paths{
     fill: none;
     pointer-events: all;
   }
 
-  .cells g:hover circle{
+  .paths:hover .circles{
     fill: red;
   }
 

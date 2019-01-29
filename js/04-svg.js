@@ -59,8 +59,8 @@ function graph4(){
 		"grouping": [3]
 	});
 
-	let tx_data = "tx_sm_68_75";
-	let pop_data = "pop_sm_68_75";
+	//let tx_data = "tx_sm_68_75";
+	//let pop_data = "pop_sm_68_75";
 
 	d3.csv("data/data-04.csv").then(function(data){
 
@@ -118,44 +118,52 @@ function graph4(){
 			.call(xAxis);
 
 
-		//simulation force
-		let simulation = d3.forceSimulation(data)
-			.force("x", d3.forceX((d)=>{ return xScale(d[tx_data]);}).strength(1))
-			.force("y", d3.forceY(height -margin.top - margin.bottom/2))
-			.force("collide", d3.forceCollide().radius((d)=>{return(Math.sqrt(d.pop_sm_68_75/popMax))*30;}))
-			.stop();
+		function updateData(tx_data, pop_data){
+	
 
-		for (let i=0; i<data.length;i++) simulation.tick();
+			//simulation force
+			let simulation = d3.forceSimulation(data)
+				.force("x", d3.forceX((d)=>{ return xScale(d[tx_data]);}).strength(1))
+				.force("y", d3.forceY(height/2 - margin.bottom/2))
+				.force("collide", d3.forceCollide().radius((d)=>{return(Math.sqrt(d[pop_data]/popMax))*70;}))
+				.stop();
 
-		//join
-		let cell = svg.append("g")
-			.append("g")
-			.attr("class", "cells")
-			.selectAll("g").data(d3.voronoi()
-				.extent([[-margin.left, -margin.top], [width + margin.right, height + margin.top]])
-				.x(function(d) { return d.x; })
-				.y(function(d) { return d.y; })
-				.polygons(data)).enter().append("g");
+			for (let i=0; i<data.length;i++) simulation.tick();
 
-		//voronoi improves hover interaction
-		cell.append("path")
-			.attr("class", "path04")
-			.attr("d", function(d) { return "M" + d.join("L") + "Z"; });
-
-		//circle
-		cell.append("circle")
-			.attr("r",(d)=>{return(Math.sqrt(d.data[pop_data]/popMax))*30;})
-			.attr("cx", ((d)=>{ return d.data.x; }))
-			.attr("cy", ((d)=>{ return d.data.y; }))
-			.attr("fill",((d)=>{ return colors(d.data.codgeo);}));
+			let newCircles = svg.selectAll(".circles")
+				.data(data, ((d)=>{ return d.codgeo; }));
 
 
+			newCircles.exit()
+				.transition()
+				.duration(1000)
+				.attr("cx", 0)
+				.attr("cy", height/2 - margin.bottom/2)
+				.remove();
 
+			
+			let	g = newCircles
+				.enter()
+				.append("g")
+				.attr("id", ((d)=>{ return "g-" + d.codgeo;}));
 
+			//circle
+			g.append("circle")
+				.attr("class", "circles")
+				.attr("r",1)
+				.attr("cx", ((d)=>{ return d.x; }))
+				.attr("cy", ((d)=>{ return d.y; }))
+				.attr("fill",((d)=>{ return colors(d.codgeo);}))
+				.merge(newCircles)
+				.transition()
+				.duration(1500)
+				.attr("cx", ((d)=>{ return d.x; }))
+				.attr("cy", ((d)=>{ return d.y; }))
+				.attr("r",(d)=>{return(Math.sqrt(d[pop_data]/popMax))*50;})
 
+		
 
-
-
+		}
 
 
 
@@ -163,22 +171,22 @@ function graph4(){
 			deplaceOutputBullet2();
 			switch (e.target.value) {
 			case "0":
-
+				updateData("tx_sm_68_75", "pop_sm_68_75");
 				break;
 			case "1":
-			
+				updateData("tx_sm_75_82", "pop_sm_75_82");
 				break;	
 			case "2":
-
+				updateData("tx_sm_82_90", "pop_sm_82_90");
 				break;
 			case "3":
-
+				updateData("tx_sm_90_99", "pop_sm_90_99");
 				break;
 			case "4":
-
+				updateData("tx_sm_99_09", "pop_sm_99_09");
 				break;
 			case "5":
-	
+				updateData("tx_sm_09_14", "pop_sm_09_14");
 				break;
 				
 			}
@@ -193,24 +201,13 @@ function graph4(){
 
 
 
+		updateData("tx_sm_68_75", "pop_sm_68_75");
 
-
-
+		
 
 	}); //read data
 
-
-
-
-
-
-
-
-
-
-
-
-
+	
 
 
 
@@ -222,6 +219,8 @@ function graph4(){
 
 } //function graph4
 
+graph4();
+
 
 
 //initialize the scrollama
@@ -231,6 +230,9 @@ const scroller = scrollama();
 function handleStepEnter(response) {
 
 	switch(response.index){
+	case 0:
+		d3.select("#c-svg-04").selectAll("*").remove();
+		break;
 	case 1:
 		graph4();
 		break;
