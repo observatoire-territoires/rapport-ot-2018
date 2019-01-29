@@ -106,9 +106,11 @@ function graph4(){
 		//Initiate x Axis
 		const xScale = d3.scaleLinear()
 			.domain([min,max]) //input
-			.range([margin.left, width-margin.right]); //output
+			.range([margin.left, width-margin.right]) //output
+			.nice();
 
-		const xAxis = d3.axisBottom(xScale);
+		const xAxis = d3.axisBottom(xScale)
+			.tickSizeOuter(0);
 
 		//Call x axis
 		svg
@@ -116,6 +118,10 @@ function graph4(){
 			.attr("class", "axis x_axis")
 			.attr("transform", `translate(0,${height-margin.bottom})`)
 			.call(xAxis);
+
+		svg.select(".x_axis")
+			.selectAll("text")
+			.attr("y", 15);
 
 
 		function updateData(tx_data, pop_data){
@@ -125,7 +131,7 @@ function graph4(){
 			let simulation = d3.forceSimulation(data)
 				.force("x", d3.forceX((d)=>{ return xScale(d[tx_data]);}).strength(1))
 				.force("y", d3.forceY(height/2 - margin.bottom/2))
-				.force("collide", d3.forceCollide().radius((d)=>{return(Math.sqrt(d[pop_data]/popMax))*70;}))
+				.force("collide", d3.forceCollide().radius((d)=>{return(Math.sqrt(d[pop_data]/popMax))*50;}))
 				.stop();
 
 			for (let i=0; i<data.length;i++) simulation.tick();
@@ -160,7 +166,7 @@ function graph4(){
 				.attr("cx", ((d)=>{ return d.x; }))
 				.attr("cy", ((d)=>{ return d.y; }))
 				.attr("r",(d)=>{return(Math.sqrt(d[pop_data]/popMax))*50;})
-
+				
 		
 
 		}

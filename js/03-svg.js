@@ -38,6 +38,9 @@ object03.addEventListener("load", function() {
 		.getSVGDocument()
 		.querySelectorAll(".per_all");
 
+	let legend = object03
+		.getSVGDocument()
+		.querySelector("#legend");
 
 	//Opacity
 	function svg03ChangeOpacity(index) {
@@ -52,7 +55,7 @@ object03.addEventListener("load", function() {
 
 	//on loading, first svg
 	svg03ChangeOpacity(0);
-
+	legend.setAttribute("opacity",1);
 	input03.addEventListener("input",function(e){
 		deplaceOutputBullet();
 		switch (e.target.value) {
