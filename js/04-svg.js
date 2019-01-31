@@ -64,7 +64,7 @@ function graph4(){
 
 	d3.csv("data/data-04.csv").then(function(data){
 
-		console.log(data);
+
 
 		data.forEach((d)=>{
 			d.pop_sm_68_75 = +d.pop_sm_68_75,
@@ -99,9 +99,7 @@ function graph4(){
 		
 		let popKey = data.columns.slice(2,8);
 		let popMax = d3.max(data, (d)=>{ return d3.max(popKey, (key)=>{ return d[key];});});
-		console.log(min);
-		console.log(max);
-		console.log(popMax);
+
 
 		//Initiate x Axis
 		const xScale = d3.scaleLinear()

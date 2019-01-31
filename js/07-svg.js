@@ -3,7 +3,7 @@ function graph7(){
 
 	d3.csv("").then(function(data){
 
-		console.log(data);
+		
 
 
 

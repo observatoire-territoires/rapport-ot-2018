@@ -32,6 +32,11 @@
     fill: red;
   }
 
+  /*svg-05*/
+  .border-lines {
+    stroke: #fff;
+    stroke-width: 1px;
+  }
 
 
   /*svg-06*/
@@ -48,6 +53,10 @@
   .y_axis :nth-child(5) line{
     stroke-width: 1.5px;
   }
+
+
+
+}
 
 
 /*4 steps for svg text
