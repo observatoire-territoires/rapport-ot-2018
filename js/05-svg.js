@@ -23,6 +23,7 @@ function graph5(){
 	});
 
 
+
 	//Initiate data
 	d3.csv("data/data-05.csv").then(function(data){
 
@@ -42,30 +43,6 @@ function graph5(){
 
 		console.log(min);
 		console.log(max);
-
-
-
-		//Initiate y Axis
-		const yScale = d3.scaleLinear()
-			.domain([min,max]).nice() //input
-			.range([height-margin.bottom, margin.top]); //output
-
-
-		const yAxis = d3.axisRight(yScale)
-			.tickSize(width);
-
-
-		//Call y Axis
-		let borderLines = svg.append("g")
-			.attr("class", "border-lines")
-		borderLines.append("line")
-			.attr("id", "left-border-line")
-			.attr("x1", margin.left).attr("y1", margin.top)
-			.attr("x2", margin.left).attr("y2", config.height-margin.bottom);
-		borderLines.append("line")
-			.attr("id", "right-border-line")
-			.attr("x1", width-margin.right).attr("y1", margin.top)
-			.attr("x2", width-margin.right).attr("y2", config.height-margin.bottom);
 
 
 	}); //read csv
