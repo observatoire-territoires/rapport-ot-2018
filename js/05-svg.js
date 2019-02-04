@@ -25,31 +25,40 @@ function graph5(){
 
 
 	//Initiate data
-	d3.csv("data/data-05.csv").then(function(data){
+	d3.json("data/map/dep.json").then(function(data){
 
 		console.log(data);
 
-		data.forEach((d)=>{
-			d.tx_19992009 = +d.tx_19992009,
-			d.tx_20092014 = +d.tx_20092014;	
-		});
-
-		//select key values
-		let keys = data.columns.slice(2,4);
-
-		//return min & max values
-		let min = d3.min(data, (d)=>{ return d3.min(keys, (key)=>{ return d[key];});});
-		let max = d3.max(data, (d)=>{ return d3.max(keys, (key)=>{ return d[key];});});
-
-		console.log(min);
-		console.log(max);
-
-
-	}); //read csv
 
 
 
 
+/*projection
+------------------------------------------------------
+------------------------------------------------------
+*/
+
+
+		const featureCollection = topojson.feature(data, data.objects.dep); //geojson
+		const projection = d3.geoConicConformal() //france projection
+			.fitSize([width,height],featureCollection);
+
+		const path = d3.geoPath() //generate path
+			.projection(projection); //add projection to path
+
+
+		/*path
+		------------------------------------------------------
+		------------------------------------------------------
+		*/
+
+		svg.selectAll("path")
+			.append("g")
+			.data(featureCollection.features)
+			.enter()
+			.append("path")
+			.attr("d", path)
+			.attr("class", "feature");
 
 
 
@@ -58,6 +67,7 @@ function graph5(){
 
 
 
+}); //read csv
 
 
 
@@ -69,7 +79,7 @@ function graph5(){
 } //fonction graph5
 
 
-
+graph5();
 
 
 
