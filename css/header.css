@@ -84,6 +84,14 @@
 @media only screen and (min-width:1024px){
   
 
+	.niv-scroll-title{
+		margin-left:15vw;
+		margin-right:15vw;
+	}
+
+	#niv1-c-header p{
+		padding: 1em 15vw 0em 15vw;
+	}
 
 
 }
@@ -102,6 +110,12 @@
   
 @media (min-width:320px) and (max-width:1024px){
   
+
+	.niv-scroll-title{
+		padding-left:1em;
+		padding-right:1em;
+	}
+
 
 	/*Application style sur le niveau 1*/
 	/*--------------------------------*/
