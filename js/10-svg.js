@@ -1,4 +1,4 @@
-function graph5(){
+function graph10(){
 
 
 	//sizing
@@ -9,7 +9,7 @@ function graph5(){
 
 
 	//initiate svg
-	let svg = d3.select("#c-svg-05")
+	let svg = d3.select("#c-svg-10")
 		.append("svg")
 		.attr("height", height)
 		.attr("width", "100%");
@@ -26,8 +26,8 @@ function graph5(){
 
 	//Initiate data
 	Promise.all([
-		d3.json("data/map/dep.json"),
-		d3.json("data/map/dep_reg.json")
+		d3.json("data/map/epci.json"),
+		d3.json("data/map/epci_reg.json")
 	]).then(function(data){
 
 		console.log(data);
@@ -37,8 +37,8 @@ function graph5(){
 
 		//projection
 
-		const featureCollection = topojson.feature(data[0], data[0].objects.dep_gen_wgs84); //geojson
-		const featureCollectionReg = topojson.feature(data[1], data[1].objects.dep_reg_gen_wgs84); //geojson
+		const featureCollection = topojson.feature(data[0], data[0].objects.epci_gen_wgs84); //geojson
+		const featureCollectionReg = topojson.feature(data[1], data[1].objects.epci_reg_gen_wgs84); //geojson
 		const projection = d3.geoConicConformal() //france projection
 			.fitSize([width,height],featureCollection);
 
@@ -46,7 +46,7 @@ function graph5(){
 			.projection(projection); //add projection to path
 
 
-		//generate dep
+		//generate epci
 		svg.selectAll(".dep")
 			.append("g")
 			.data(featureCollection.features)
@@ -77,48 +77,11 @@ function graph5(){
 	
 
 
-} //fonction graph5
+} //fonction graph10
 
 
-graph5();
+graph10();
 
 
 
 
-
-//initialize the scrollama
-//Parallax
-const scroller2 = scrollama();
-
-function handleStepEnter(response) {
-
-	switch(response.index){
-	case 1:
-		d3.select("#c-svg-05").selectAll("*").remove();
-		break;
-	case 2:
-		graph5();
-		break;
-	}
-}
-
-function handleStepExit(response){
-	switch(response.index){
-	case 2:
-		d3.select("#c-svg-05").selectAll("*").remove();
-		break;
-	}
-}
-
-
-scroller2
-	.setup({
-		container: ".scroll",
-		graphic: ".scroll-graphic",
-		text: ".scroll-text",
-		step: ".break-section3",
-		debug: false,
-		offset: 0.33
-	})
-	.onStepEnter(handleStepEnter)
-	.onStepExit(handleStepExit);

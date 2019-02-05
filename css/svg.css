@@ -33,10 +33,23 @@
   }
 
   /*svg-05*/
-  .border-lines {
-    stroke: #fff;
-    stroke-width: 1px;
+  .dep{
+    fill:#878787;
   }
+
+
+  .region{
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke:#fff;
+}
+
+
+
+
+
+
+
 
 
   /*svg-06*/
