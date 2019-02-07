@@ -32,10 +32,7 @@
     fill: red;
   }
 
-  /*svg-05*/
-  .dep{
-    fill:#878787;
-  }
+  
 
 
   .region{
@@ -46,7 +43,9 @@
 
 
 
-
+.dep{
+  stroke-width: 3;
+}
 
 
 

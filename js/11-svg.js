@@ -37,26 +37,30 @@ function graph11(){
 
 		//projection
 
-		const featureCollection = topojson.feature(data[0], data[0].objects.epci_gen_wgs84); //geojson
-		const featureCollectionReg = topojson.feature(data[1], data[1].objects.epci_reg_gen_wgs84); //geojson
+		const featureCollection = topojson.feature(data[0], data[0].objects.epci_gen); //geojson
+		const featureCollectionReg = topojson.feature(data[1], data[1].objects.epci_reg_gen); //geojson
 		const projection = d3.geoConicConformal() //france projection
 			.fitSize([width,height],featureCollection);
 
 		const path = d3.geoPath() //generate path
 			.projection(projection); //add projection to path
 
+		let g = svg.append("g"); //conteneur pour le zoom
 
 		//generate epci
-		svg.selectAll(".dep")
-			.append("g")
+		let epci = g.append("g")
+			.attr("class","c-epci")
+			.selectAll(".epci")
 			.data(featureCollection.features)
 			.enter()
 			.append("path")
 			.attr("d", path)
-			.attr("class", "dep");
+			.attr("class", "epci");
 
 		//generate reg
-		svg.selectAll(".region")
+		let reg = g.append("g")
+			.attr("class","c-region")
+			.selectAll(".region")
 			.append("g")
 			.data(featureCollectionReg.features)
 			.enter()
@@ -64,7 +68,15 @@ function graph11(){
 			.attr("d", path)
 			.attr("class", "region");
 
-
+		//zoom
+		svg
+			.call(d3.zoom()
+				.on("zoom", function(){
+					g.attr("transform", d3.event.transform);
+				})
+				.scaleExtent([1,6]) //deep zoom
+				.translateExtent([[0,0],[width, height]])
+			);
 
 
 
