@@ -211,7 +211,7 @@ function graph10(){
 	
 
 
-} //fonction graph10
+} //function graph10
 
 
 graph10();

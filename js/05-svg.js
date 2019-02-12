@@ -88,17 +88,17 @@ function graph5(){
 
 		//zoom
 		svg
-		.call(d3.zoom()
-			.on("zoom", function(){
-				g.attr("transform", d3.event.transform);
-			})
-			.scaleExtent([1,6]) //deep zoom
-			.translateExtent([[0,0],[width, height]])
-		);
+			.call(d3.zoom()
+				.on("zoom", function(){
+					g.attr("transform", d3.event.transform);
+				})
+				.scaleExtent([1,6]) //deep zoom
+				.translateExtent([[0,0],[width, height]])
+			);
 
 
 
-}); //read csv
+	}); //read csv
 
 
 
