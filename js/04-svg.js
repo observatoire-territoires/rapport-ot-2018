@@ -223,7 +223,7 @@ function graph4(){
 
 } //function graph4
 
-graph4();
+
 
 
 
@@ -235,7 +235,7 @@ function handleStepEnter(response) {
 
 	switch(response.index){
 	case 0:
-		d3.select("#c-svg-04").selectAll("*").remove();
+
 		break;
 	case 1:
 		graph4();

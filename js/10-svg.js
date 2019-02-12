@@ -77,7 +77,7 @@ function graph10(){
 			.attr("fill", ((d)=>{ return colors(d.properties.clust); }));
 
 
-/*
+		/*
 			.filter((d)=>{ return d.properties.clust == "1"})
 			.attr("fill", ((d)=>{ 
 				let value = d.properties.clust;
@@ -116,13 +116,13 @@ function graph10(){
 			case 0:
 				epci
 					.transition()
-           			.duration(500)
+					.duration(500)
 					.attr("fill", ((d)=>{ return colors(d.properties.clust); }));
 				break;
 			case 1:
 				epci
 					.transition()
-           			.duration(500)
+					.duration(500)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 5 ? "#53995c"
@@ -132,7 +132,7 @@ function graph10(){
 			case 2:
 				epci
 					.transition()
-           			.duration(500)
+					.duration(500)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 6 ? "#7cc18b"
@@ -142,7 +142,7 @@ function graph10(){
 			case 3:
 				epci
 					.transition()
-           			.duration(500)
+					.duration(500)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 4 ? "#e8e774"
@@ -152,7 +152,7 @@ function graph10(){
 			case 4:
 				epci
 					.transition()
-           			.duration(500)
+					.duration(500)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 3 ? "#c4431d"
@@ -163,7 +163,7 @@ function graph10(){
 			case 5:
 				epci
 					.transition()
-           			.duration(500)
+					.duration(500)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 2 ? "#eec05d"
@@ -174,7 +174,7 @@ function graph10(){
 			case 6:
 				epci
 					.transition()
-           			.duration(500)
+					.duration(500)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 1 ? "#e8e774"
@@ -202,7 +202,7 @@ function graph10(){
 			.onStepEnter(handleStepEnter)
 			.onStepExit(handleStepExit);
 
-}); //read csv
+	}); //read csv
 
 
 

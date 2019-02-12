@@ -68,6 +68,12 @@ document.addEventListener("scroll",function(){
 
 
 
+//SECTION 3 BREAK SCROLLING
+//-----------------------------------------------------
+//-----------------------------------------------------
+
+
+
 
 
 //SMALL AND LARGE DEVICE POSITIONNING GRAPHIC
@@ -97,11 +103,11 @@ function deplaceElementSmallDevice() {
 		breakC04Section3.parentNode.insertBefore(c04Section3,breakC04Section3.nextSibling);
 		breakC05Section3.parentNode.insertBefore(c05Section3,breakC05Section3.nextSibling);
 		breakC06Section4.parentNode.insertBefore(c06Section4,breakC06Section4.nextSibling);
-//		breakC07Section4.parentNode.insertBefore(c06Section4,breakC07Section4.nextSibling);
-//		breakC08Section5.parentNode.insertBefore(c06Section4,breakC08Section5.nextSibling);
-//		breakC09Section5.parentNode.insertBefore(c06Section4,breakC09Section5.nextSibling);
-//		breakC10Section6.parentNode.insertBefore(c06Section4,breakC10Section6.nextSibling);
-//		breakC11Section6.parentNode.insertBefore(c06Section4,breakC11Section6.nextSibling);
+		//		breakC07Section4.parentNode.insertBefore(c06Section4,breakC07Section4.nextSibling);
+		//		breakC08Section5.parentNode.insertBefore(c06Section4,breakC08Section5.nextSibling);
+		//		breakC09Section5.parentNode.insertBefore(c06Section4,breakC09Section5.nextSibling);
+		//		breakC10Section6.parentNode.insertBefore(c06Section4,breakC10Section6.nextSibling);
+		//		breakC11Section6.parentNode.insertBefore(c06Section4,breakC11Section6.nextSibling);
 	
 		console.log("petit écran");
 		
@@ -112,7 +118,7 @@ function deplaceElementSmallDevice() {
 
 	if (largeMedia==true){
 
-/*
+		/*
 		scrollNumber[0].append(c01Section1);
 		scrollNumber[1].append(c02Section2);
 		scrollNumber[2].append(c03Section3);
