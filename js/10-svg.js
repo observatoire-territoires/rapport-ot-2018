@@ -2,9 +2,9 @@ function graph10(){
 
 
 	//sizing
-	let margin = {top:20, right:0, bottom:40, left: 40};
+	let margin = {top:20, right:0, bottom:40, left: 20};
 
-	let width = 600;
+	let width = document.querySelector("#c-svg-10").clientWidth;
 	let height = 400;
 
 
@@ -12,7 +12,7 @@ function graph10(){
 	let svg = d3.select("#c-svg-10")
 		.append("svg")
 		.attr("height", height)
-		.attr("width", "100%");
+		.attr("width", width);
 
 	//initiate format number
 	/*Initiate format number*/
@@ -69,21 +69,21 @@ function graph10(){
 			.attr("class","c-epci")
 			.selectAll(".epci")
 			.data(featureCollection.features)
-			.enter()
-			.append("path")
+			.join("path")
 			.attr("d", path)
 			.attr("class", "epci")
 			.attr("stroke","white")
 			.attr("stroke-width",.1)
 			.attr("fill", ((d)=>{ return colors(d.properties.clust); }));
 
+
+
+
 		//generate reg
 		let region = g.append("g")
 			.attr("class","c-reg")
-			.selectAll(".region")	
-			.data(featureCollectionReg.features)
-			.enter()
 			.append("path")
+			.datum(featureCollectionReg)
 			.attr("d", path)
 			.attr("class", "region");
 

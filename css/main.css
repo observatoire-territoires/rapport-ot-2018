@@ -491,21 +491,16 @@
 	}
 	
 
+		/*Text break scroll image*/
+		.section7-text{
+			min-height: 100vh;
+		}
+
+
+		.section8-text{
+			min-height: 100vh;
+		}
 	
-		/*Section 4*/
-		#c-07-section4{
-		display: none;
-	}
-	
-		/*Section 5*/
-		#c-09-section5{
-		display: none;
-	}
-	
-		/*Section 6*/
-		#c-11-section6{
-		display: none;
-	}
 
 	/*Interlude*/
 	.section-interlude{
