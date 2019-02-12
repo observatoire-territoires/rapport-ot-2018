@@ -114,31 +114,40 @@ function graph11(){
 			switch(response.index){
 			case 0:
 				epci
-					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs3); }));
+					.transition()
+           			.duration(500)
+					.attr("fill", "#646464");
 				break;
 			case 1:
 				epci
-					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs6); }));
+					.transition()
+           			.duration(500)
+					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs8); }));
 				break;
 			case 2:
 				epci
+					.transition()
+           			.duration(500)
 					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs7); }));
 				break;
 			case 3:
 				epci
-					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs8); }));
+					.transition()
+           			.duration(500)
+					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs6); }));
+				break;
+			case 4:
+				epci
+					.transition()
+           			.duration(500)
+					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs3); }));
 				break;
 
 			}
 		}
 
 		function handleStepExit(response){
-			switch(response.index){
-			case 0:
-				epci
-					.attr("fill", "#646464");
-				break;
-			}
+		
 		}
 
 

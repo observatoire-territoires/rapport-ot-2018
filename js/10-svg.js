@@ -77,7 +77,14 @@ function graph10(){
 			.attr("fill", ((d)=>{ return colors(d.properties.clust); }));
 
 
-
+/*
+			.filter((d)=>{ return d.properties.clust == "1"})
+			.attr("fill", ((d)=>{ 
+				let value = d.properties.clust;
+				return value ? colors(value)
+					: "#646464";
+			}));
+*/
 
 		//generate reg
 		let region = g.append("g")
@@ -98,6 +105,102 @@ function graph10(){
 				.translateExtent([[0,0],[width, height]])
 			);
 
+		
+		//initialize the scrollama
+		//Parallax
+		const scroller = scrollama();
+
+		function handleStepEnter(response) {
+
+			switch(response.index){
+			case 0:
+				epci
+					.transition()
+           			.duration(500)
+					.attr("fill", ((d)=>{ return colors(d.properties.clust); }));
+				break;
+			case 1:
+				epci
+					.transition()
+           			.duration(500)
+					.attr("fill", ((d)=>{ 
+						let value = d.properties.clust;
+						return value == 5 ? "#53995c"
+							: "#646464";
+					}));
+				break;
+			case 2:
+				epci
+					.transition()
+           			.duration(500)
+					.attr("fill", ((d)=>{ 
+						let value = d.properties.clust;
+						return value == 6 ? "#7cc18b"
+							: "#646464";
+					}));
+				break;
+			case 3:
+				epci
+					.transition()
+           			.duration(500)
+					.attr("fill", ((d)=>{ 
+						let value = d.properties.clust;
+						return value == 4 ? "#e8e774"
+							: "#646464";
+					}));
+				break;
+			case 4:
+				epci
+					.transition()
+           			.duration(500)
+					.attr("fill", ((d)=>{ 
+						let value = d.properties.clust;
+						return value == 3 ? "#c4431d"
+							: "#646464";
+					}));
+				break;
+
+			case 5:
+				epci
+					.transition()
+           			.duration(500)
+					.attr("fill", ((d)=>{ 
+						let value = d.properties.clust;
+						return value == 2 ? "#eec05d"
+							: "#646464";
+					}));
+				break;		
+				
+			case 6:
+				epci
+					.transition()
+           			.duration(500)
+					.attr("fill", ((d)=>{ 
+						let value = d.properties.clust;
+						return value == 1 ? "#e8e774"
+							: "#646464";
+					}));
+				break;
+
+			}
+		}
+
+		function handleStepExit(response){
+			
+		}
+
+
+		scroller
+			.setup({
+				container: ".scroll",
+				graphic: ".scroll-graphic",
+				text: ".scroll-text",
+				step: ".break-10",
+				debug: false,
+				offset: 0.6
+			})
+			.onStepEnter(handleStepEnter)
+			.onStepExit(handleStepExit);
 
 }); //read csv
 

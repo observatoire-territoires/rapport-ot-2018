@@ -163,7 +163,7 @@ function graph4(){
 				.duration(1500)
 				.attr("cx", ((d)=>{ return d.x; }))
 				.attr("cy", ((d)=>{ return d.y; }))
-				.attr("r",(d)=>{return(Math.sqrt(d[pop_data]/popMax))*50;})
+				.attr("r",(d)=>{return(Math.sqrt(d[pop_data]/popMax))*50;});
 				
 		
 
