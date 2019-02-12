@@ -148,7 +148,7 @@ function graph11(){
 				graphic: ".scroll-graphic",
 				text: ".scroll-text",
 				step: ".break-11",
-				debug: true,
+				debug: false,
 				offset: 0.6
 			})
 			.onStepEnter(handleStepEnter)
