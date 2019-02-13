@@ -258,12 +258,12 @@
 	  }
   
 
-	  #toolbar-03, #toolbar-04{
+	  #toolbar-03, #toolbar-04, #toolbar-07{
 		  display: flex;
 		  flex-direction: row;	  
 	  }
 
-	  #c-input-03, #c-input-04{
+	  #c-input-03, #c-input-04, #c-input-07{
 		  width: 70%;
 	  }
 
@@ -397,7 +397,7 @@
 	  }
 
 
-	  #output-03-bullet, #output-04-bullet{
+	  #output-03-bullet, #output-04-bullet, #output-07-bullet{
 		  position: relative;
 		  display: block;
 		  text-align: center;
@@ -408,7 +408,7 @@
 
 
 
-	  #c-output-03, #c-output-04{
+	  #c-output-03, #c-output-04, #c-output-07{
 		  margin-left: 2em;
 		  display: none;
 	  }
@@ -535,33 +535,14 @@
 
 
 
-	/*Section 3*/
-	#c-04-section3, #c-05-section3{
-		display: block;
-	}
-
-	/*Section 4*/
-	#c-07-section4{
-		display: block;
-	}
-
-	/*Section 5*/
-	#c-09-section5{
-		display: block;
-	}
-
-	/*Section 6*/
-	#c-11-section6{
-		display: block;
-	}
 
 	/*Application sur le container du slider*/
-	#toolbar-03, #toolbar-04{
+	#toolbar-03, #toolbar-04, #toolbar-07{
 		margin-right: 1.5em;	 
 		justify-content: center; 
 	}
 
-	#c-input-03, #c-input-04{
+	#c-input-03, #c-input-04, #c-input-07{
 		width: 80%;
 	}
 

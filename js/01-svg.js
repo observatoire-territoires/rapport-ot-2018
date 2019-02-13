@@ -7,7 +7,7 @@ function getWidthSVG(i){
 function graph1(){
 
 	//sizing
-	const width = 320;
+	let width = document.querySelector("#c-svg-01").clientWidth;
 	const height = 400;
 
 	//center location mobility type
@@ -18,7 +18,7 @@ function graph1(){
 	let svg = d3.select("#c-svg-01")
 		.append("svg")
 		.attr("height", height)
-		.attr("width", "100%");
+		.attr("width", width);
 		
 
 	let g = svg.append("g")

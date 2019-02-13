@@ -2,16 +2,16 @@ function graph6(){
 
 
 	//sizing
-	let margin = {top:20, right:0, bottom:40, left: 40};
+	let margin = {top:20, right:20, bottom:40, left: 40};
 
-	let width = 600;
+	let width = document.querySelector("#c-svg-06").clientWidth;
 	let height = 400;
 
 	//initiate svg
 	let svg = d3.select("#c-svg-06")
 		.append("svg")
 		.attr("height", height)
-		.attr("width", "100%");
+		.attr("width", width);
 
 	//initiate format number
 	/*Initiate format number*/

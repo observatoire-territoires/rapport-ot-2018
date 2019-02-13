@@ -25,7 +25,6 @@ function graph2(){
 
 	d3.csv("data/data-02.csv").then(function(data){
 
-		console.log(data);
 
 		//Conversion number
 		data.forEach((d)=>{
