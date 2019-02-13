@@ -6,6 +6,7 @@ let sectionNavBullet = document.querySelectorAll(".section-nav-bullet");
 
 
 
+
 //ALTERNATIVE 1 & ALTERNATIVE 2 could enter in competition :)
 
 /*
@@ -164,5 +165,3 @@ if("IntersectionObserver" in window) {
 }
 
 	
-
-

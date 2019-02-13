@@ -118,6 +118,15 @@ function deplaceElementSmallDevice() {
 
 	if (largeMedia==true){
 
+		//POP-UP ALERT------------------------
+		//------------------------------------
+		
+		firstVisit();
+
+	
+
+
+
 		/*
 		scrollNumber[0].append(c01Section1);
 		scrollNumber[1].append(c02Section2);
@@ -154,3 +163,58 @@ document.onreadystatechange = function(){
 
 	}
 };
+
+
+
+
+
+//ALERT FIRST VISIT--------------------
+//-------------------------------------
+
+
+const alert = document.querySelector("#alert");
+const body = document.querySelector("body");
+const selectionGlobal = document.querySelector(".global");
+
+
+function firstVisit(){
+
+
+	document.querySelector("#button-alert").addEventListener("click",function(){
+		hideAlert();
+	});
+
+	document.onkeydown = function (evt) {
+		evt = evt || window.event;
+		if (evt.keyCode == 27 || evt.keyCode == 13 || evt.keyCode == 32) {
+			hideAlert();
+		}
+	};
+
+	if (window.sessionStorage.getItem("nouvelleSession")){
+
+		console.log("ce n'est pas la première visite");
+		hideAlert();
+		
+	} else {
+
+		window.sessionStorage.setItem("nouvelleSession","true");
+		console.log("c'est la première visite");
+		showAlert();
+		
+	}
+}
+
+
+function showAlert(){
+	alert.style.display = "flex";
+	body.style.overflow = "hidden";
+	selectionGlobal.style.opacity = 0.2;
+}
+
+function hideAlert(){
+	alert.style.display = "none";
+	body.style.overflow = "initial";
+	selectionGlobal.style.opacity = 1;
+
+}

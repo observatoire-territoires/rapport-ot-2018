@@ -42,7 +42,7 @@ function graph1(){
 		.force("x", d3.forceX().strength(0.05))
 		.force("y", d3.forceY().strength(0.05))
 		.force("collide", d3.forceCollide(5))
-		.velocityDecay(0.3);
+		.force("charge", d3.forceManyBody().strength(-1));
 
 
 	//color circles
@@ -126,6 +126,7 @@ function graph1(){
 			updateData(data);
 			//reset the 'x' force to draw the circles to the center
 			simulation.force("x", d3.forceX().strength(0.05));
+			simulation.force("charge", d3.forceManyBody().strength(-1));
 			//reset the alpha value and restart the simulation
 			simulation.alpha(1).restart();
 
