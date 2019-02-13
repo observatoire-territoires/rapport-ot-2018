@@ -54,7 +54,7 @@ niv1HIntro2Button.addEventListener("click",navButtonColor);
 //CLICK BUTTON INTRO
 
 niv1HIntro2Button.addEventListener("click",function(){
-	window.location = "#niv2-c-section1";
+	window.location = "#onze_pour_cent_des_francais_ont_demenage_en_2014";
 });
 
 
