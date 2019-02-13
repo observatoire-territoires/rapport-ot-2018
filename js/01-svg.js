@@ -6,6 +6,7 @@ function getWidthSVG(i){
 
 function graph1(){
 
+
 	//sizing
 	let width = document.querySelector("#c-svg-01").clientWidth;
 	const height = 400;

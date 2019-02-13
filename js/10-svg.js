@@ -1,5 +1,5 @@
 function graph10(){
-
+	
 
 	//sizing
 	let margin = {top:20, right:0, bottom:40, left: 20};
