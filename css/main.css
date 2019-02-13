@@ -141,9 +141,7 @@
 		width: 100%;
 	  }
 
-	#c-svg-01, #c-svg-04, #c-svg-06{
-		width: 100%;
-	}
+
 	
 	/*Application sur les notes de bas de page*/
 
@@ -168,14 +166,14 @@
 		line-height: 1.5;
 	  }
 
-	  .notes-number-link{
+	  .notes-number-link, .link{
 		  font-family: "MontserratWebLight";
 		  font-style: italic;
 		  font-weight: normal;
 		  color: #ffadad; 
 	  }
 
-	  .notes-number-link:hover{
+	  .notes-number-link:hover, .link:hover{
 		  color: #ff3333;
 	  }
 
@@ -474,7 +472,7 @@
 	}
 	
 	
-	#c-01-section1, #c-03-section3, #c-04-section3, 
+	#c-01-section1, #c-02-section2,#c-03-section3, #c-04-section3, 
 	#c-05-section3, #c-06-section4, #c-07-section5,
 	#c-10-section7, #c-11-section8{
 		position: sticky;
@@ -483,7 +481,7 @@
 
 
 
-	#c-svg-01, #c-svg-03, #c-svg-04, #c-svg-05,
+	#c-svg-01, #c-svg-02, #c-svg-03, #c-svg-04, #c-svg-05,
 	#c-svg-06, #c-svg-07, #c-svg-10,
 	#c-svg-11{
 		min-width: "320px";

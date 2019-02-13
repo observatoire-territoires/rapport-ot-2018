@@ -31,7 +31,6 @@ function graph11(){
 		d3.csv("data/data-11.csv")
 	]).then(function(data){
 
-		console.log(data);
 
 		//set colors
 		let colors = d3.scaleOrdinal()

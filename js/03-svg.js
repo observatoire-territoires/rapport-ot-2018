@@ -48,7 +48,7 @@ function graph03(){
 		d3.json("data/map/rw_20092014.json")
 	]).then(function(data){
 
-console.log(data);
+
 
 		const featureCollection6875 = topojson.feature(data[0], data[0].objects.rw_19681975); //geojson
 		const featureCollection7582 = topojson.feature(data[1], data[1].objects.rw_19751982); //geojson
@@ -57,7 +57,6 @@ console.log(data);
 		const featureCollection9909 = topojson.feature(data[4], data[4].objects.rw_19992009); //geojson
 		const featureCollection0914 = topojson.feature(data[5], data[5].objects.rw_20092014); //geojson
 
-		console.log(featureCollection6875);
 		//projection
 		const projection = d3.geoConicConformal() //france projection
 			.fitSize([width,height],featureCollection6875);

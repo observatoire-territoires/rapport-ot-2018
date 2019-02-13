@@ -32,6 +32,12 @@
 		font-family: "LatoWebBold"
 	}
 
+	.niv1-h-intro-1 h2{
+		text-align: center;
+		font-size:2em;
+		margin-top: -0.5em;
+	}
+
 	#niv1-h-intro-2{
 		display: flex;
 		justify-content: center;
