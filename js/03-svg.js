@@ -207,11 +207,3 @@ graph03();
 
 
 
-
-//If windows is resized, real-time
-window.addEventListener("resize",()=>{
-	deplaceOutputBullet();
-
-});
-
-
