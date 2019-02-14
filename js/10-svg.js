@@ -105,6 +105,59 @@ function graph10(){
 				.translateExtent([[0,0],[width, height]])
 			);
 
+
+		//add popup
+
+		//create div popup
+		let popup = d3.select("body").append("div")
+			.attr("class", "my-popup");
+
+
+		//MOUSE EVENT
+
+
+		epci
+			.on("mouseover", function(d){
+				console.log(d)
+				popup
+					.transition()
+					.duration(50)
+					.style("left", d3.event.pageX - 20 + "px")
+					.style("top", d3.event.pageY - 30 + "px")
+					.style("opacity", 1)
+					.style("text-align", "left")
+				popup
+					.html(`
+						<div><strong>${d.properties.libepci}</strong></div>
+						`);
+
+				//geographical unit
+				d3.select(this)
+					.attr("fill-opacity",0.7);
+
+
+
+			})
+			.on("mouseout", function(d){
+				popup
+					.transition()
+					.duration(100)
+					.style("opacity", 0);
+
+				//geographical unit
+				d3.select(this)
+					.attr("fill-opacity",1);
+
+
+
+			});
+
+
+
+
+
+
+
 		
 		//initialize the scrollama
 		//Parallax

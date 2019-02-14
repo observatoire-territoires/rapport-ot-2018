@@ -22,7 +22,7 @@ function graph5(){
 		"grouping": [3]
 	});
 
-
+	let format = d3.format(".2n");
 
 	//Initiate data
 	Promise.all([
@@ -42,7 +42,7 @@ function graph5(){
 				var jsonId = featureCollection.features[j].properties.coddep;
 				if (csvId === jsonId) {
 					featureCollection.features[j].properties.tx_19992009 = data[2][i].tx_19992009;
-					featureCollection.features[j].properties.tx_2009_2014 = data[2][i].tx_20092014;
+					featureCollection.features[j].properties.tx_20092014 = data[2][i].tx_20092014;
 					featureCollection.features[j].properties.quali = data[2][i].quali;
 					break;
 				}
@@ -96,6 +96,55 @@ function graph5(){
 				.translateExtent([[0,0],[width, height]])
 			);
 
+		//add popup
+
+		//create div popup
+		let popup = d3.select("body").append("div")
+			.attr("class", "my-popup");
+
+
+		//MOUSE EVENT
+
+
+		dep
+			.on("mouseover", function(d){
+				console.log(d)
+				popup
+					.transition()
+					.duration(50)
+					.style("left", d3.event.pageX - 20 + "px")
+					.style("top", d3.event.pageY - 100 + "px")
+					.style("opacity", 1)
+					.style("text-align", "left")
+				popup
+					.html(`
+						<div><strong>${d.properties.libdep}</strong></div>
+						<div>
+							<div>Croissance migratoire</div>
+							<em>1999-2009</em> : <span>${format(d.properties.tx_19992009)} % </span>
+							<br>
+							<em>2009-2014</em> : <span>${format(d.properties.tx_20092014)} % </span>
+						</div>
+						`);
+
+				//geographical unit
+				d3.select(this)
+					.attr("fill-opacity",0.7);
+
+
+			})
+			.on("mouseout", function(d){
+				popup
+					.transition()
+					.duration(100)
+					.style("opacity", 0);
+
+				//geographical unit
+				d3.select(this)
+					.attr("fill-opacity",1);
+
+
+			});
 
 
 	}); //read csv
