@@ -58,6 +58,8 @@ function graph7(){
 		"grouping": [3]
 	});
 
+	let format = d3.format(".2n");
+	let formatPop = d3.format(",.0f");
 
 	d3.csv("data/data-07.csv").then(function(data){
 
@@ -174,6 +176,63 @@ function graph7(){
 				.attr("cx", ((d)=>{ return d.x; }))
 				.attr("cy", ((d)=>{ return d.y; }))
 				.attr("r",(d)=>{return(Math.sqrt(d[pop_data]/popMax))*50;});
+
+
+			//add popup
+
+			//create div popup
+			let popup = d3.select("body").append("div")
+				.attr("class", "my-popup");
+
+
+			//MOUSE EVENT
+
+
+			g
+				.on("mouseover", function(d){
+					console.log(d)
+					popup
+						.transition()
+						.duration(50)
+						.style("left", d3.event.pageX - 20 + "px")
+						.style("top", d3.event.pageY - 10 + "px")
+						.style("opacity", 1)
+						.style("text-align", "left")
+					popup
+						.html(`
+							<div><strong>${d.libgeo}</strong></div>
+							<div>
+								<div>Population</div>
+								<span>${formatPop(d[pop_data])} </span>
+								<div>Taux de croissance annuel moyen</div>
+								<span>${format(d[tx_pop_data])} % </span>
+								<div>Taux d'évolution de la population</div>
+								<em>Due au solde naturel</em> : <span>${format(d[tx_sn_data])} % </span>
+								<br>
+								<em>Due au solde migratoire</em> : <span>${format(d[tx_sm_data])} % </span>
+							</div>
+							`);
+
+					//geographical unit
+					d3.select(this)
+						.attr("fill-opacity",0.7);
+
+				})
+				.on("mouseout", function(d){
+					popup
+						.transition()
+						.duration(100)
+						.style("opacity", 0);
+
+
+					//geographical unit
+					d3.select(this)
+						.attr("fill-opacity",1);
+
+				})
+
+
+
 
 		} //function update data
 

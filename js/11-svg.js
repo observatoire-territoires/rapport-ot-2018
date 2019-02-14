@@ -104,7 +104,7 @@ function graph11(){
 				.translateExtent([[0,0],[width, height]])
 			);
 
-//add popup
+		//add popup
 
 		//create div popup
 		let popup = d3.select("body").append("div")

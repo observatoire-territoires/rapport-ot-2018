@@ -22,6 +22,7 @@ function graph2(){
 		"grouping": [3]
 	});
 
+	let format = d3.format(".2n");
 
 	d3.csv("data/data-02.csv").then(function(data){
 
@@ -97,6 +98,50 @@ function graph2(){
 			.attr("y", ((d)=>{ return yScale(d.data.periode); }))
 			.attr("width", ((d)=>{ return xScale(d[1])-xScale(d[0]); }))
 			.attr("height", yScale.bandwidth());
+
+
+		//create div popup
+		let popup = d3.select("body").append("div")
+			.attr("class", "my-popup");
+
+
+		//MOUSE EVENT
+
+
+		d3.selectAll("rect")
+			.on("mouseover", function(d){
+				console.log(d)
+				popup
+					.transition()
+					.duration(50)
+					.style("left", d3.event.pageX - 20 + "px")
+					.style("top", d3.event.pageY - 100 + "px")
+					.style("opacity", 1)
+					.style("text-align", "left");
+				popup
+					.html(`
+						<div>
+							<em>Mobilité communale</em> : <span>${format(d.data.change_com)} % </span>
+							<br>
+							<em>Mobilité départementale</em> : <span>${format(d.data.change_dep)} % </span>
+							<br>
+							<em>Mobilité régionale</em> : <span>${format(d.data.change_reg)} % </span>
+							<br>
+							<em>Arrivée depuis l'étranger</em> : <span>${format(d.data.change_int)} % </span>
+						</div>
+						`);
+
+
+			})
+			.on("mouseout", function(d){
+				popup
+					.transition()
+					.duration(100)
+					.style("opacity", 0);
+
+
+			});
+
 
 
 	}); //read csv

@@ -59,6 +59,9 @@ function graph4(){
 		"grouping": [3]
 	});
 
+	let format = d3.format(".2n");
+	let formatPop = d3.format(",.0f");
+
 	//let tx_data = "tx_sm_68_75";
 	//let pop_data = "pop_sm_68_75";
 
@@ -167,7 +170,57 @@ function graph4(){
 				
 		
 
-		}
+			//add popup
+
+			//create div popup
+			let popup = d3.select("body").append("div")
+				.attr("class", "my-popup");
+
+
+			//MOUSE EVENT
+
+
+			g
+				.on("mouseover", function(d){
+					console.log(d)
+					popup
+						.transition()
+						.duration(50)
+						.style("left", d3.event.pageX - 20 + "px")
+						.style("top", d3.event.pageY - 10 + "px")
+						.style("opacity", 1)
+						.style("text-align", "left")
+					popup
+						.html(`
+							<div><strong>${d.libgeo}</strong></div>
+							<div>
+								<div>Solde migratoire annuel moyen</div>
+								<span>${formatPop(d[pop_data])} </span>
+								<div>Taux d'évolution de la population</div>
+								<span>${format(d[tx_data])} % </span>
+							</div>
+							`);
+
+					//geographical unit
+					d3.select(this)
+						.attr("fill-opacity",0.7);
+
+				})
+				.on("mouseout", function(d){
+					popup
+						.transition()
+						.duration(100)
+						.style("opacity", 0);
+
+
+					//geographical unit
+					d3.select(this)
+						.attr("fill-opacity",1);
+
+				});
+
+
+		} //function updatedata
 
 
 
