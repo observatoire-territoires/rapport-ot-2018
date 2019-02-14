@@ -1,33 +1,36 @@
 console.log("Etat du document : " + document.readyState);
 
 
-let breakC01Section1 = document.querySelector("#break-c-01-section1");
-let breakC02Section2 = document.querySelector("#break-c-02-section2");
-let breakC03Section3 = document.querySelector("#break-c-03-section3");
-let breakC04Section3 = document.querySelector("#break-c-04-section3");
-let breakC05Section3 = document.querySelector("#break-c-05-section3");
-let breakC06Section4 = document.querySelector("#break-c-06-section4");
-let breakC07Section4 = document.querySelector("#break-c-07-section4");
-let breakC08Section5 = document.querySelector("#break-c-08-section5");
-let breakC09Section5 = document.querySelector("#break-c-09-section5");
-let breakC10Section6 = document.querySelector("#break-c-10-section6");
-let breakC11Section6 = document.querySelector("#break-c-11-section6");
+const breakC01Section1 = document.querySelector("#break-c-01-section1");
+const breakC02Section2 = document.querySelector("#break-c-02-section2");
+const breakC03Section3 = document.querySelector("#break-c-03-section3");
+const breakC04Section3 = document.querySelector("#break-c-04-section3");
+const breakC05Section3 = document.querySelector("#break-c-05-section3");
+const breakC06Section4 = document.querySelector("#break-c-06-section4");
+const breakC07Section5 = document.querySelector("#break-c-07-section5");
+const breakC08Section6 = document.querySelector("#break-c-08-section6");
+const breakC10Section7 = document.querySelector("#break-c-10-section7");
+const breakC11Section8 = document.querySelector("#break-c-11-section8");
 
-let scrollNumber = document.querySelectorAll(".scroll-number");
+const c01Section1 = document.querySelector("#c-01-section1");
+const c02Section2 = document.querySelector("#c-02-section2");
+const c03Section3 = document.querySelector("#c-03-section3");
+const c04Section3 = document.querySelector("#c-04-section3");
+const c05Section3 = document.querySelector("#c-05-section3");
+const c06Section4 = document.querySelector("#c-06-section4");
+const c07Section5 = document.querySelector("#c-07-section5");
+const c08Section6 = document.querySelector("#c-08-section6");
+const c10Section7 = document.querySelector("#c-10-section7");
+const c11Section8 = document.querySelector("#c-11-section8");
 
-let c01Section1 = document.querySelector("#c-01-section1");
-let c02Section2 = document.querySelector("#c-02-section2");
-let c03Section3 = document.querySelector("#c-03-section3");
-let c04Section3 = document.querySelector("#c-04-section3");
-let c05Section3 = document.querySelector("#c-05-section3");
-let c06Section4 = document.querySelector("#c-06-section4");
-let c07Section4 = document.querySelector("#c-07-section4");
-let c08Section5 = document.querySelector("#c-08-section5");
-let c09Section5 = document.querySelector("#c-09-section5");
-let c10Section6 = document.querySelector("#c-10-section6");
-let c11Section6 = document.querySelector("#c-11-section6");
-
-
+const scrollGraphic1 = document.querySelector("#scroll-graphic1");
+const scrollGraphic2 = document.querySelector("#scroll-graphic2");
+const scrollGraphic3 = document.querySelector("#scroll-graphic3");
+const scrollGraphic4 = document.querySelector("#scroll-graphic4");
+const scrollGraphic5 = document.querySelector("#scroll-graphic5");
+const scrollGraphic6 = document.querySelector("#scroll-graphic6");
+const scrollGraphic7 = document.querySelector("#scroll-graphic7");
+const scrollGraphic8 = document.querySelector("#scroll-graphic8");
 
 
 //FOOTER NOTE
@@ -97,18 +100,18 @@ function deplaceElementSmallDevice() {
 
 	if (largeMedia==false){
 
-		breakC01Section1.parentNode.insertBefore(c01Section1,breakC01Section1.nextSibling);
+		breakC01Section1.parentNode.insertBefore(c01Section1,breakC01Section1.nextSibling);			
 		breakC02Section2.parentNode.insertBefore(c02Section2,breakC02Section2.nextSibling);
 		breakC03Section3.parentNode.insertBefore(c03Section3,breakC03Section3.nextSibling);
 		breakC04Section3.parentNode.insertBefore(c04Section3,breakC04Section3.nextSibling);
 		breakC05Section3.parentNode.insertBefore(c05Section3,breakC05Section3.nextSibling);
 		breakC06Section4.parentNode.insertBefore(c06Section4,breakC06Section4.nextSibling);
-		//		breakC07Section4.parentNode.insertBefore(c06Section4,breakC07Section4.nextSibling);
-		//		breakC08Section5.parentNode.insertBefore(c06Section4,breakC08Section5.nextSibling);
-		//		breakC09Section5.parentNode.insertBefore(c06Section4,breakC09Section5.nextSibling);
-		//		breakC10Section6.parentNode.insertBefore(c06Section4,breakC10Section6.nextSibling);
-		//		breakC11Section6.parentNode.insertBefore(c06Section4,breakC11Section6.nextSibling);
-	
+		breakC07Section5.parentNode.insertBefore(c07Section5,breakC07Section5.nextSibling);
+		breakC08Section6.parentNode.insertBefore(c08Section6,breakC08Section6.nextSibling);
+		breakC10Section7.parentNode.insertBefore(c10Section7,breakC10Section7.nextSibling);
+		breakC11Section8.parentNode.insertBefore(c11Section8,breakC11Section8.nextSibling);
+
+		
 		console.log("petit écran");
 		
 
@@ -117,30 +120,25 @@ function deplaceElementSmallDevice() {
 	}
 
 	if (largeMedia==true){
+		
+		scrollGraphic1.appendChild(c01Section1);
+		scrollGraphic2.appendChild(c02Section2);
+		scrollGraphic3.appendChild(c03Section3);
+		scrollGraphic3.appendChild(c04Section3);
+		scrollGraphic3.appendChild(c05Section3);
+		scrollGraphic4.appendChild(c06Section4);
+		scrollGraphic5.appendChild(c07Section5);
+		scrollGraphic6.appendChild(c08Section6);
+		scrollGraphic7.appendChild(c10Section7);
+		scrollGraphic8.appendChild(c11Section8);
+
+
+		
 
 		//POP-UP ALERT------------------------
 		//------------------------------------
 		
 		firstVisit();
-
-	
-
-
-
-		/*
-		scrollNumber[0].append(c01Section1);
-		scrollNumber[1].append(c02Section2);
-		scrollNumber[2].append(c03Section3);
-		scrollNumber[2].append(c04Section3);
-		scrollNumber[2].append(c05Section3);
-		scrollNumber[3].append(c06Section4);
-		scrollNumber[3].append(c07Section4);
-		scrollNumber[4].append(c08Section5);
-		scrollNumber[4].append(c09Section5);
-		scrollNumber[5].append(c10Section6);
-		scrollNumber[5].append(c11Section6);
-*/
-		
 
 		console.log("grand écran");
 	}
@@ -175,6 +173,7 @@ document.onreadystatechange = function(){
 const alert = document.querySelector("#alert");
 const body = document.querySelector("body");
 const selectionGlobal = document.querySelector(".global");
+const selectionHtml = document.querySelector("html");
 
 
 function firstVisit(){
@@ -209,12 +208,13 @@ function firstVisit(){
 function showAlert(){
 	alert.style.display = "flex";
 	body.style.overflow = "hidden";
+	selectionHtml.style.overflow = "hidden";
 	selectionGlobal.style.opacity = 0.2;
 }
 
 function hideAlert(){
 	alert.style.display = "none";
 	body.style.overflow = "initial";
+	selectionHtml.style.overflow = "initial";
 	selectionGlobal.style.opacity = 1;
-
 }
