@@ -8,9 +8,7 @@ function graph08(){
 
 
 		let width = document.querySelector("#c-svg-08").clientWidth;
-		let height = 400;
-
-		console.log(width)
+		let height = 440;
 
 
 		let svg = object08
