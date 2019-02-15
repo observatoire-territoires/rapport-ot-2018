@@ -92,7 +92,7 @@ function graph2(){
 			.data(stack.keys(keys)(data))
 			.enter().append("g")
 			.attr("class", "serie")
-			.attr("fill", ((d)=>{ return zScale(d.key); }))
+			.attr("fill", ((d)=>{ return zScale(d.key); }));
 
 		serie
 			.selectAll("rect")
@@ -125,7 +125,7 @@ function graph2(){
 
 		d3.selectAll("rect")
 			.on("mouseover", function(d){
-				console.log(d)
+				console.log(d);
 				popup
 					.transition()
 					.duration(50)

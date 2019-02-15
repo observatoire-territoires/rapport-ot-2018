@@ -212,6 +212,41 @@ function graph7(){
 				.attr("r",(d)=>{return(Math.sqrt(d[pop_data]/popMax))*50;});
 
 
+
+			function addExtra(){
+				//Text label xAxis
+				svg
+					.append("text")       
+					.attr("class","extra label-change")      
+					.attr("x",20+margin.left)
+					.attr("y",20)
+					.text("Période");
+				
+				//Horizontal line
+				svg
+					.append("line")
+					.attr("class","extra line-extra")
+					.attr("x1",margin.left)
+					.attr("y1",0)
+					.attr("x2",180)
+					.attr("y2",0)
+					.attr("stroke", "#fff");
+	
+				svg
+					.append("line")
+					.attr("class","extra line-extra")
+					.attr("x1",margin.left)
+					.attr("y1",30)
+					.attr("x2",180)
+					.attr("y2",30)
+					.attr("stroke", "#fff");
+	
+	
+	
+			} //function addExtra
+
+			
+
 			//Text label yAxis
 			svg
 				.append("text")       
@@ -305,7 +340,7 @@ function graph7(){
 					d3.select(this)
 						.attr("fill-opacity",1);
 
-				})
+				});
 
 
 
@@ -320,6 +355,7 @@ function graph7(){
 			deplaceOutputBullet3();
 			switch (e.target.value) {
 			case "0":
+			
 				updateData("pop_1975", "tx_pop_1975", "tx_pop_sn_1975", "tx_pop_sm_1975");
 				break;
 			case "1":

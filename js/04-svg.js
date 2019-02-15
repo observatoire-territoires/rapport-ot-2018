@@ -115,6 +115,65 @@ function graph4(){
 			.tickSizeOuter(0)
 			.tickFormat((d)=>{ return format2(d)+" %"; });
 
+
+		function addExtra(){
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","extra label-change")      
+				.attr("x",20)
+				.attr("y",20)
+				.text("Période");
+			
+			//Horizontal line
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",margin.left)
+				.attr("y1",0)
+				.attr("x2",180)
+				.attr("y2",0)
+				.attr("stroke", "#fff");
+
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",margin.left)
+				.attr("y1",30)
+				.attr("x2",180)
+				.attr("y2",30)
+				.attr("stroke", "#fff");
+
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","label extra")      
+				.attr("transform",
+					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3) + ")")
+				.style("text-anchor", "end")
+				.text("Taux d'évolution de la population");
+
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","label extra")      
+				.attr("transform",
+					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3+15) + ")")
+				.style("text-anchor", "end")
+				.text("due a solde migratoire apparent");
+
+
+		} //function addExtra
+
+
+
+		addExtra();
+
+
+
+
+
+
 		//Call x axis
 		svg
 			.append("g")
@@ -138,8 +197,14 @@ function graph4(){
 			.attr("stroke-width",2);
 
 
-		function updateData(tx_data, pop_data){
+		function updateData(tx_data, pop_data, label){
 	
+			svg
+				.append("text")       
+				.attr("class","label-change label-change2")      
+				.attr("x",90)
+				.attr("y",20)
+				.text(label);
 
 			//simulation force
 			let simulation = d3.forceSimulation(data)
@@ -182,23 +247,7 @@ function graph4(){
 				.attr("r",(d)=>{return(Math.sqrt(d[pop_data]/popMax))*50;});
 				
 
-			//Text label xAxis
-			svg
-				.append("text")       
-				.attr("class","label")      
-				.attr("transform",
-					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3) + ")")
-				.style("text-anchor", "end")
-				.text("Taux d'évolution de la population");
-
-			//Text label xAxis
-			svg
-				.append("text")       
-				.attr("class","label")      
-				.attr("transform",
-					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3+15) + ")")
-				.style("text-anchor", "end")
-				.text("due a solde migratoire apparent");
+		
 
 
 			//add popup
@@ -253,28 +302,34 @@ function graph4(){
 
 		} //function updatedata
 
-
+		updateData("tx_sm_68_75", "pop_sm_68_75", inputValues2[0]);
 
 		input04.addEventListener("input",function(e){
 			deplaceOutputBullet2();
 			switch (e.target.value) {
 			case "0":
-				updateData("tx_sm_68_75", "pop_sm_68_75");
+				d3.selectAll(".label-change2").remove();
+				updateData("tx_sm_68_75", "pop_sm_68_75", inputValues2[0]);
 				break;
 			case "1":
-				updateData("tx_sm_75_82", "pop_sm_75_82");
+				d3.selectAll(".label-change2").remove();
+				updateData("tx_sm_75_82", "pop_sm_75_82", inputValues2[1]);
 				break;	
 			case "2":
-				updateData("tx_sm_82_90", "pop_sm_82_90");
+				d3.selectAll(".label-change2").remove();
+				updateData("tx_sm_82_90", "pop_sm_82_90", inputValues2[2]);
 				break;
 			case "3":
-				updateData("tx_sm_90_99", "pop_sm_90_99");
+				d3.selectAll(".label-change2").remove();
+				updateData("tx_sm_90_99", "pop_sm_90_99", inputValues2[3]);
 				break;
 			case "4":
-				updateData("tx_sm_99_09", "pop_sm_99_09");
+				d3.selectAll(".label-change2").remove();
+				updateData("tx_sm_99_09", "pop_sm_99_09", inputValues2[4]);
 				break;
 			case "5":
-				updateData("tx_sm_09_14", "pop_sm_09_14");
+				d3.selectAll(".label-change2").remove();
+				updateData("tx_sm_09_14", "pop_sm_09_14", inputValues2[5]);
 				break;
 				
 			}
@@ -282,14 +337,6 @@ function graph4(){
 
 
 
-
-
-
-
-
-
-
-		updateData("tx_sm_68_75", "pop_sm_68_75");
 
 		
 

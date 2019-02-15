@@ -72,9 +72,51 @@ function graph03(){
 			.range(["#10524d","#229f97","#add9dc","#f9d7ad","#e89c3f","#ab6016","#693e0f"]);
 
 
+		function addExtra(){
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","extra label-change")      
+				.attr("x",20)
+				.attr("y",20)
+				.text("Période");
+			
+			//Horizontal line
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",margin.left)
+				.attr("y1",0)
+				.attr("x2",180)
+				.attr("y2",0)
+				.attr("stroke", "#fff");
 
-		function render_raster(data){
-		//generate epci
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",margin.left)
+				.attr("y1",30)
+				.attr("x2",180)
+				.attr("y2",30)
+				.attr("stroke", "#fff");
+		} //function addExtra
+
+
+		addExtra();
+
+		function render_raster(data, label){
+
+		
+
+			svg
+				.append("text")       
+				.attr("class","label-change label-change2")      
+				.attr("x",90)
+				.attr("y",20)
+				.text(label);
+
+
+			//generate epci
 			let rw = g
 				.selectAll(".rw")
 				.data(data)
@@ -114,27 +156,35 @@ function graph03(){
 
 
 		//on loading, first svg
-		render_raster(featureCollection6875.features);
+		render_raster(featureCollection6875.features,inputValues[0]);
+
 		input03.addEventListener("input",function(e){
 			deplaceOutputBullet();
+
 			switch (e.target.value) {
 			case "0":
-				render_raster(featureCollection6875.features);
+				d3.selectAll(".label-change2").remove();
+				render_raster(featureCollection6875.features,inputValues[0]);
 				break;
 			case "1":
-				render_raster(featureCollection7582.features);
+				d3.selectAll(".label-change2").remove();
+				render_raster(featureCollection7582.features,inputValues[1]);
 				break;	
 			case "2":
-				render_raster(featureCollection8290.features);
+				d3.selectAll(".label-change2").remove();
+				render_raster(featureCollection8290.features,inputValues[2]);
 				break;
 			case "3":
-				render_raster(featureCollection9099.features);
+				d3.selectAll(".label-change2").remove();
+				render_raster(featureCollection9099.features,inputValues[3]);
 				break;
 			case "4":
-				render_raster(featureCollection9909.features);
+				d3.selectAll(".label-change2").remove();
+				render_raster(featureCollection9909.features,inputValues[4]);
 				break;
 			case "5":
-				render_raster(featureCollection0914.features);
+				d3.selectAll(".label-change2").remove();
+				render_raster(featureCollection0914.features,inputValues[5]);
 				break;
 				
 			}
@@ -149,9 +199,15 @@ function graph03(){
 
 			switch(response.index){
 			case 0:
-			
-				render_raster(featureCollection6875.features);
+				render_raster(featureCollection6875.features,inputValues[0]);
+				addExtra();
+
+
+
 				break;
+
+
+				
 			}
 		}
 
@@ -159,6 +215,8 @@ function graph03(){
 			switch(response.index){
 			case 0:
 				d3.selectAll(".rw").remove();
+				d3.selectAll(".label-change").remove();
+				d3.selectAll(".line-extra").remove();
 				break;
 			}
 		}
