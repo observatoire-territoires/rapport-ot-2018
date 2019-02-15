@@ -2,7 +2,7 @@ function graph6(){
 
 
 	//sizing
-	let margin = {top:20, right:20, bottom:40, left: 40};
+	let margin = {top:50, right:20, bottom:50, left: 100};
 
 	let width = document.querySelector("#c-svg-06").clientWidth;
 	let height = 400;
@@ -21,6 +21,7 @@ function graph6(){
 		"grouping": [3]
 	});
 
+	let format2 = d3.format("");
 
 	//Initiate data
 	d3.csv("data/data-06.csv").then(function(data){
@@ -61,9 +62,39 @@ function graph6(){
 		const xAxis = d3.axisBottom(xScale)
 			.tickSizeOuter(0);
 
-		const yAxis = d3.axisRight(yScale)
-			.tickSize(width)
-			.tickFormat((d)=>{return d+"%";}); //add unit
+		const yAxis = d3.axisLeft(yScale)
+			.ticks(5)
+			.tickSizeOuter(0)
+			.tickFormat((d)=>{return format2(d)+" %";}); //add unit
+
+
+
+		//Call x axis
+		svg
+			.append("g")
+			.attr("class", "axis x_axis")
+			.attr("transform", `translate(0,${height-margin.bottom})`)
+			.call(xAxis);
+
+		svg.select(".x_axis")
+			.selectAll("text")
+			.attr("y", 10);
+
+			
+		//Call y axis
+		svg
+			.append("g")
+			.attr("class", "axis y_axis")
+			.attr("transform",`translate(${margin.left},0)`)
+			.call(yAxis);
+
+
+	
+		svg.select(".y_axis")
+			.selectAll("text")
+			.attr("x",-10)
+			.attr("dy",3);
+
 
 
 		//111
@@ -120,34 +151,16 @@ function graph6(){
 			.y((d)=>{return yScale(d["400"]);}) //set the y values for the line generator
 			.curve(d3.curveMonotoneX); //apply smoothing to the line
 
-		//Call x axis
+		//Call horizontal line
 		svg
-			.append("g")
-			.attr("class", "axis x_axis")
-			.attr("transform", `translate(0,${height-margin.bottom})`)
-			.call(xAxis)
-			.select(".domain").remove();
+			.append("line")
+			.attr("x1", margin.left)
+			.attr("x2", width-margin.right)
+			.attr("y1", yScale(0))
+			.attr("y2", yScale(0))
+			.attr("stroke", "#fff")
+			.attr("stroke-width",2);
 
-		svg.select(".x_axis")
-			.selectAll("text")
-			.attr("y", 15);
-
-		//Call y axis
-		svg
-			.append("g")
-			.attr("class", "axis y_axis")
-			.attr("transform",`translate(${margin.left},0)`)
-			.call(yAxis)
-			.select(".domain").remove();
-
-		svg.select(".y_axis")
-			.selectAll("line")
-			.attr("stroke-width", "0.5px");
-	
-		svg.select(".y_axis")
-			.selectAll("text")
-			.attr("x",-10)
-			.attr("dy",3);
 
 
 		//Call line
@@ -215,6 +228,132 @@ function graph6(){
 		Array.from(lines).forEach((el,i)=>{
 			el.setAttribute("stroke",color[i]);
 		});
+
+
+
+		
+
+
+
+		//Text label yAxis
+		svg
+			.append("text")       
+			.attr("class","label")      
+			.attr("transform", "rotate(-90)")
+			.attr("y",0+(margin.left/4))
+			.attr("x", 0-(height/2))
+			.style("text-anchor", "middle")
+			.text("Taux d'évolution de la population");
+
+		//Text label yAxis
+		svg
+			.append("text")       
+			.attr("class","label")      
+			.attr("transform", "rotate(-90)")
+			.attr("y",0+(margin.left/4+15))
+			.attr("x", 0-(height/2))
+			.style("text-anchor", "middle")
+			.text("due a solde migratoire apparent");
+
+
+
+		//add popup
+
+		//create div popup
+		let popup = d3.select("body").append("div")
+			.attr("class", "my-popup");
+
+
+		//MOUSE EVENT
+
+
+		d3.selectAll(".line")
+			.on("mouseover", function(d,i){
+				popup
+					.transition()
+					.duration(50)
+					.style("left", d3.event.pageX - 20 + "px")
+					.style("top", d3.event.pageY - 30 + "px")
+					.style("opacity", 1)
+					.style("text-align", "left");
+				
+				switch (i) {
+				case 0:
+					popup
+						.html(`
+							<div><strong>Grands pôles</strong></div>
+							`);
+					break;
+				case 1:
+					popup
+						.html(`
+							<div><strong>Couronnes de grands pôles</strong></div>
+							`);
+					break;
+				case 2:
+					popup
+						.html(`
+							<div><strong>Communes multipolarisées des grandes aires urbaines</strong></div>
+							`);
+					break;
+				case 3:
+					popup
+						.html(`
+							<div><strong>Pôles moyens</strong></div>
+							`);
+					break;
+				case 4:
+					popup
+						.html(`
+							<div><strong>Couronnes des pôles moyens</strong></div>
+							`);
+					break;
+				case 5:
+					popup
+						.html(`
+							<div><strong>Petits pôles</strong></div>
+							`);
+					break;
+				case 6:
+					popup
+						.html(`
+							<div><strong>Couronnes des petits pôles</strong></div>
+							`);
+					break;
+				case 7:
+					popup
+						.html(`
+							<div><strong>Autres communes multipolarisées</strong></div>
+							`);
+					break;
+				case 8:
+					popup
+						.html(`
+							<div><strong>Communes isolées, hors influence des pôles</strong></div>
+							`);
+					break;
+				}
+					
+
+				//geographical unit
+				d3.select(this)
+					.attr("fill-opacity",0.7);
+
+			})
+			.on("mouseout", function(d){
+				popup
+					.transition()
+					.duration(100)
+					.style("opacity", 0);
+
+
+				//geographical unit
+				d3.select(this)
+					.attr("fill-opacity",1);
+
+			});
+
+
 
 		/*Resize SVG, responsive*/
 

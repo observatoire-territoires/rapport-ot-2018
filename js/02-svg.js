@@ -3,7 +3,7 @@ function graph2(){
 
 
 	//sizing
-	let margin = {top:20, right:20, bottom:40, left: 100};
+	let margin = {top:50, right:20, bottom:60, left: 100};
 
 	let width = document.querySelector("#c-svg-02").clientWidth;
 	let height = 400;
@@ -58,7 +58,7 @@ function graph2(){
 
 
 		const xAxis = d3.axisBottom(xScale)
-			.tickFormat((d)=>{ return d+"%"; });;
+			.tickFormat((d)=>{ return d+" %"; });
 		const yAxis = d3.axisLeft(yScale)
 			.tickSizeOuter(0);
 
@@ -72,6 +72,11 @@ function graph2(){
 			.attr("class", "axis x_axis")
 			.attr("transform", `translate(0,${height-margin.bottom})`)
 			.call(xAxis);
+
+		svg.select(".x_axis")
+			.selectAll("text")
+			.attr("y", 10);
+
 
 		svg
 			.append("g")
@@ -98,6 +103,16 @@ function graph2(){
 			.attr("y", ((d)=>{ return yScale(d.data.periode); }))
 			.attr("width", ((d)=>{ return xScale(d[1])-xScale(d[0]); }))
 			.attr("height", yScale.bandwidth());
+
+
+		//Text label xAxis
+		svg
+			.append("text")       
+			.attr("class","label")      
+			.attr("transform",
+				"translate(" + (width-margin.right) + " ," + (height-margin.bottom/4) + ")")
+			.style("text-anchor", "end")
+			.text("Taux de mobilité résidentielle des ménages");
 
 
 		//create div popup

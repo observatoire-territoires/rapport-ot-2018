@@ -40,7 +40,7 @@ function graph4(){
 
 
 	//sizing
-	let margin = {top:20, right:20, bottom:40, left: 20};
+	let margin = {top:60, right:20, bottom:70, left: 20};
 
 	let width = document.querySelector("#c-svg-04").clientWidth;
 	let height = 400;
@@ -61,6 +61,7 @@ function graph4(){
 
 	let format = d3.format(".2n");
 	let formatPop = d3.format(",.0f");
+	let format2 = d3.format("");
 
 	//let tx_data = "tx_sm_68_75";
 	//let pop_data = "pop_sm_68_75";
@@ -111,7 +112,8 @@ function graph4(){
 			.nice();
 
 		const xAxis = d3.axisBottom(xScale)
-			.tickSizeOuter(0);
+			.tickSizeOuter(0)
+			.tickFormat((d)=>{ return format2(d)+" %"; });
 
 		//Call x axis
 		svg
@@ -122,7 +124,18 @@ function graph4(){
 
 		svg.select(".x_axis")
 			.selectAll("text")
-			.attr("y", 15);
+			.attr("y", 10);
+
+
+		//Call vertical line
+		svg
+			.append("line")
+			.attr("x1", xScale(0))
+			.attr("x2", xScale(0))
+			.attr("y1", margin.top)
+			.attr("y2", height-margin.bottom)
+			.attr("stroke", "#fff")
+			.attr("stroke-width",2);
 
 
 		function updateData(tx_data, pop_data){
@@ -168,7 +181,25 @@ function graph4(){
 				.attr("cy", ((d)=>{ return d.y; }))
 				.attr("r",(d)=>{return(Math.sqrt(d[pop_data]/popMax))*50;});
 				
-		
+
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","label")      
+				.attr("transform",
+					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3) + ")")
+				.style("text-anchor", "end")
+				.text("Taux d'évolution de la population");
+
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","label")      
+				.attr("transform",
+					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3+15) + ")")
+				.style("text-anchor", "end")
+				.text("due a solde migratoire apparent");
+
 
 			//add popup
 

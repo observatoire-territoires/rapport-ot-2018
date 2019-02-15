@@ -39,7 +39,7 @@ function graph7(){
 
 
 	//sizing
-	let margin = {top:20, right:40, bottom:40, left: 40};
+	let margin = {top:60, right:40, bottom:60, left: 70};
 
 	let width = document.querySelector("#c-svg-07").clientWidth;
 	let height = 400;
@@ -104,9 +104,11 @@ function graph7(){
 
 
 		const xAxis = d3.axisBottom(xScale)
+			.ticks(5)
 			.tickSizeOuter(0);
 
 		const yAxis = d3.axisLeft(yScale)
+			.ticks(5)
 			.tickSizeOuter(0);
 
 		//Call Axis
@@ -122,6 +124,29 @@ function graph7(){
 			.attr("transform",`translate(${margin.left},0)`)
 			.call(yAxis);
 			
+
+		//Call vertical line
+		svg
+			.append("line")
+			.attr("x1", xScale(0))
+			.attr("x2", xScale(0))
+			.attr("y1", margin.top)
+			.attr("y2", height-margin.bottom)
+			.attr("stroke", "#fff")
+			.attr("stroke-width",2);
+
+
+		//Call horizontal line
+		svg
+			.append("line")
+			.attr("x1", margin.left)
+			.attr("x2", width-margin.right)
+			.attr("y1", yScale(0))
+			.attr("y2", yScale(0))
+			.attr("stroke", "#fff")
+			.attr("stroke-width",2);
+
+
 		//color
 		const colorsFill = d3.scaleLinear()
 			.domain([colorMin, -0.25, 0, 0.5, 1, colorMax])
@@ -178,6 +203,52 @@ function graph7(){
 				.attr("r",(d)=>{return(Math.sqrt(d[pop_data]/popMax))*50;});
 
 
+			//Text label yAxis
+			svg
+				.append("text")       
+				.attr("class","label")      
+				.attr("transform", "rotate(-90)")
+				.attr("y",0+(margin.left/4))
+				.attr("x", 0-(height/2))
+				.style("text-anchor", "middle")
+				.text("Taux d'évolution de la population");
+
+			//Text label yAxis
+			svg
+				.append("text")       
+				.attr("class","label")      
+				.attr("transform", "rotate(-90)")
+				.attr("y",0+(margin.left/4+15))
+				.attr("x", 0-(height/2))
+				.style("text-anchor", "middle")
+				.text("due a solde migratoire apparent");
+
+
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","label")      
+				.attr("transform",
+					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3) + ")")
+				.style("text-anchor", "end")
+				.text("Taux d'évolution de la population");
+
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","label")      
+				.attr("transform",
+					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3+15) + ")")
+				.style("text-anchor", "end")
+				.text("due au solde naturel");
+
+
+
+
+
+
+
+
 			//add popup
 
 			//create div popup
@@ -202,11 +273,9 @@ function graph7(){
 						.html(`
 							<div><strong>${d.libgeo}</strong></div>
 							<div>
-								<div>Population</div>
-								<span>${formatPop(d[pop_data])} </span>
-								<div>Taux de croissance annuel moyen</div>
-								<span>${format(d[tx_pop_data])} % </span>
 								<div>Taux d'évolution de la population</div>
+								<em>Total</em> : <span>${format(d[tx_pop_data])} % </span>
+								<br>
 								<em>Due au solde naturel</em> : <span>${format(d[tx_sn_data])} % </span>
 								<br>
 								<em>Due au solde migratoire</em> : <span>${format(d[tx_sm_data])} % </span>

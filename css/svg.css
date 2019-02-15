@@ -14,6 +14,12 @@
   text, tspan{
     font-family: "MontserratWebMedium";
     font-style: normal;
+    fill: #f0f0f0;
+    font-size: 11px;
+  }
+
+  .label{
+    font-size:11px;
   }
 
 
@@ -121,11 +127,6 @@ Y88888P YP   YP 88   YD  Y888P  Y88888P
 */
 @media only screen and (min-width:800px){
 
-  text, tspan{
-    font-size:  08px;
-    fill: #b4854f;
-  }
-
 
 }
 
@@ -142,10 +143,6 @@ Y88888P YP   YP 88   YD  Y888P  Y88888P
 @media (min-width:620px) and (max-width:800px){
 
     
-  text, tspan{
-    font-size:  10px;
-    fill: #f0f0f0;
-  }
 
 
 }
@@ -162,10 +159,7 @@ d8888b.  .88'   88 d' 88
 
 @media (min-width:480px) and (max-width:620px){
 
-  text, tspan{
-    font-size: 12px;
-    fill: #c8c8e8;
-  }
+
 
 }
 
@@ -184,10 +178,6 @@ V88888D .d~~~b. 88 d' 88
 
 @media (min-width:320px) and (max-width:480px){
 
-  text, tspan{
-    font-size: 16px;
-    fill: #f3a561;
-  }
 
 
 }
@@ -202,9 +192,6 @@ Y8888P' 888888D  `Y88P'
 */
 @media only screen and (max-width:320px){
 
-  text, tspan{
-    font-size: 18px;
-    fill: #818181;
-  }
+
 
 }

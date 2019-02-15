@@ -183,9 +183,9 @@ function firstVisit(){
 		hideAlert();
 	});
 
-	document.onkeydown = function (evt) {
-		evt = evt || window.event;
-		if (evt.keyCode == 27 || evt.keyCode == 13 || evt.keyCode == 32) {
+	document.onkeydown = function (e) {
+		e = e || window.event;
+		if (e.keyCode == 27 || e.keyCode == 13 || e.keyCode == 8) {
 			hideAlert();
 		}
 	};
@@ -210,6 +210,8 @@ function showAlert(){
 	body.style.overflow = "hidden";
 	selectionHtml.style.overflow = "hidden";
 	selectionGlobal.style.opacity = 0.2;
+	selectionGlobal.style.pointerEvents = "none";
+	selectionGlobal.style.userSelect = "none";
 }
 
 function hideAlert(){
@@ -217,4 +219,6 @@ function hideAlert(){
 	body.style.overflow = "initial";
 	selectionHtml.style.overflow = "initial";
 	selectionGlobal.style.opacity = 1;
+	selectionGlobal.style.pointerEvents = "initial";
+	selectionGlobal.style.userSelect = "initial";
 }
