@@ -214,9 +214,9 @@ function graph03(){
 		function handleStepExit(response){
 			switch(response.index){
 			case 0:
+				d3.select("#c-svg-03").selectAll(".label-change2").remove();
 				d3.selectAll(".rw").remove();
-				d3.selectAll(".label-change").remove();
-				d3.selectAll(".line-extra").remove();
+				d3.select("#c-svg-03").selectAll(".extra").remove();
 				break;
 			}
 		}

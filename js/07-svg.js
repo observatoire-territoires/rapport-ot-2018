@@ -39,7 +39,7 @@ function graph7(){
 
 
 	//sizing
-	let margin = {top:60, right:40, bottom:60, left: 50};
+	let margin = {top:110, right:40, bottom:60, left: 50};
 
 	let width = document.querySelector("#c-svg-07").clientWidth;
 	let height = 400;
@@ -168,7 +168,93 @@ function graph7(){
 				"#ca75ad","#0a9ba2","#8acdd2","#ccc1da","#f2f4ee"]);
 
 
-		function updateData(pop_data, tx_pop_data, tx_sn_data, tx_sm_data){
+		function addExtra(){
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","extra label-change")      
+				.attr("x",margin.left)
+				.attr("y",20)
+				.text("Période");
+			
+			//Horizontal line
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",margin.left)
+				.attr("y1",0)
+				.attr("x2",180+margin.left)
+				.attr("y2",0)
+				.attr("stroke", "#fff");
+
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",margin.left)
+				.attr("y1",30)
+				.attr("x2",180+margin.left)
+				.attr("y2",30)
+				.attr("stroke", "#fff");
+
+
+			//Text label yAxis
+			svg
+				.append("text")       
+				.attr("class","label")      
+				.attr("y",margin.top/2)
+				.attr("x", margin.left/2)
+				.style("text-anchor", "start")
+				.text("Taux d'évolution de la population");
+
+			//Text label yAxis
+			svg
+				.append("text")       
+				.attr("class","label")      
+				.attr("y",margin.top/2+15)
+				.attr("x", margin.left/2)
+				.style("text-anchor", "start")
+				.text("due a solde migratoire apparent");
+
+
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","label")      
+				.attr("transform",
+					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3) + ")")
+				.style("text-anchor", "end")
+				.text("Taux d'évolution de la population");
+
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","label")      
+				.attr("transform",
+					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3+15) + ")")
+				.style("text-anchor", "end")
+				.text("due au solde naturel");
+
+
+
+		} //function addExtra
+
+
+		addExtra();
+
+
+
+
+
+
+		function updateData(pop_data, tx_pop_data, tx_sn_data, tx_sm_data, label){
+
+			svg
+				.append("text")       
+				.attr("class","label-change label-change2")      
+				.attr("x",70+margin.left)
+				.attr("y",20)
+				.text(label);
+
 
 			//simulation force
 			let simulation = d3.forceSimulation(data)
@@ -210,80 +296,6 @@ function graph7(){
 				.attr("cx", ((d)=>{ return d.x; }))
 				.attr("cy", ((d)=>{ return d.y; }))
 				.attr("r",(d)=>{return(Math.sqrt(d[pop_data]/popMax))*50;});
-
-
-
-			function addExtra(){
-				//Text label xAxis
-				svg
-					.append("text")       
-					.attr("class","extra label-change")      
-					.attr("x",20+margin.left)
-					.attr("y",20)
-					.text("Période");
-				
-				//Horizontal line
-				svg
-					.append("line")
-					.attr("class","extra line-extra")
-					.attr("x1",margin.left)
-					.attr("y1",0)
-					.attr("x2",180)
-					.attr("y2",0)
-					.attr("stroke", "#fff");
-	
-				svg
-					.append("line")
-					.attr("class","extra line-extra")
-					.attr("x1",margin.left)
-					.attr("y1",30)
-					.attr("x2",180)
-					.attr("y2",30)
-					.attr("stroke", "#fff");
-	
-	
-	
-			} //function addExtra
-
-			
-
-			//Text label yAxis
-			svg
-				.append("text")       
-				.attr("class","label")      
-				.attr("y",margin.top/2)
-				.attr("x", margin.left/2)
-				.style("text-anchor", "start")
-				.text("Taux d'évolution de la population");
-
-			//Text label yAxis
-			svg
-				.append("text")       
-				.attr("class","label")      
-				.attr("y",margin.top/2+15)
-				.attr("x", margin.left/2)
-				.style("text-anchor", "start")
-				.text("due a solde migratoire apparent");
-
-
-			//Text label xAxis
-			svg
-				.append("text")       
-				.attr("class","label")      
-				.attr("transform",
-					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3) + ")")
-				.style("text-anchor", "end")
-				.text("Taux d'évolution de la population");
-
-			//Text label xAxis
-			svg
-				.append("text")       
-				.attr("class","label")      
-				.attr("transform",
-					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3+15) + ")")
-				.style("text-anchor", "end")
-				.text("due au solde naturel");
-
 
 
 
@@ -349,36 +361,41 @@ function graph7(){
 
 
 
-
+		updateData("pop_1975", "tx_pop_1975", "tx_pop_sn_1975", "tx_pop_sm_1975", inputValues3[0]);
 
 		input07.addEventListener("input",function(e){
 			deplaceOutputBullet3();
 			switch (e.target.value) {
 			case "0":
-			
-				updateData("pop_1975", "tx_pop_1975", "tx_pop_sn_1975", "tx_pop_sm_1975");
+				d3.selectAll(".label-change2").remove();
+				updateData("pop_1975", "tx_pop_1975", "tx_pop_sn_1975", "tx_pop_sm_1975", inputValues3[0]);
 				break;
 			case "1":
-				updateData("pop_1982", "tx_pop_1982", "tx_pop_sn_1982", "tx_pop_sm_1982");
+				d3.selectAll(".label-change2").remove();
+				updateData("pop_1982", "tx_pop_1982", "tx_pop_sn_1982", "tx_pop_sm_1982", inputValues3[1]);
 				break;	
 			case "2":
-				updateData("pop_1990", "tx_pop_1990", "tx_pop_sn_1990", "tx_pop_sm_1990");
+				d3.selectAll(".label-change2").remove();
+				updateData("pop_1990", "tx_pop_1990", "tx_pop_sn_1990", "tx_pop_sm_1990", inputValues3[2]);
 				break;
 			case "3":
-				updateData("pop_1999", "tx_pop_1999", "tx_pop_sn_1999", "tx_pop_sm_1999");
+				d3.selectAll(".label-change2").remove();
+				updateData("pop_1999", "tx_pop_1999", "tx_pop_sn_1999", "tx_pop_sm_1999", inputValues3[3]);
 				break;
 			case "4":
-				updateData("pop_2009", "tx_pop_2009", "tx_pop_sn_2009", "tx_pop_sm_2009");
+				d3.selectAll(".label-change2").remove();
+				updateData("pop_2009", "tx_pop_2009", "tx_pop_sn_2009", "tx_pop_sm_2009", inputValues3[4]);
 				break;
 			case "5":
-				updateData("pop_2014", "tx_pop_2014", "tx_pop_sn_2014", "tx_pop_sm_2014");
+				d3.selectAll(".label-change2").remove();
+				updateData("pop_2014", "tx_pop_2014", "tx_pop_sn_2014", "tx_pop_sm_2014", inputValues3[5]);
 				break;
 				
 			}
 		});
 
 
-		updateData("pop_1975", "tx_pop_1975", "tx_pop_sn_1975", "tx_pop_sm_1975");
+		
 
 
 
