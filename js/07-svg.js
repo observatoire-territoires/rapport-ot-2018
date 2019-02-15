@@ -39,7 +39,7 @@ function graph7(){
 
 
 	//sizing
-	let margin = {top:60, right:40, bottom:60, left: 70};
+	let margin = {top:60, right:40, bottom:60, left: 50};
 
 	let width = document.querySelector("#c-svg-07").clientWidth;
 	let height = 400;
@@ -60,6 +60,7 @@ function graph7(){
 
 	let format = d3.format(".2n");
 	let formatPop = d3.format(",.0f");
+	let format2 = d3.format("");
 
 	d3.csv("data/data-07.csv").then(function(data){
 
@@ -105,11 +106,13 @@ function graph7(){
 
 		const xAxis = d3.axisBottom(xScale)
 			.ticks(5)
-			.tickSizeOuter(0);
+			.tickSizeOuter(0)
+			.tickFormat((d)=>{return format2(d)+" %";});
 
 		const yAxis = d3.axisLeft(yScale)
 			.ticks(5)
-			.tickSizeOuter(0);
+			.tickSizeOuter(0)
+			.tickFormat((d)=>{return format2(d)+" %";});
 
 		//Call Axis
 		svg
@@ -117,6 +120,12 @@ function graph7(){
 			.attr("class", "axis x_axis")
 			.attr("transform", `translate(0,${height-margin.bottom})`)
 			.call(xAxis);
+
+		svg
+			.select(".x_axis")
+			.selectAll("text")
+			.attr("y", 10);
+
 
 		svg
 			.append("g")
@@ -207,20 +216,18 @@ function graph7(){
 			svg
 				.append("text")       
 				.attr("class","label")      
-				.attr("transform", "rotate(-90)")
-				.attr("y",0+(margin.left/4))
-				.attr("x", 0-(height/2))
-				.style("text-anchor", "middle")
+				.attr("y",margin.top/2)
+				.attr("x", margin.left/2)
+				.style("text-anchor", "start")
 				.text("Taux d'évolution de la population");
 
 			//Text label yAxis
 			svg
 				.append("text")       
 				.attr("class","label")      
-				.attr("transform", "rotate(-90)")
-				.attr("y",0+(margin.left/4+15))
-				.attr("x", 0-(height/2))
-				.style("text-anchor", "middle")
+				.attr("y",margin.top/2+15)
+				.attr("x", margin.left/2)
+				.style("text-anchor", "start")
 				.text("due a solde migratoire apparent");
 
 

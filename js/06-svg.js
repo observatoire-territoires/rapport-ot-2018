@@ -2,7 +2,7 @@ function graph6(){
 
 
 	//sizing
-	let margin = {top:50, right:20, bottom:50, left: 100};
+	let margin = {top:50, right:20, bottom:50, left: 50};
 
 	let width = document.querySelector("#c-svg-06").clientWidth;
 	let height = 400;
@@ -239,20 +239,18 @@ function graph6(){
 		svg
 			.append("text")       
 			.attr("class","label")      
-			.attr("transform", "rotate(-90)")
-			.attr("y",0+(margin.left/4))
-			.attr("x", 0-(height/2))
-			.style("text-anchor", "middle")
+			.attr("y",margin.top/2)
+			.attr("x", margin.left/2)
+			.style("text-anchor", "start")
 			.text("Taux d'évolution de la population");
 
 		//Text label yAxis
 		svg
 			.append("text")       
 			.attr("class","label")      
-			.attr("transform", "rotate(-90)")
-			.attr("y",0+(margin.left/4+15))
-			.attr("x", 0-(height/2))
-			.style("text-anchor", "middle")
+			.attr("y",margin.top/2+15)
+			.attr("x", margin.left/2)
+			.style("text-anchor", "start")
 			.text("due a solde migratoire apparent");
 
 
