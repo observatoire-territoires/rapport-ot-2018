@@ -174,7 +174,7 @@ function graph7(){
 				.append("text")       
 				.attr("class","extra label-change")      
 				.attr("x",margin.left)
-				.attr("y",20)
+				.attr("y",25)
 				.text("Période");
 			
 			//Horizontal line
@@ -182,18 +182,18 @@ function graph7(){
 				.append("line")
 				.attr("class","extra line-extra")
 				.attr("x1",margin.left)
-				.attr("y1",0)
+				.attr("y1",5)
 				.attr("x2",180+margin.left)
-				.attr("y2",0)
+				.attr("y2",5)
 				.attr("stroke", "#fff");
 
 			svg
 				.append("line")
 				.attr("class","extra line-extra")
 				.attr("x1",margin.left)
-				.attr("y1",30)
+				.attr("y1",35)
 				.attr("x2",180+margin.left)
-				.attr("y2",30)
+				.attr("y2",35)
 				.attr("stroke", "#fff");
 
 
@@ -201,7 +201,7 @@ function graph7(){
 			svg
 				.append("text")       
 				.attr("class","label")      
-				.attr("y",margin.top/2)
+				.attr("y",margin.top/2+10)
 				.attr("x", margin.left/2)
 				.style("text-anchor", "start")
 				.text("Taux d'évolution de la population");
@@ -210,10 +210,10 @@ function graph7(){
 			svg
 				.append("text")       
 				.attr("class","label")      
-				.attr("y",margin.top/2+15)
+				.attr("y",margin.top/2+25)
 				.attr("x", margin.left/2)
 				.style("text-anchor", "start")
-				.text("due a solde migratoire apparent");
+				.text("due au solde migratoire apparent");
 
 
 			//Text label xAxis
@@ -252,7 +252,7 @@ function graph7(){
 				.append("text")       
 				.attr("class","label-change label-change2")      
 				.attr("x",70+margin.left)
-				.attr("y",20)
+				.attr("y",25)
 				.text(label);
 
 

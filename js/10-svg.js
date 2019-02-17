@@ -2,7 +2,7 @@ function graph10(){
 	
 
 	//sizing
-	let margin = {top:20, right:0, bottom:40, left: 20};
+	let margin = {top:20, right:20, bottom:40, left: 20};
 
 	let width = document.querySelector("#c-svg-10").clientWidth;
 	let height = 400;
@@ -95,6 +95,42 @@ function graph10(){
 			.attr("class", "region");
 
 
+
+		function addExtra(){
+			
+			
+			//Horizontal line
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",margin.left)
+				.attr("y1",5)
+				.attr("x2",180+margin.left)
+				.attr("y2",5)
+				.attr("stroke", "#fff");
+
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",margin.left)
+				.attr("y1",35)
+				.attr("x2",180+margin.left)
+				.attr("y2",35)
+				.attr("stroke", "#fff");
+
+
+		} //function addExtra
+
+
+		addExtra();
+
+
+
+
+
+
+
+
 		//zoom
 		svg
 			.call(d3.zoom()
@@ -125,7 +161,7 @@ function graph10(){
 					.style("left", d3.event.pageX - 20 + "px")
 					.style("top", d3.event.pageY - 30 + "px")
 					.style("opacity", 1)
-					.style("text-align", "left")
+					.style("text-align", "left");
 				popup
 					.html(`
 						<div><strong>${d.properties.libepci}</strong></div>
@@ -154,8 +190,15 @@ function graph10(){
 
 
 
-
-
+		//Text label xAxis
+		function changeLabel(label){
+			svg
+				.append("text")       
+				.attr("class","extra label-change")      
+				.attr("x",margin.left)
+				.attr("y",25)
+				.text(label);
+		}
 
 
 		
@@ -167,12 +210,16 @@ function graph10(){
 
 			switch(response.index){
 			case 0:
+				d3.select("#c-svg-10").selectAll(".label-change").remove();
+				changeLabel("Toutes catégories");
 				epci
 					.transition()
 					.duration(500)
 					.attr("fill", ((d)=>{ return colors(d.properties.clust); }));
 				break;
 			case 1:
+				d3.select("#c-svg-10").selectAll(".label-change").remove();
+				changeLabel("Jeunes adultes, étudiants et cadres");
 				epci
 					.transition()
 					.duration(500)
@@ -183,6 +230,8 @@ function graph10(){
 					}));
 				break;
 			case 2:
+				d3.select("#c-svg-10").selectAll(".label-change").remove();
+				changeLabel("Trentenaires, cadres et prof. int.");
 				epci
 					.transition()
 					.duration(500)
@@ -193,6 +242,8 @@ function graph10(){
 					}));
 				break;
 			case 3:
+				d3.select("#c-svg-10").selectAll(".label-change").remove();
+				changeLabel("Employés et ouvriers");
 				epci
 					.transition()
 					.duration(500)
@@ -203,6 +254,8 @@ function graph10(){
 					}));
 				break;
 			case 4:
+				d3.select("#c-svg-10").selectAll(".label-change").remove();
+				changeLabel("Ouvriers et jeunes enfants");
 				epci
 					.transition()
 					.duration(500)
@@ -214,6 +267,8 @@ function graph10(){
 				break;
 
 			case 5:
+				d3.select("#c-svg-10").selectAll(".label-change").remove();
+				changeLabel("Profil diversifié, plutôt âgé");
 				epci
 					.transition()
 					.duration(500)
@@ -225,6 +280,8 @@ function graph10(){
 				break;		
 				
 			case 6:
+				d3.select("#c-svg-10").selectAll(".label-change").remove();
+				changeLabel("Retraités");
 				epci
 					.transition()
 					.duration(500)

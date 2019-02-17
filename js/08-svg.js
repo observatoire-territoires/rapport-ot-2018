@@ -15,26 +15,48 @@ function graph08(){
 			.getSVGDocument()
 			.querySelector("#svg-08-section6");
 
-		let mapAll = object08
+		let flowAll = object08
 			.getSVGDocument()
 			.querySelectorAll(".csp-flow");
 
+		let mapAll = object08
+			.getSVGDocument()
+			.querySelector("#carte_complete");
+
+
 		svg.setAttribute("width",width);
 		svg.setAttribute("height",height);
-		
+
+	
+
 		
 		//Opacity
 		function svg08ChangeOpacity(index) {
-			for(let i = 0; i < mapAll.length; i++){
+			for(let i = 0; i < flowAll.length; i++){
 				if(index != i){
-					mapAll[i].setAttribute("opacity",0);
+					flowAll[i].setAttribute("opacity",0);
 				} else {
-					mapAll[i].setAttribute("opacity",1);
+					flowAll[i].setAttribute("opacity",1);
 				}
 			}
 		}
 
-		
+
+		/* 
+		let labelText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+		labelText.setAttributeNS(null, "x", 0);
+		labelText.setAttributeNS(null, "y", 25);
+		labelText.setAttributeNS(null, "class", "extra label-change");
+		labelText.setAttributeNS(null, "font-family", "MontserratWebMedium");
+		labelText.setAttributeNS(null, "font-style", "normal");
+		labelText.setAttributeNS(null, "fill", "#f0f0f0");
+		labelText.setAttributeNS(null, "font-size", "16px");
+		labelText.setAttributeNS(null, "text-anchor", "start");
+
+		labelText.innerHTML = "Toutes catégories";
+		svg.appendChild(labelText);
+		*/
+
 
 		function setupButtons(){
 			d3.select("#toolbar-08")

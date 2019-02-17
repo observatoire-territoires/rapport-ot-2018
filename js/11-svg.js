@@ -2,7 +2,7 @@ function graph11(){
 
 
 	//sizing
-	let margin = {top:20, right:0, bottom:40, left: 40};
+	let margin = {top:20, right:20, bottom:40, left: 20};
 
 	let width = document.querySelector("#c-svg-11").clientWidth;
 	let height = 400;
@@ -104,6 +104,44 @@ function graph11(){
 				.translateExtent([[0,0],[width, height]])
 			);
 
+
+
+
+		function addExtra(){
+		
+		
+			//Horizontal line
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",margin.left)
+				.attr("y1",5)
+				.attr("x2",180+margin.left)
+				.attr("y2",5)
+				.attr("stroke", "#fff");
+
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",margin.left)
+				.attr("y1",35)
+				.attr("x2",180+margin.left)
+				.attr("y2",35)
+				.attr("stroke", "#fff");
+
+
+		} //function addExtra
+
+
+		addExtra();
+
+
+
+
+
+
+
+
 		//add popup
 
 		//create div popup
@@ -150,6 +188,17 @@ function graph11(){
 			});
 
 
+		//Text label xAxis
+		function changeLabel(label){
+			svg
+				.append("text")       
+				.attr("class","extra label-change")      
+				.attr("x",margin.left)
+				.attr("y",25)
+				.text(label);
+		}
+
+
 		//initialize the scrollama
 		//Parallax
 		const scroller = scrollama();
@@ -158,30 +207,40 @@ function graph11(){
 
 			switch(response.index){
 			case 0:
+				d3.select("#c-svg-11").selectAll(".label-change").remove();
+				changeLabel("Groupes socioprofessionnels");
 				epci
 					.transition()
-           			.duration(500)
+         			.duration(500)
 					.attr("fill", "#646464");
 				break;
 			case 1:
+				d3.select("#c-svg-11").selectAll(".label-change").remove();
+				changeLabel("Etudiants");
 				epci
 					.transition()
            			.duration(500)
 					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs8); }));
 				break;
 			case 2:
+				d3.select("#c-svg-11").selectAll(".label-change").remove();
+				changeLabel("Retraités");
 				epci
 					.transition()
            			.duration(500)
 					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs7); }));
 				break;
 			case 3:
+				d3.select("#c-svg-11").selectAll(".label-change").remove();
+				changeLabel("Ouvriers et employés");
 				epci
 					.transition()
            			.duration(500)
 					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs6); }));
 				break;
 			case 4:
+				d3.select("#c-svg-11").selectAll(".label-change").remove();
+				changeLabel("Cadres et prof. int. sup.");
 				epci
 					.transition()
            			.duration(500)

@@ -78,7 +78,7 @@ function graph03(){
 				.append("text")       
 				.attr("class","extra label-change")      
 				.attr("x",20)
-				.attr("y",20)
+				.attr("y",25)
 				.text("Période");
 			
 			//Horizontal line
@@ -86,18 +86,18 @@ function graph03(){
 				.append("line")
 				.attr("class","extra line-extra")
 				.attr("x1",margin.left)
-				.attr("y1",0)
+				.attr("y1",5)
 				.attr("x2",180)
-				.attr("y2",0)
+				.attr("y2",5)
 				.attr("stroke", "#fff");
 
 			svg
 				.append("line")
 				.attr("class","extra line-extra")
 				.attr("x1",margin.left)
-				.attr("y1",30)
+				.attr("y1",35)
 				.attr("x2",180)
-				.attr("y2",30)
+				.attr("y2",35)
 				.attr("stroke", "#fff");
 		} //function addExtra
 
@@ -112,7 +112,7 @@ function graph03(){
 				.append("text")       
 				.attr("class","label-change label-change2")      
 				.attr("x",90)
-				.attr("y",20)
+				.attr("y",25)
 				.text(label);
 
 
