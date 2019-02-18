@@ -443,6 +443,9 @@
 		#c-extra img{
 			border-radius: 50%;
 			width:10em;
+			border-style: solid;
+			border-width: 0.3em;
+			border-color:#5c7829;
 		}
 
 		.c-extra1{
