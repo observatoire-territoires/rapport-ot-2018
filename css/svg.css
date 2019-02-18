@@ -11,11 +11,30 @@
 
 @media all{
 
+  .svg-title{
+    margin-bottom: 1em;
+    text-align: center;
+    font-family: "MontserratWebBold";
+    font-style: normal;
+    letter-spacing: 0.01em;
+    color: #f0f0f0;
+    font-size: 14px;
+  }
+
+
   text, tspan{
     font-family: "MontserratWebMedium";
     font-style: normal;
     fill: #f0f0f0;
     font-size: 11px;
+  }
+
+
+  .label-circle{
+    font-family: "MontserratWebThin";
+    font-style: normal;
+    font-size:11px;
+    text-anchor: middle;
   }
 
   .label{
@@ -43,7 +62,10 @@
   }
 
   
-
+  .circle-legend {
+    fill: none;
+    stroke: #fff;
+  }
 
   .region{
     fill:none;

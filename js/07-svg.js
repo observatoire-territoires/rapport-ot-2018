@@ -42,7 +42,7 @@ function graph7(){
 	let margin = {top:110, right:40, bottom:60, left: 50};
 
 	let width = document.querySelector("#c-svg-07").clientWidth;
-	let height = 400;
+	let height = 500;
 
 	//initiate svg
 	let svg = d3.select("#c-svg-07")
@@ -201,7 +201,7 @@ function graph7(){
 			svg
 				.append("text")       
 				.attr("class","label")      
-				.attr("y",margin.top/2+10)
+				.attr("y",margin.top/2+25)
 				.attr("x", margin.left/2)
 				.style("text-anchor", "start")
 				.text("Taux d'évolution de la population");
@@ -210,7 +210,7 @@ function graph7(){
 			svg
 				.append("text")       
 				.attr("class","label")      
-				.attr("y",margin.top/2+25)
+				.attr("y",margin.top/2+40)
 				.attr("x", margin.left/2)
 				.style("text-anchor", "start")
 				.text("due au solde migratoire apparent");
@@ -242,8 +242,59 @@ function graph7(){
 		addExtra();
 
 
+		//Legend
+		console.log(colorsFill.domain());
 
 
+		let legendColor = svg.selectAll(".legend")
+			.data(colorsFill.range())
+			.enter()
+			.append("g")
+			.attr("class", "legend");
+
+
+		
+		legendColor
+			.append("rect")
+			.attr("x", function (d, i) {
+				return 3*width/7+i * 30;
+			})
+			.attr("y", margin.top/2+20)
+			.attr("width", 23)
+			.attr("height", 12)
+			.style("stroke", "black")
+			.style("stroke-width", 0.1)
+			.style("fill", function (d) { return d; });
+
+
+		legendColor
+			.append("text")
+			.attr("x", function (d, i) {
+				return 3*width/7 + i * 30;
+			})
+			.attr("dx", -5)
+			.attr("y", margin.top/2+40)
+			.attr("dy", "0.5em")
+			.attr("text-anchor", "middle")
+			.text(function (d, i) {
+				return format(colorsFill.domain()[i]);
+			});
+
+		svg
+			.append("text")
+			.attr("x", 3*width/7 + 5 * 30)
+			.attr("dx", -5)
+			.attr("y", margin.top/2+40)
+			.attr("dy", "0.5em")
+			.attr("text-anchor", "middle")
+			.text(format(colorsFill.domain()[5]));
+
+		svg
+			.append("text")         
+			.attr("x",3*width/7-40)
+			.attr("y",margin.top/2+5)
+			.attr("text-anchor", "start")
+			.text("Taux de croissance annuel moyen (%)");
 
 
 		function updateData(pop_data, tx_pop_data, tx_sn_data, tx_sm_data, label){
@@ -315,14 +366,14 @@ function graph7(){
 
 			g
 				.on("mouseover", function(d){
-					console.log(d)
+					console.log(d);
 					popup
 						.transition()
 						.duration(50)
 						.style("left", d3.event.pageX - 20 + "px")
 						.style("top", d3.event.pageY - 10 + "px")
 						.style("opacity", 1)
-						.style("text-align", "left")
+						.style("text-align", "left");
 					popup
 						.html(`
 							<div><strong>${d.libgeo}</strong></div>
@@ -358,6 +409,60 @@ function graph7(){
 
 
 		} //function update data
+
+
+		let circleLegend = svg
+			.append("g")
+			.attr("class","circle-legend");
+
+		circleLegend
+			.append("text")         
+			.attr("class", "label-circle")  
+			.attr("x",6*width/7)
+			.attr("y",20)
+			.text("Population");
+
+
+		circleLegend
+			.append("circle")
+			.attr("cx", 6*width/7)
+			.attr("cy", margin.top/2+45)
+			.attr("r", Math.sqrt(popMax/popMax)*50);
+
+		circleLegend
+			.append("circle")
+			.attr("cx", 6*width/7)		
+			.attr("cy", margin.top/2+40+(Math.sqrt(20E6/popMax)*50)/2)
+			.attr("r", Math.sqrt(20E6/popMax)*50);
+
+		circleLegend
+			.append("circle")
+			.attr("cx", 6*width/7)		
+			.attr("cy", margin.top/2+40+(Math.sqrt(20E6/popMax)*50))
+			.attr("r", Math.sqrt(5E6/popMax)*50);
+	
+		circleLegend
+			.append("text")
+			.attr("class", "label-circle")
+			.attr("x", 6*width/7)
+			.attr("y", margin.top/3+5)
+			.text("39 M");
+
+		circleLegend
+			.append("text")
+			.attr("class", "label-circle")
+			.attr("x", 6*width/7)
+			.attr("y", margin.top/2+Math.sqrt(20E6/popMax)*50/2-3)
+			.text("5 M");
+
+		circleLegend
+			.append("text")
+			.attr("class", "label-circle")
+			.attr("x", 6*width/7)
+			.attr("y",  margin.top/2+15+Math.sqrt(20E6/popMax)*50)
+			.text("1 M");
+
+
 
 
 

@@ -142,6 +142,77 @@ function graph03(){
 
 
 
+		function addLegend(){
+		//Legend
+
+			const legendText = [-2, -1, 0, 1, 2, 3];
+
+
+			let svgLegend = d3.select("#c-svg-03-legend")
+				.append("svg")
+				.attr("width", width)
+				.attr("height", 70);
+
+			let legend = svgLegend.selectAll(".legend")
+				.data(colors.range())
+				.enter()
+				.append("g")
+				.attr("class", "legend");
+
+
+			
+			legend
+				.append("rect")
+				.attr("x", function (d, i) {
+					return (width/2-100) +i * 30;
+				})
+				.attr("y", 40)
+				.attr("width", 23)
+				.attr("height", 12)
+				.style("stroke", "black")
+				.style("stroke-width", 0.1)
+				.style("fill", function (d) { return d; });
+
+
+			legend
+				.append("text")
+				.attr("x", function (d, i) {
+					return (width/2-100+30) + i * 30;
+				})
+				.attr("dx", -5)
+				.attr("y", 60)
+				.attr("dy", "0.5em")
+				.attr("text-anchor", "middle")
+				.text(function (d, i) {
+					return legendText[i];
+				});
+
+			
+
+
+			//title legend	
+			svgLegend
+				.append("text")         
+				.attr("x",width/2)
+				.attr("y",margin.top/2+5)
+				.attr("text-anchor", "middle")
+				.text("Taux d'évolution de la population due au solde");
+
+			svgLegend
+				.append("text")         
+				.attr("x",width/2)
+				.attr("y",margin.top/2+20)
+				.attr("text-anchor", "middle")
+				.text("migratoire apparent (moyenne annuelle, en %) ");
+		}
+
+
+
+
+
+
+
+
 		//set the default value
 		input03.oninput();
 
@@ -201,8 +272,10 @@ function graph03(){
 			case 0:
 				render_raster(featureCollection6875.features,inputValues[0]);
 				addExtra();
-
-
+				addLegend();
+				break;
+			case 1:
+				
 
 				break;
 
@@ -215,8 +288,9 @@ function graph03(){
 			switch(response.index){
 			case 0:
 				d3.select("#c-svg-03").selectAll(".label-change2").remove();
-				d3.selectAll(".rw").remove();
+				d3.select("#c-svg-03").selectAll(".rw").remove();
 				d3.select("#c-svg-03").selectAll(".extra").remove();
+				d3.select("#c-svg-03-legend").selectAll("*").remove();
 				break;
 			}
 		}
@@ -233,10 +307,6 @@ function graph03(){
 			})
 			.onStepEnter(handleStepEnter)
 			.onStepExit(handleStepExit);
-
-
-
-
 
 
 

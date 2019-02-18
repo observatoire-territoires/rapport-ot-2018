@@ -490,6 +490,10 @@
 		max-width: "1024px";
 	}
 	
+	#c-04-section3 .svg-title{
+		display:none;
+	}
+
 
 		/*Text break scroll image*/
 		.section7-text{

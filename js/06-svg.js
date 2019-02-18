@@ -2,7 +2,7 @@ function graph6(){
 
 
 	//sizing
-	let margin = {top:50, right:20, bottom:50, left: 50};
+	let margin = {top:35, right:20, bottom:30, left: 50};
 
 	let width = document.querySelector("#c-svg-06").clientWidth;
 	let height = 400;
@@ -239,7 +239,7 @@ function graph6(){
 		svg
 			.append("text")       
 			.attr("class","label")      
-			.attr("y",margin.top/2)
+			.attr("y",margin.top/3)
 			.attr("x", margin.left/2)
 			.style("text-anchor", "start")
 			.text("Taux d'évolution de la population");
@@ -248,7 +248,7 @@ function graph6(){
 		svg
 			.append("text")       
 			.attr("class","label")      
-			.attr("y",margin.top/2+15)
+			.attr("y",margin.top/3+15)
 			.attr("x", margin.left/2)
 			.style("text-anchor", "start")
 			.text("due a solde migratoire apparent");
@@ -350,6 +350,58 @@ function graph6(){
 					.attr("fill-opacity",1);
 
 			});
+
+
+
+
+
+		//Legend
+		const legendText = ["Grands pôles", "Couronnes de grands pôles", "Communes multipolarisées des grandes aires urbaines", "Pôles moyens", "Couronnes des pôles moyens", "Petits pôles", "Couronnes des petits pôles", "Autres communes multipolarisées", "Communes isolées, hors influence des pôles"];
+
+		let svgLegend = d3.select("#c-svg-06-legend")
+			.append("svg")
+			.attr("width", width)
+			.attr("height", 180);
+
+
+
+		let legend = svgLegend.selectAll(".legend")
+			.data(color)
+			.enter()
+			.append("g")
+			.attr("class", "legend");
+
+
+
+
+		legend
+			.append("rect")
+			.attr("x", 10 + margin.left)
+			.attr("y", function (d, i) {
+				return i * 20+5;
+			})
+			.attr("width", 23)
+			.attr("height", 12)
+			.style("stroke", "black")
+			.style("stroke-width", 0.1)
+			.style("fill", function (d) { return d; });
+
+		legend
+			.append("text")
+			.attr("x", 40 + margin.left) //leave 30 pixel space after the <rect>
+			.attr("y", function (d, i) {
+				return 10 + i * 20;
+			})
+			.attr("dy", "0.5em")
+			.text(function (d, i) {
+				return legendText[i];
+			});
+
+
+
+
+
+
 
 
 

@@ -51,7 +51,7 @@ function graph5(){
 
 		//set colors
 		let colors = d3.scaleOrdinal()
-			.domain(["0_0","0_1","0_2","1_0","1_1","2_1","2_0","2_1","2_2"])
+			.domain(["0_0","0_1","0_2","1_0","1_1","1_2","2_0","2_1","2_2"])
 			.range(["#045364","#1a5230","#ad6116","#26a199","#39a065","#e89e3f","#aedbde","#b0d8bd","#fad8af"]);
 		
 		//projection
@@ -95,6 +95,84 @@ function graph5(){
 				.scaleExtent([1,6]) //deep zoom
 				.translateExtent([[0,0],[width, height]])
 			);
+
+
+
+
+
+		//Legend
+		const legendText = ["Décroissance migratoire sur 1999-2009 et sur 2009-2014",
+			"Décroissance migratoire sur 1999-2009 et croissance faible sur 2009-2014",
+			"Décroissance migratoire sur 1999-2009 et croissance forte sur 2009-2014",
+			"Croissance faible sur 1999-2009 et décroissance sur 2009-2014",
+			"Croissance faible sur 1999-2009 et sur 2009-2014",
+			"Croissance faible sur 1999-2009 et croissance forte sur 2009-2014",
+			"Croissance forte sur 1999-2009 et décroissance sur 2009-2014",
+			"Croissance forte sur 1999-2009 et croissance faible sur 2009-2014",
+			"Croissance forte sur 1999-2009 et sur 2009-2014"];
+
+		let svgLegend = d3.select("#c-svg-05-legend")
+			.append("svg")
+			.attr("width", width)
+			.attr("height", 220);
+
+
+
+		let legend = svgLegend.selectAll(".legend")
+			.data(colors.range())
+			.enter()
+			.append("g")
+			.attr("class", "legend");
+
+
+
+		legend
+			.append("rect")
+			.attr("x", width/3-100)
+			.attr("y", function (d, i) {
+				return i * 20+45;
+			})
+			.attr("width", 23)
+			.attr("height", 12)
+			.style("stroke", "black")
+			.style("stroke-width", 0.1)
+			.style("fill", function (d) { return d; });
+
+		legend
+			.append("text")
+			.attr("x", width/3 +30 - 100) //leave 30 pixel space after the <rect>
+			.attr("y", function (d, i) {
+				return 50 + i * 20;
+			})
+			.attr("dy", "0.5em")
+			.text(function (d, i) {
+				return legendText[i];
+			});
+
+
+		svgLegend
+			.append("text")
+			.attr("x", width/3-100) //leave 30 pixel space after the <rect>
+			.attr("y", 10)
+			.attr("dy", "0.5em")
+			.text("Typologie de l'évolution de la croissance migratoire");
+
+		svgLegend
+			.append("text")
+			.attr("x", width/3-100) //leave 30 pixel space after the <rect>
+			.attr("y", 25)
+			.attr("dy", "0.5em")
+			.text("sur 1999-2009 et sur 2009-2014");
+
+
+
+
+
+
+
+
+
+
 
 		//add popup
 
@@ -184,6 +262,7 @@ function handleStepExit(response){
 	switch(response.index){
 	case 2:
 		d3.select("#c-svg-05").selectAll("*").remove();
+		d3.select("#c-svg-05-legend").selectAll("*").remove();
 		break;
 	}
 }

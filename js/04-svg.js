@@ -262,14 +262,13 @@ function graph4(){
 
 			g
 				.on("mouseover", function(d){
-					console.log(d)
 					popup
 						.transition()
 						.duration(50)
 						.style("left", d3.event.pageX - 20 + "px")
 						.style("top", d3.event.pageY - 10 + "px")
 						.style("opacity", 1)
-						.style("text-align", "left")
+						.style("text-align", "left");
 					popup
 						.html(`
 							<div><strong>${d.libgeo}</strong></div>
@@ -301,6 +300,58 @@ function graph4(){
 
 
 		} //function updatedata
+
+		let circleLegend = svg
+			.append("g")
+			.attr("class","circle-legend");
+
+		circleLegend
+			.append("text")         
+			.attr("class", "label-circle")  
+			.attr("x",6*width/7)
+			.attr("y",25)
+			.text("Solde migratoire annuel moyen");
+
+
+		circleLegend
+			.append("circle")
+			.attr("cx", 6*width/7)
+			.attr("cy", margin.top+40)
+			.attr("r", Math.sqrt(popMax/popMax)*50);
+
+		circleLegend
+			.append("circle")
+			.attr("cx", 6*width/7)		
+			.attr("cy", margin.top+40+(Math.sqrt(25000/popMax)*50)/2)
+			.attr("r", Math.sqrt(25000/popMax)*50);
+
+		circleLegend
+			.append("circle")
+			.attr("cx", 6*width/7)		
+			.attr("cy", margin.top+40+(Math.sqrt(25000/popMax)*50))
+			.attr("r", Math.sqrt(5000/popMax)*50);
+	
+		circleLegend
+			.append("text")
+			.attr("class", "label-circle")
+			.attr("x", 6*width/7)
+			.attr("y", margin.top/2+15)
+			.text(formatPop(popMax));
+
+		circleLegend
+			.append("text")
+			.attr("class", "label-circle")
+			.attr("x", 6*width/7)
+			.attr("y", margin.top/2+Math.sqrt(25000/popMax)*50+15)
+			.text(formatPop(5000));
+
+		circleLegend
+			.append("text")
+			.attr("class", "label-circle")
+			.attr("x", 6*width/7)
+			.attr("y",  margin.top/2+2*Math.sqrt(25000/popMax)*50+15)
+			.text(formatPop(1000));
+
 
 		updateData("tx_sm_68_75", "pop_sm_68_75", inputValues2[0]);
 
@@ -348,13 +399,7 @@ function graph4(){
 
 
 
-
-
-
-
 } //function graph4
-
-
 
 
 
@@ -363,20 +408,23 @@ function graph4(){
 const scroller = scrollama();
 
 function handleStepEnter(response) {
-
+	const selectionTitle = document.querySelector("#c-04-section3 .svg-title");
 	switch(response.index){
 	case 0:
 
 		break;
 	case 1:
+		selectionTitle.style.display = "block";
 		graph4();
 		break;
 	}
 }
 
 function handleStepExit(response){
+	const selectionTitle = document.querySelector("#c-04-section3 .svg-title");
 	switch(response.index){
 	case 1:
+		selectionTitle.style.display = "none";
 		d3.select("#c-svg-04").selectAll("*").remove();
 		break;
 	}
