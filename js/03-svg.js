@@ -224,12 +224,13 @@ function graph03(){
 		};
 
 
-
+		deplaceOutputBullet();
 
 		//on loading, first svg
-		render_raster(featureCollection6875.features,inputValues[0]);
+		render_raster(featureCollection0914.features,inputValues[5]);
 
 		input03.addEventListener("input",function(e){
+
 			deplaceOutputBullet();
 
 			switch (e.target.value) {
@@ -272,7 +273,7 @@ function graph03(){
 
 			switch(response.index){
 			case 0:
-				render_raster(featureCollection6875.features,inputValues[0]);
+				render_raster(featureCollection0914.features,inputValues[5]);
 				addExtra();
 				addLegend();
 				helpButton.style.display = "inline";

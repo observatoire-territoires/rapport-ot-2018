@@ -353,7 +353,8 @@ function graph4(){
 			.text(formatPop(1000));
 
 
-		updateData("tx_sm_68_75", "pop_sm_68_75", inputValues2[0]);
+		updateData("tx_sm_09_14", "pop_sm_09_14", inputValues2[5]);
+		deplaceOutputBullet2();
 
 		input04.addEventListener("input",function(e){
 			deplaceOutputBullet2();

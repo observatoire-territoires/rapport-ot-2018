@@ -463,7 +463,8 @@ function graph7(){
 
 
 
-		updateData("pop_1975", "tx_pop_1975", "tx_pop_sn_1975", "tx_pop_sm_1975", inputValues3[0]);
+		updateData("pop_2014", "tx_pop_2014", "tx_pop_sn_2014", "tx_pop_sm_2014", inputValues3[5]);
+		deplaceOutputBullet3();
 
 		input07.addEventListener("input",function(e){
 			deplaceOutputBullet3();
