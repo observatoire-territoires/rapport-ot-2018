@@ -241,7 +241,7 @@ function graph5(){
 
 
 
-
+const helpButton5 = document.querySelector("#help-button5");
 
 //initialize the scrollama
 //Parallax
@@ -254,6 +254,7 @@ function handleStepEnter(response) {
 		break;
 	case 2:
 		graph5();
+		helpButton5.style.display = "inline";
 		break;
 	}
 }
@@ -263,6 +264,7 @@ function handleStepExit(response){
 	case 2:
 		d3.select("#c-svg-05").selectAll("*").remove();
 		d3.select("#c-svg-05-legend").selectAll("*").remove();
+		helpButton5.style.display = "none";
 		break;
 	}
 }

@@ -127,7 +127,6 @@ function graph2() {
 
 		d3.selectAll("rect")
 			.on("mouseover", function (d) {
-				console.log(d);
 				popup
 					.transition()
 					.duration(50)

@@ -243,8 +243,6 @@ function graph7(){
 
 
 		//Legend
-		console.log(colorsFill.domain());
-
 
 		let legendColor = svg.selectAll(".legend")
 			.data(colorsFill.range())
@@ -366,7 +364,6 @@ function graph7(){
 
 			g
 				.on("mouseover", function(d){
-					console.log(d);
 					popup
 						.transition()
 						.duration(50)

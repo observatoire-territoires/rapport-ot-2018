@@ -262,6 +262,8 @@ function graph03(){
 		});
 
 
+		const helpButton = document.querySelector("#help-button3");
+
 		//initialize the scrollama
 		//Parallax
 		const scroller = scrollama();
@@ -273,7 +275,8 @@ function graph03(){
 				render_raster(featureCollection6875.features,inputValues[0]);
 				addExtra();
 				addLegend();
-				break;
+				helpButton.style.display = "inline";
+				break;	
 			case 1:
 				
 
@@ -291,6 +294,7 @@ function graph03(){
 				d3.select("#c-svg-03").selectAll(".rw").remove();
 				d3.select("#c-svg-03").selectAll(".extra").remove();
 				d3.select("#c-svg-03-legend").selectAll("*").remove();
+				helpButton.style.display = "none";
 				break;
 			}
 		}

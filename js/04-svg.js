@@ -308,47 +308,47 @@ function graph4(){
 		circleLegend
 			.append("text")         
 			.attr("class", "label-circle")  
-			.attr("x",6*width/7)
+			.attr("x",6*width/7-20)
 			.attr("y",25)
 			.text("Solde migratoire annuel moyen");
 
 
 		circleLegend
 			.append("circle")
-			.attr("cx", 6*width/7)
+			.attr("cx", 6*width/7-20)
 			.attr("cy", margin.top+40)
 			.attr("r", Math.sqrt(popMax/popMax)*50);
 
 		circleLegend
 			.append("circle")
-			.attr("cx", 6*width/7)		
+			.attr("cx", 6*width/7-20)		
 			.attr("cy", margin.top+40+(Math.sqrt(25000/popMax)*50)/2)
 			.attr("r", Math.sqrt(25000/popMax)*50);
 
 		circleLegend
 			.append("circle")
-			.attr("cx", 6*width/7)		
+			.attr("cx", 6*width/7-20)		
 			.attr("cy", margin.top+40+(Math.sqrt(25000/popMax)*50))
 			.attr("r", Math.sqrt(5000/popMax)*50);
 	
 		circleLegend
 			.append("text")
 			.attr("class", "label-circle")
-			.attr("x", 6*width/7)
+			.attr("x", 6*width/7-20)
 			.attr("y", margin.top/2+15)
 			.text(formatPop(popMax));
 
 		circleLegend
 			.append("text")
 			.attr("class", "label-circle")
-			.attr("x", 6*width/7)
+			.attr("x", 6*width/7-20)
 			.attr("y", margin.top/2+Math.sqrt(25000/popMax)*50+15)
 			.text(formatPop(5000));
 
 		circleLegend
 			.append("text")
 			.attr("class", "label-circle")
-			.attr("x", 6*width/7)
+			.attr("x", 6*width/7-20)
 			.attr("y",  margin.top/2+2*Math.sqrt(25000/popMax)*50+15)
 			.text(formatPop(1000));
 
@@ -401,7 +401,7 @@ function graph4(){
 
 } //function graph4
 
-
+const helpButton4 = document.querySelector("#help-button4");
 
 //initialize the scrollama
 //Parallax
@@ -416,6 +416,7 @@ function handleStepEnter(response) {
 	case 1:
 		selectionTitle.style.display = "block";
 		graph4();
+		helpButton4.style.display = "inline";
 		break;
 	}
 }
@@ -426,6 +427,7 @@ function handleStepExit(response){
 	case 1:
 		selectionTitle.style.display = "none";
 		d3.select("#c-svg-04").selectAll("*").remove();
+		helpButton4.style.display = "none";
 		break;
 	}
 }

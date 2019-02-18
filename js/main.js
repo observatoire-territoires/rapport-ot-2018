@@ -70,6 +70,41 @@ document.addEventListener("scroll",function(){
 });
 
 
+//BUTTTON HELP
+const cHelpButton = document.querySelectorAll(".c-help-button");
+const helpButton = document.querySelectorAll(".help-button");
+const helpBody = document.querySelectorAll(".help-body");
+
+let displayToggle = 1;
+
+
+function showHelpButton(i){
+	helpBody[i].style.display = "block";
+	cHelpButton[i].style.borderWidth = "1px";
+	cHelpButton[i].style.background = " #282828";
+}
+
+function hideHelpButton(i){
+	helpBody[i].style.display = "none";
+	cHelpButton[i].style.borderWidth = "0px";
+	cHelpButton[i].style.background = "none";
+}
+
+Array.from(helpButton).forEach((el,i)=>{
+	el.addEventListener("click",function(){
+		displayToggle++;
+
+		if (displayToggle % 2 ==0){
+			showHelpButton(i);
+		} else {
+			hideHelpButton(i);
+		}
+
+	});
+
+});
+
+
 
 //SECTION 3 BREAK SCROLLING
 //-----------------------------------------------------
@@ -179,6 +214,7 @@ const selectionHtml = document.querySelector("html");
 function firstVisit(){
 
 
+
 	document.querySelector("#button-alert").addEventListener("click",function(){
 		hideAlert();
 	});
@@ -187,6 +223,10 @@ function firstVisit(){
 		e = e || window.event;
 		if (e.keyCode == 27 || e.keyCode == 13 || e.keyCode == 8) {
 			hideAlert();
+
+			Array.from(helpButton).forEach((d,i)=>{
+				hideHelpButton(i);
+			});
 		}
 	};
 
