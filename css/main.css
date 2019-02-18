@@ -219,7 +219,7 @@
 	  /*Application sur les boutons des graphiques*/
 
 	  .toolbar{
-		  margin-top: 2em;
+		  margin-top: 1em;
 		  margin-bottom: 2em;
 		  margin-left: 1.5em;
 		  display: flex;
@@ -227,8 +227,16 @@
 			flex-wrap: wrap;
 			justify-content: flex-start;
 			padding-right:4em;
-	  }
+		}
 
+		.toolbar-title{
+			margin-top: 2em;
+			text-transform: uppercase;
+			font-family: "MontserratWebMedium";
+			font-style: normal;
+			font-size:0.9em;
+			color:#adc285;
+		}
 
 	  .button{
 		  min-width: 130px;

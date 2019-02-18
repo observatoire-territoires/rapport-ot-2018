@@ -171,32 +171,7 @@ function graph1(){
 
 		//Sets up the layout buttons to allow for toggling between view modes
 
-		function setupButtons(){
-			d3.select("#toolbar-01")
-				.selectAll(".button")
-				.on("click", function(){
-
-					//remove active class from all buttons
-					d3.selectAll(".button").classed("active", false);
-
-					//find the button just clicked
-					let button = d3.select(this);
-
-					//set it as the active button
-					button.classed("active", true);
-
-					//get the id of the buttton
-					let buttonId = button.attr("id");
-
-					buttonId === "by-type-mobility" ? splitCircles(): groupCircles();
-
-					// Toggle the bubble chart based on
-					// the currently clicked button
-					//toggleDisplay(buttonId);
-				});
-		}
-		//setup the buttons
-		setupButtons();
+		
 
 
 
@@ -238,7 +213,8 @@ function graph1(){
 
 			switch(response.index){
 			case 0:
-				console.log("Je suis entré 1er texte section1");
+
+				splitCircles();
 				break;
 			case 1:
 				fiveCircles();
@@ -249,7 +225,7 @@ function graph1(){
 		function handleStepExit(response){
 			switch(response.index){
 			case 0:
-				console.log("Je suis sorti 1er texte section1");
+
 				break;
 			}
 		}

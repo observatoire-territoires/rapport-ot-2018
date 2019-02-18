@@ -227,7 +227,7 @@ function graph03(){
 		deplaceOutputBullet();
 
 		//on loading, first svg
-		render_raster(featureCollection0914.features,inputValues[5]);
+		//render_raster(featureCollection0914.features,inputValues[5]);
 
 		input03.addEventListener("input",function(e){
 
