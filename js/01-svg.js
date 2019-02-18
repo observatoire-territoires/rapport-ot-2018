@@ -131,6 +131,9 @@ function graph1(){
 			simulation.alpha(1).restart();
 
 
+			
+
+
 		}
 
 
@@ -142,11 +145,171 @@ function graph1(){
 			simulation.force("x", d3.forceX().strength(0.05).x(nodePropMobilityPos));
 			//reset the alpha value and restart the simulation
 			simulation.alpha(1).restart();
+
+
+			d3.select("#c-svg-01").selectAll("text").remove();
+			d3.select("#c-svg-01").selectAll("line").remove();
+
+			svg
+				.append("text")
+				.attr("x", 50+getWidthSVG(0)/4) //leave 30 pixel space after the <rect>
+				.attr("y", 10)
+				.attr("text-anchor", "middle")
+				.text("89 % de la population");
+
+			svg
+				.append("text")
+				.attr("x", 50+getWidthSVG(0)/4) //leave 30 pixel space after the <rect>
+				.attr("y", 25)
+				.attr("text-anchor", "middle")
+				.text("n'ont pas changé de logement");
+
+			svg
+				.append("text")
+				.attr("x", 55+3*getWidthSVG(0)/4) //leave 30 pixel space after the <rect>
+				.attr("y", 90)
+				.attr("text-anchor", "middle")
+				.text("11 % de la population");
+
+			svg
+				.append("text")
+				.attr("x", 55+3*getWidthSVG(0)/4) //leave 30 pixel space after the <rect>
+				.attr("y", 105)
+				.attr("text-anchor", "middle")
+				.text("ont changé de logement");
+
 		}
 
 
 		//Five circle
 		function fiveCircles(){
+
+
+			d3.select("#c-svg-01").selectAll("text").remove();
+			d3.select("#c-svg-01").selectAll("line").remove();
+
+			svg
+				.append("text")
+				.attr("x", 10+getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("y", 110)
+				.attr("text-anchor", "middle")
+				.text("4 % sont restées");
+
+			svg
+				.append("text")
+				.attr("x", 10+getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("y", 125)
+				.attr("text-anchor", "middle")
+				.text("dans la même commune");
+
+			svg
+				.append("text")
+				.attr("x", 10+2*getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("y", 290)
+				.attr("text-anchor", "middle")
+				.text("4,1 % ont changé de commune");
+
+			svg
+				.append("text")
+				.attr("x", 10+2*getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("y", 305)
+				.attr("text-anchor", "middle")
+				.text("au sein du même département");
+
+			svg
+				.append("text")
+				.attr("x", 10+getWidthSVG(0)/2) //leave 30 pixel space after the <rect>
+				.attr("y", 110)
+				.attr("text-anchor", "middle")
+				.text("1,2 % ont changé de département");
+
+			svg
+				.append("text")
+				.attr("x", 10+getWidthSVG(0)/2) //leave 30 pixel space after the <rect>
+				.attr("y", 125)
+				.attr("text-anchor", "middle")
+				.text("au sein de la même région");
+
+			svg
+				.append("text")
+				.attr("x", 5+2*getWidthSVG(0)/3) //leave 30 pixel space after the <rect>
+				.attr("y", 290)
+				.attr("text-anchor", "middle")
+				.text("1,6 % ont changé");
+
+			svg
+				.append("text")
+				.attr("x", 5+2*getWidthSVG(0)/3) //leave 30 pixel space after the <rect>
+				.attr("y", 305)
+				.attr("text-anchor", "middle")
+				.text("de région");
+
+			svg
+				.append("text")
+				.attr("x", 5*getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("y", 110)
+				.attr("text-anchor", "middle")
+				.text("0,4 % sont arrivés");
+
+			svg
+				.append("text")
+				.attr("x", 5*getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("y", 125)
+				.attr("text-anchor", "middle")
+				.text("de l'étranger");
+
+
+			//Vertical Line
+			svg
+				.append("line")
+				.attr("x1", 10+getWidthSVG(0)/6)
+				.attr("x2", 10+getWidthSVG(0)/6)
+				.attr("y1",135)
+				.attr("y2", 155)
+				.attr("stroke", "#fff")
+				.attr("stroke-width",1);
+
+
+
+			svg
+				.append("line")
+				.attr("x1", 10+2*getWidthSVG(0)/6)
+				.attr("x2", 10+2*getWidthSVG(0)/6)
+				.attr("y1",240)
+				.attr("y2", 260)
+				.attr("stroke", "#fff")
+				.attr("stroke-width",1);
+
+			svg
+				.append("line")
+				.attr("x1", 10+getWidthSVG(0)/2)
+				.attr("x2", 10+getWidthSVG(0)/2)
+				.attr("y1",135)
+				.attr("y2", 155)
+				.attr("stroke", "#fff")
+				.attr("stroke-width",1);
+
+			svg
+				.append("line")
+				.attr("x1", 5+2*getWidthSVG(0)/3)
+				.attr("x2", 5+2*getWidthSVG(0)/3)
+				.attr("y1",240)
+				.attr("y2", 260)
+				.attr("stroke", "#fff")
+				.attr("stroke-width",1);
+
+
+			svg
+				.append("line")
+				.attr("x1", 5*getWidthSVG(0)/6)
+				.attr("x2", 5*getWidthSVG(0)/6)
+				.attr("y1",135)
+				.attr("y2", 155)
+				.attr("stroke", "#fff")
+				.attr("stroke-width",1);
+
+
+
 			let data2 = data.filter((d)=>{return d.value == "1";});
 			updateData(data2);
 

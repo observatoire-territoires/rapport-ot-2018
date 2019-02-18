@@ -451,7 +451,7 @@
 			flex-wrap: wrap;
 			justify-content: center;
 			text-align: center;
-			color: #686868; 
+			color: #808080; 
 			font-family: "MontserratWebMedium";
 			transition: 0.3s ease-in-out;
 		}
@@ -467,6 +467,10 @@
 		}
 
 		.c-extra1:hover img{
+			filter: grayscale(0);
+		}
+
+		#c-extra:hover img{
 			filter: grayscale(0);
 		}
 
