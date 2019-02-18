@@ -261,6 +261,9 @@ function handleStepEnter(response) {
 
 function handleStepExit(response){
 	switch(response.index){
+	case 1:
+		d3.select("#c-svg-05-legend").selectAll("*").remove();
+		break;
 	case 2:
 		d3.select("#c-svg-05").selectAll("*").remove();
 		d3.select("#c-svg-05-legend").selectAll("*").remove();

@@ -19,7 +19,14 @@
 		display:none;
 	  }
 
+	.download-logo{
+		width:1em;
+		fill: #ffadad;
+	}
 
+	.download-logo:hover{
+		fill:#ff3333;
+	}
 
 
 	}
@@ -221,6 +228,8 @@
 	.nav-logo-ot{
 		width: 2em;
 	}
+
+
 
 	/*Text content title*/
 	.nav-content-title{

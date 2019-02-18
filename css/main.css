@@ -254,7 +254,7 @@
 		  font-family: "MontserratWebMedium";
 		  font-style: normal;
 		  letter-spacing: 0.05em;
-		  white-space: nowrap;
+			white-space: nowrap;
 	}
   
 	.button.active {
@@ -266,7 +266,8 @@
 		border: 2px solid white;
 		color: #ff3333;
 	  }
-  
+	
+
 
 	  #toolbar-03, #toolbar-04, #toolbar-07{
 		  display: flex;
@@ -424,7 +425,58 @@
 	  }
 
 
-	}
+
+		/*Extra section*/
+
+
+		#c-extra{
+			background: rgba(254, 254, 254, 08);
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			text-align: center;
+			color:#282828;
+			margin-left:2em;
+		}
+
+		#c-extra img{
+			border-radius: 50%;
+			width:8em;
+		}
+
+		.c-extra1{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			width:50%;
+			text-align: center;
+
+		}
+
+		#c-end{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: row;
+			justify-content: space-between;
+		}
+
+		.c-extra-texte{
+			width:80%;
+			display:flex;
+			align-items: center;
+		}
+
+		.extra-h5{
+			margin:0;
+			padding-right:1em;
+			padding-left:1em;
+		}
+
+	
+
+		}
 
   
 /*Desktop devices
@@ -519,6 +571,13 @@
 			margin-left: 2em;
 		}
 
+
+	#c-extra, #c-end{
+		padding: 3em 3em 3em 5em;
+	}
+
+
+
   }
   
 
@@ -544,6 +603,11 @@
 
 	.niv2-c-section{
 		min-height: 100vh;
+		padding: 1em 2em 1em 2em;
+	}
+
+
+	#c-extra, #c-end{
 		padding: 1em 2em 1em 2em;
 	}
 
