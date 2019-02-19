@@ -1,7 +1,3 @@
-function getWidthSVG(i){
-	const elem = document.querySelectorAll(".scroll-graphic svg");
-	return elem[i].getBoundingClientRect().width;
-}
 
 
 function graph1(){
@@ -23,7 +19,7 @@ function graph1(){
 		
 
 	let g = svg.append("g")
-		.attr("transform", "translate(" + getWidthSVG(0)/2 +  "," + height/2 + ")");
+		.attr("transform", "translate(" + width/2 +  "," + height/2 + ")");
 
 	//initiate format number
 	/*Initiate format number*/
@@ -105,8 +101,8 @@ function graph1(){
 			}));
 
 		let propMobilityCenters = {
-			"0":{x: 50-getWidthSVG(0)/4, y: height/2},
-			"1":{x: 50+getWidthSVG(0)/4, y: height/2}
+			"0":{x: 50-width/4, y: height/2},
+			"1":{x: 50+width/4, y: height/2}
 		};
 
 		/*
@@ -152,28 +148,28 @@ function graph1(){
 
 			svg
 				.append("text")
-				.attr("x", 50+getWidthSVG(0)/4) //leave 30 pixel space after the <rect>
+				.attr("x", 50+width/4) //leave 30 pixel space after the <rect>
 				.attr("y", 10)
 				.attr("text-anchor", "middle")
 				.text("89 % de la population");
 
 			svg
 				.append("text")
-				.attr("x", 50+getWidthSVG(0)/4) //leave 30 pixel space after the <rect>
+				.attr("x", 50+width/4) //leave 30 pixel space after the <rect>
 				.attr("y", 25)
 				.attr("text-anchor", "middle")
 				.text("n'ont pas changé de logement");
 
 			svg
 				.append("text")
-				.attr("x", 55+3*getWidthSVG(0)/4) //leave 30 pixel space after the <rect>
+				.attr("x", 55+3*width/4) //leave 30 pixel space after the <rect>
 				.attr("y", 90)
 				.attr("text-anchor", "middle")
 				.text("11 % de la population");
 
 			svg
 				.append("text")
-				.attr("x", 55+3*getWidthSVG(0)/4) //leave 30 pixel space after the <rect>
+				.attr("x", 55+3*width/4) //leave 30 pixel space after the <rect>
 				.attr("y", 105)
 				.attr("text-anchor", "middle")
 				.text("ont changé de logement");
@@ -190,70 +186,70 @@ function graph1(){
 
 			svg
 				.append("text")
-				.attr("x", 10+getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("x", 10+width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 110)
 				.attr("text-anchor", "middle")
 				.text("4 % sont restées");
 
 			svg
 				.append("text")
-				.attr("x", 10+getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("x", 10+width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 125)
 				.attr("text-anchor", "middle")
 				.text("dans la même commune");
 
 			svg
 				.append("text")
-				.attr("x", 10+2*getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("x", 10+2*width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 290)
 				.attr("text-anchor", "middle")
 				.text("4,1 % ont changé de commune");
 
 			svg
 				.append("text")
-				.attr("x", 10+2*getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("x", 10+2*width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 305)
 				.attr("text-anchor", "middle")
 				.text("au sein du même département");
 
 			svg
 				.append("text")
-				.attr("x", 10+getWidthSVG(0)/2) //leave 30 pixel space after the <rect>
+				.attr("x", 10+width/2) //leave 30 pixel space after the <rect>
 				.attr("y", 110)
 				.attr("text-anchor", "middle")
 				.text("1,2 % ont changé de département");
 
 			svg
 				.append("text")
-				.attr("x", 10+getWidthSVG(0)/2) //leave 30 pixel space after the <rect>
+				.attr("x", 10+width/2) //leave 30 pixel space after the <rect>
 				.attr("y", 125)
 				.attr("text-anchor", "middle")
 				.text("au sein de la même région");
 
 			svg
 				.append("text")
-				.attr("x", 5+2*getWidthSVG(0)/3) //leave 30 pixel space after the <rect>
+				.attr("x", 5+2*width/3) //leave 30 pixel space after the <rect>
 				.attr("y", 290)
 				.attr("text-anchor", "middle")
 				.text("1,6 % ont changé");
 
 			svg
 				.append("text")
-				.attr("x", 5+2*getWidthSVG(0)/3) //leave 30 pixel space after the <rect>
+				.attr("x", 5+2*width/3) //leave 30 pixel space after the <rect>
 				.attr("y", 305)
 				.attr("text-anchor", "middle")
 				.text("de région");
 
 			svg
 				.append("text")
-				.attr("x", 5*getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("x", 5*width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 110)
 				.attr("text-anchor", "middle")
 				.text("0,4 % sont arrivés");
 
 			svg
 				.append("text")
-				.attr("x", 5*getWidthSVG(0)/6) //leave 30 pixel space after the <rect>
+				.attr("x", 5*width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 125)
 				.attr("text-anchor", "middle")
 				.text("de l'étranger");
@@ -262,8 +258,8 @@ function graph1(){
 			//Vertical Line
 			svg
 				.append("line")
-				.attr("x1", 10+getWidthSVG(0)/6)
-				.attr("x2", 10+getWidthSVG(0)/6)
+				.attr("x1", 10+width/6)
+				.attr("x2", 10+width/6)
 				.attr("y1",135)
 				.attr("y2", 155)
 				.attr("stroke", "#fff")
@@ -273,8 +269,8 @@ function graph1(){
 
 			svg
 				.append("line")
-				.attr("x1", 10+2*getWidthSVG(0)/6)
-				.attr("x2", 10+2*getWidthSVG(0)/6)
+				.attr("x1", 10+2*width/6)
+				.attr("x2", 10+2*width/6)
 				.attr("y1",240)
 				.attr("y2", 260)
 				.attr("stroke", "#fff")
@@ -282,8 +278,8 @@ function graph1(){
 
 			svg
 				.append("line")
-				.attr("x1", 10+getWidthSVG(0)/2)
-				.attr("x2", 10+getWidthSVG(0)/2)
+				.attr("x1", 10+width/2)
+				.attr("x2", 10+width/2)
 				.attr("y1",135)
 				.attr("y2", 155)
 				.attr("stroke", "#fff")
@@ -291,8 +287,8 @@ function graph1(){
 
 			svg
 				.append("line")
-				.attr("x1", 5+2*getWidthSVG(0)/3)
-				.attr("x2", 5+2*getWidthSVG(0)/3)
+				.attr("x1", 5+2*width/3)
+				.attr("x2", 5+2*width/3)
 				.attr("y1",240)
 				.attr("y2", 260)
 				.attr("stroke", "#fff")
@@ -301,8 +297,8 @@ function graph1(){
 
 			svg
 				.append("line")
-				.attr("x1", 5*getWidthSVG(0)/6)
-				.attr("x2", 5*getWidthSVG(0)/6)
+				.attr("x1", 5*width/6)
+				.attr("x2", 5*width/6)
 				.attr("y1",135)
 				.attr("y2", 155)
 				.attr("stroke", "#fff")
@@ -314,11 +310,11 @@ function graph1(){
 			updateData(data2);
 
 			let typeMobilityCenters = {
-				"mob_com":{x: -2*getWidthSVG(0)/6, y: height/2},
-				"mob_dep":{x: -getWidthSVG(0)/6, y: height/2},
+				"mob_com":{x: -2*width/6, y: height/2},
+				"mob_dep":{x: -width/6, y: height/2},
 				"mob_reg":{x: 0, y: height/2},
-				"mob_france":{x: getWidthSVG(0)/6, y: height/2},
-				"mob_all":{x: 2*getWidthSVG(0)/6, y: height/2},
+				"mob_france":{x: width/6, y: height/2},
+				"mob_all":{x: 2*width/6, y: height/2},
 				"immob":{x:0,y:0}
 			};
 	
@@ -352,13 +348,13 @@ function graph1(){
 
 
 		function resize(){
-			console.log(getWidthSVG(0));
+			console.log(width);
 
 			svg
 				.attr("width", "100%");
 
 			g
-				.attr("transform", "translate(" + getWidthSVG(0)/2 +  "," + height/2 + ")");
+				.attr("transform", "translate(" + width/2 +  "," + height/2 + ")");
 
 
 		}

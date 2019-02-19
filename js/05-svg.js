@@ -89,13 +89,52 @@ function graph5(){
 		//zoom
 		svg
 			.call(d3.zoom()
-				.on("zoom", function(){
-					g.attr("transform", d3.event.transform);
-				})
 				.scaleExtent([1,6]) //deep zoom
 				.translateExtent([[0,0],[width, height]])
+				.on("zoom", zoomed)
+				.on("start", zoomstart)
+				.on("end", zoomend)
 			);
 
+		function zoomed(){
+			g.attr("transform", d3.event.transform);
+		}
+			
+		function zoomstart(){
+			dep
+				.on("mouseover",null);
+		}
+
+
+		function zoomend(){
+			dep
+				.on("mouseover", function(d){
+					console.log(d)
+					popup
+						.transition()
+						.duration(50)
+						.style("left", d3.event.pageX - 20 + "px")
+						.style("top", d3.event.pageY - 100 + "px")
+						.style("opacity", 1)
+						.style("text-align", "left");
+					popup
+						.html(`
+							<div><strong>${d.properties.libdep}</strong></div>
+							<div>
+								<div>Croissance migratoire</div>
+								<em>1999-2009</em> : <span>${format(d.properties.tx_19992009)} % </span>
+								<br>
+								<em>2009-2014</em> : <span>${format(d.properties.tx_20092014)} % </span>
+							</div>
+							`);
+
+					//geographical unit
+					d3.select(this)
+						.attr("fill-opacity",0.7);
+
+
+				});
+		}
 
 
 

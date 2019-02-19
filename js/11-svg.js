@@ -97,14 +97,46 @@ function graph11(){
 		//zoom
 		svg
 			.call(d3.zoom()
-				.on("zoom", function(){
-					g.attr("transform", d3.event.transform);
-				})
 				.scaleExtent([1,6]) //deep zoom
 				.translateExtent([[0,0],[width, height]])
+				.on("zoom", zoomed)
+				.on("start", zoomstart)
+				.on("end", zoomend)
+				
 			);
 
+		function zoomed(){
+			g.attr("transform", d3.event.transform);
+		}
+		
+		function zoomstart(){
+			epci
+				.on("mouseover",null);
+		}
 
+		function zoomend(){
+			epci
+				.on("mouseover",function(d){
+					popup
+						.transition()
+						.duration(50)
+						.style("left", d3.event.pageX - 20 + "px")
+						.style("top", d3.event.pageY - 30 + "px")
+						.style("opacity", 1)
+						.style("text-align", "left");
+	
+					popup
+						.html(`
+							<div><strong>${d.properties.libepci}</strong></div>
+							`);
+	
+					//geographical unit
+					d3.select(this)
+						.attr("fill-opacity",0.7);
+
+				});
+		}
+		
 
 
 		function addExtra(){
@@ -151,17 +183,19 @@ function graph11(){
 
 		//MOUSE EVENT
 
+		
+
 
 		epci
 			.on("mouseover", function(d){
-				console.log(d)
 				popup
 					.transition()
 					.duration(50)
 					.style("left", d3.event.pageX - 20 + "px")
 					.style("top", d3.event.pageY - 30 + "px")
 					.style("opacity", 1)
-					.style("text-align", "left")
+					.style("text-align", "left");
+
 				popup
 					.html(`
 						<div><strong>${d.properties.libepci}</strong></div>
@@ -211,7 +245,7 @@ function graph11(){
 				changeLabel("Groupes socioprofessionnels");
 				epci
 					.transition()
-         			.duration(500)
+         			.duration(250)
 					.attr("fill", "#646464");
 				break;
 			case 1:
@@ -219,7 +253,7 @@ function graph11(){
 				changeLabel("Etudiants");
 				epci
 					.transition()
-           			.duration(500)
+           			.duration(250)
 					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs8); }));
 				break;
 			case 2:
@@ -227,7 +261,7 @@ function graph11(){
 				changeLabel("Retraités");
 				epci
 					.transition()
-           			.duration(500)
+           			.duration(250)
 					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs7); }));
 				break;
 			case 3:
@@ -235,7 +269,7 @@ function graph11(){
 				changeLabel("Ouvriers et employés");
 				epci
 					.transition()
-           			.duration(500)
+           			.duration(250)
 					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs6); }));
 				break;
 			case 4:
@@ -243,7 +277,7 @@ function graph11(){
 				changeLabel("Cadres et prof. int. sup.");
 				epci
 					.transition()
-           			.duration(500)
+           			.duration(250)
 					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs3); }));
 				break;
 

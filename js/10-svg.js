@@ -125,22 +125,96 @@ function graph10(){
 		addExtra();
 
 
+		//Legend
+
+		function addLegend(){
+			d3.select("#c-svg-10-legend").selectAll("*").remove();
+			const legendText = ["Retraités","Profil diversifié, plutôt âgé", "Ouvriers et jeunes enfants", "Employés et ouvriers", "Jeunes adultes, étudiants et cadres", "Trentenaires, cadres et prof. int."];
+
+			let svgLegend = d3.select("#c-svg-10-legend")
+				.append("svg")
+				.attr("width", width)
+				.attr("height", 100);
 
 
 
+			let legend = svgLegend.selectAll(".legend")
+				.data(colors.range())
+				.enter()
+				.append("g")
+				.attr("class", "legend");
 
+
+			legend
+				.append("rect")
+				.attr("x", width/3+10 + margin.left)
+				.attr("y", function (d, i) {
+					return i * 20+5;
+				})
+				.attr("width", 23)
+				.attr("height", 12)
+				.style("stroke", "black")
+				.style("stroke-width", 0.1)
+				.style("fill", function (d) { return d; });
+
+			legend
+				.append("text")
+				.attr("x", width/3+40 + margin.left) //leave 30 pixel space after the <rect>
+				.attr("y", function (d, i) {
+					return 10 + i * 20;
+				})
+				.attr("dy", "0.5em")
+				.text(function (d, i) {
+					return legendText[i];
+				});
+
+		}
+
+		addLegend();
 
 
 		//zoom
 		svg
 			.call(d3.zoom()
-				.on("zoom", function(){
-					g.attr("transform", d3.event.transform);
-				})
 				.scaleExtent([1,6]) //deep zoom
 				.translateExtent([[0,0],[width, height]])
+				.on("zoom", zoomed)
+				.on("start", zoomstart)
+				.on("end", zoomend)
 			);
 
+		function zoomed(){
+			g.attr("transform", d3.event.transform);
+		}
+			
+		function zoomstart(){
+			epci
+				.on("mouseover",null);
+		}
+
+
+		function zoomend(){
+			epci
+				.on("mouseover", function(d){
+					popup
+						.transition()
+						.duration(50)
+						.style("left", d3.event.pageX - 20 + "px")
+						.style("top", d3.event.pageY - 30 + "px")
+						.style("opacity", 1)
+						.style("text-align", "left");
+
+					popup
+						.html(`
+							<div><strong>${d.properties.libepci}</strong></div>
+							`);
+
+					//geographical unit
+					d3.select(this)
+						.attr("fill-opacity",0.7);
+				});
+		}
+		
 
 		//add popup
 
@@ -210,19 +284,21 @@ function graph10(){
 
 			switch(response.index){
 			case 0:
+				addLegend();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Toutes catégories");
 				epci
 					.transition()
-					.duration(500)
+					.duration(250)
 					.attr("fill", ((d)=>{ return colors(d.properties.clust); }));
 				break;
 			case 1:
+				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Jeunes adultes, étudiants et cadres");
 				epci
 					.transition()
-					.duration(500)
+					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 5 ? "#53995c"
@@ -230,11 +306,12 @@ function graph10(){
 					}));
 				break;
 			case 2:
+				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Trentenaires, cadres et prof. int.");
 				epci
 					.transition()
-					.duration(500)
+					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 6 ? "#7cc18b"
@@ -242,11 +319,12 @@ function graph10(){
 					}));
 				break;
 			case 3:
+				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Employés et ouvriers");
 				epci
 					.transition()
-					.duration(500)
+					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 4 ? "#e8e774"
@@ -254,11 +332,12 @@ function graph10(){
 					}));
 				break;
 			case 4:
+				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Ouvriers et jeunes enfants");
 				epci
 					.transition()
-					.duration(500)
+					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 3 ? "#c4431d"
@@ -267,11 +346,12 @@ function graph10(){
 				break;
 
 			case 5:
+				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Profil diversifié, plutôt âgé");
 				epci
 					.transition()
-					.duration(500)
+					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 2 ? "#eec05d"
@@ -280,11 +360,12 @@ function graph10(){
 				break;		
 				
 			case 6:
+				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Retraités");
 				epci
 					.transition()
-					.duration(500)
+					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
 						return value == 1 ? "#e8e774"
