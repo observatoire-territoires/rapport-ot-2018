@@ -239,6 +239,7 @@ function graph6(){
 		svg
 			.append("text")       
 			.attr("class","label")      
+			.attr("fill", "#f0f0f0")
 			.attr("y",margin.top/3)
 			.attr("x", margin.left/2)
 			.style("text-anchor", "start")
@@ -247,7 +248,8 @@ function graph6(){
 		//Text label yAxis
 		svg
 			.append("text")       
-			.attr("class","label")      
+			.attr("class","label")     
+			.attr("fill", "#f0f0f0") 
 			.attr("y",margin.top/3+15)
 			.attr("x", margin.left/2)
 			.style("text-anchor", "start")
@@ -388,6 +390,7 @@ function graph6(){
 
 		legend
 			.append("text")
+			.attr("fill", "#f0f0f0")
 			.attr("x", 40 + margin.left) //leave 30 pixel space after the <rect>
 			.attr("y", function (d, i) {
 				return 10 + i * 20;

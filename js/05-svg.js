@@ -179,6 +179,7 @@ function graph5(){
 
 		legend
 			.append("text")
+			.attr("fill", "#f0f0f0")
 			.attr("x", width/3 +30 - 100) //leave 30 pixel space after the <rect>
 			.attr("y", function (d, i) {
 				return 50 + i * 20;
@@ -191,6 +192,7 @@ function graph5(){
 
 		svgLegend
 			.append("text")
+			.attr("fill", "#f0f0f0")
 			.attr("x", width/3-100) //leave 30 pixel space after the <rect>
 			.attr("y", 10)
 			.attr("dy", "0.5em")
@@ -198,6 +200,7 @@ function graph5(){
 
 		svgLegend
 			.append("text")
+			.attr("fill", "#f0f0f0")
 			.attr("x", width/3-100) //leave 30 pixel space after the <rect>
 			.attr("y", 25)
 			.attr("dy", "0.5em")
@@ -300,6 +303,9 @@ function handleStepEnter(response) {
 
 function handleStepExit(response){
 	switch(response.index){
+	case 0:
+		d3.select("#c-svg-05-legend").selectAll("*").remove();
+		break;
 	case 1:
 		d3.select("#c-svg-05-legend").selectAll("*").remove();
 		break;

@@ -229,6 +229,7 @@ function graph11(){
 				.attr("class","extra label-change")      
 				.attr("x",margin.left)
 				.attr("y",25)
+				.attr("fill", "#fff")
 				.text(label);
 		}
 

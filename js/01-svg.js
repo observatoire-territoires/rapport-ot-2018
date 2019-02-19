@@ -151,6 +151,7 @@ function graph1(){
 				.attr("x", 50+width/4) //leave 30 pixel space after the <rect>
 				.attr("y", 10)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("89 % de la population");
 
 			svg
@@ -158,6 +159,7 @@ function graph1(){
 				.attr("x", 50+width/4) //leave 30 pixel space after the <rect>
 				.attr("y", 25)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("n'ont pas changé de logement");
 
 			svg
@@ -165,6 +167,7 @@ function graph1(){
 				.attr("x", 55+3*width/4) //leave 30 pixel space after the <rect>
 				.attr("y", 90)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("11 % de la population");
 
 			svg
@@ -172,6 +175,7 @@ function graph1(){
 				.attr("x", 55+3*width/4) //leave 30 pixel space after the <rect>
 				.attr("y", 105)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("ont changé de logement");
 
 		}
@@ -189,6 +193,7 @@ function graph1(){
 				.attr("x", 10+width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 110)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("4 % sont restées");
 
 			svg
@@ -196,6 +201,7 @@ function graph1(){
 				.attr("x", 10+width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 125)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("dans la même commune");
 
 			svg
@@ -203,6 +209,7 @@ function graph1(){
 				.attr("x", 10+2*width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 290)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("4,1 % ont changé de commune");
 
 			svg
@@ -210,6 +217,7 @@ function graph1(){
 				.attr("x", 10+2*width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 305)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("au sein du même département");
 
 			svg
@@ -217,6 +225,7 @@ function graph1(){
 				.attr("x", 10+width/2) //leave 30 pixel space after the <rect>
 				.attr("y", 110)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("1,2 % ont changé de département");
 
 			svg
@@ -224,6 +233,7 @@ function graph1(){
 				.attr("x", 10+width/2) //leave 30 pixel space after the <rect>
 				.attr("y", 125)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("au sein de la même région");
 
 			svg
@@ -231,6 +241,7 @@ function graph1(){
 				.attr("x", 5+2*width/3) //leave 30 pixel space after the <rect>
 				.attr("y", 290)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("1,6 % ont changé");
 
 			svg
@@ -238,6 +249,7 @@ function graph1(){
 				.attr("x", 5+2*width/3) //leave 30 pixel space after the <rect>
 				.attr("y", 305)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("de région");
 
 			svg
@@ -245,6 +257,7 @@ function graph1(){
 				.attr("x", 5*width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 110)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("0,4 % sont arrivés");
 
 			svg
@@ -252,6 +265,7 @@ function graph1(){
 				.attr("x", 5*width/6) //leave 30 pixel space after the <rect>
 				.attr("y", 125)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("de l'étranger");
 
 
@@ -262,7 +276,7 @@ function graph1(){
 				.attr("x2", 10+width/6)
 				.attr("y1",135)
 				.attr("y2", 155)
-				.attr("stroke", "#fff")
+				.attr("stroke", "#f0f0f0")
 				.attr("stroke-width",1);
 
 
@@ -273,7 +287,7 @@ function graph1(){
 				.attr("x2", 10+2*width/6)
 				.attr("y1",240)
 				.attr("y2", 260)
-				.attr("stroke", "#fff")
+				.attr("stroke", "#f0f0f0")
 				.attr("stroke-width",1);
 
 			svg
@@ -282,7 +296,7 @@ function graph1(){
 				.attr("x2", 10+width/2)
 				.attr("y1",135)
 				.attr("y2", 155)
-				.attr("stroke", "#fff")
+				.attr("stroke", "#f0f0f0")
 				.attr("stroke-width",1);
 
 			svg
@@ -291,7 +305,7 @@ function graph1(){
 				.attr("x2", 5+2*width/3)
 				.attr("y1",240)
 				.attr("y2", 260)
-				.attr("stroke", "#fff")
+				.attr("stroke", "#f0f0f0")
 				.attr("stroke-width",1);
 
 
@@ -301,7 +315,7 @@ function graph1(){
 				.attr("x2", 5*width/6)
 				.attr("y1",135)
 				.attr("y2", 155)
-				.attr("stroke", "#fff")
+				.attr("stroke", "#f0f0f0")
 				.attr("stroke-width",1);
 
 

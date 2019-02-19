@@ -134,7 +134,7 @@ function graph10(){
 			let svgLegend = d3.select("#c-svg-10-legend")
 				.append("svg")
 				.attr("width", width)
-				.attr("height", 100);
+				.attr("height", 120);
 
 
 
@@ -159,6 +159,7 @@ function graph10(){
 
 			legend
 				.append("text")
+				.attr("fill", "#f0f0f0")
 				.attr("x", width/3+40 + margin.left) //leave 30 pixel space after the <rect>
 				.attr("y", function (d, i) {
 					return 10 + i * 20;
@@ -214,7 +215,7 @@ function graph10(){
 						.attr("fill-opacity",0.7);
 				});
 		}
-		
+
 
 		//add popup
 
@@ -265,13 +266,15 @@ function graph10(){
 
 
 		//Text label xAxis
-		function changeLabel(label){
+		function changeLabel(label, color){
 			svg
 				.append("text")       
+				.attr("fill", "#f0f0f0")
 				.attr("class","extra label-change")      
 				.attr("x",margin.left)
 				.attr("y",25)
-				.text(label);
+				.text(label)
+				.attr("fill", color);
 		}
 
 
@@ -286,7 +289,7 @@ function graph10(){
 			case 0:
 				addLegend();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Toutes catégories");
+				changeLabel("Toutes catégories","#fff");
 				epci
 					.transition()
 					.duration(250)
@@ -295,52 +298,52 @@ function graph10(){
 			case 1:
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Jeunes adultes, étudiants et cadres");
+				changeLabel("Jeunes adultes, étudiants et cadres", colors.range()[4]);
 				epci
 					.transition()
 					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
-						return value == 5 ? "#53995c"
+						return value == 5 ?  colors.range()[4]
 							: "#646464";
 					}));
 				break;
 			case 2:
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Trentenaires, cadres et prof. int.");
+				changeLabel("Trentenaires, cadres et prof. int.", colors.range()[5]);
 				epci
 					.transition()
 					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
-						return value == 6 ? "#7cc18b"
+						return value == 6 ? colors.range()[5]
 							: "#646464";
 					}));
 				break;
 			case 3:
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Employés et ouvriers");
+				changeLabel("Employés et ouvriers", colors.range()[3]);
 				epci
 					.transition()
 					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
-						return value == 4 ? "#e8e774"
+						return value == 4 ? colors.range()[3]
 							: "#646464";
 					}));
 				break;
 			case 4:
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Ouvriers et jeunes enfants");
+				changeLabel("Ouvriers et jeunes enfants", colors.range()[2]);
 				epci
 					.transition()
 					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
-						return value == 3 ? "#c4431d"
+						return value == 3 ? colors.range()[2]
 							: "#646464";
 					}));
 				break;
@@ -348,13 +351,13 @@ function graph10(){
 			case 5:
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Profil diversifié, plutôt âgé");
+				changeLabel("Profil diversifié, plutôt âgé", colors.range()[1]);
 				epci
 					.transition()
 					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
-						return value == 2 ? "#eec05d"
+						return value == 2 ? colors.range()[1]
 							: "#646464";
 					}));
 				break;		
@@ -362,13 +365,13 @@ function graph10(){
 			case 6:
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Retraités");
+				changeLabel("Retraités", colors.range()[0]);
 				epci
 					.transition()
 					.duration(250)
 					.attr("fill", ((d)=>{ 
 						let value = d.properties.clust;
-						return value == 1 ? "#e8e774"
+						return value == 1 ? colors.range()[0]
 							: "#646464";
 					}));
 				break;

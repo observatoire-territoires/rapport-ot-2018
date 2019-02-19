@@ -123,6 +123,7 @@ function graph4(){
 				.attr("class","extra label-change")      
 				.attr("x",20)
 				.attr("y",25)
+				.attr("fill", "#f0f0f0")
 				.text("Période");
 			
 			//Horizontal line
@@ -151,6 +152,7 @@ function graph4(){
 				.attr("transform",
 					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3) + ")")
 				.style("text-anchor", "end")
+				.attr("fill", "#f0f0f0")
 				.text("Taux d'évolution de la population");
 
 			//Text label xAxis
@@ -160,6 +162,7 @@ function graph4(){
 				.attr("transform",
 					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3+15) + ")")
 				.style("text-anchor", "end")
+				.attr("fill", "#f0f0f0")
 				.text("due a solde migratoire apparent");
 
 
@@ -204,6 +207,7 @@ function graph4(){
 				.attr("class","label-change label-change2")      
 				.attr("x",90)
 				.attr("y",25)
+				.attr("fill", "#f0f0f0")
 				.text(label);
 
 			//simulation force
@@ -310,6 +314,7 @@ function graph4(){
 			.attr("class", "label-circle")  
 			.attr("x",6*width/7-20)
 			.attr("y",25)
+			.attr("fill", "#f0f0f0")
 			.text("Solde migratoire annuel moyen");
 
 

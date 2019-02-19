@@ -83,7 +83,7 @@
   text, tspan{
     font-family: "MontserratWebMedium";
     font-style: normal;
-    fill: #f0f0f0;
+
     font-size: 11px;
   }
 
@@ -122,13 +122,13 @@
   
   .circle-legend {
     fill: none;
-    stroke: #fff;
+    stroke: #f0f0f0;
   }
 
   .region{
     fill:none;
     stroke-opacity: 1;
-    stroke:#fff;
+    stroke:#f0f0f0;
 }
 
   /*pop-up*/
@@ -173,7 +173,7 @@
   /*svg-06*/
 
   .tick line{
-    stroke: #fffff0;
+    stroke: #f0f0f0ff0;
   }
 
   .line{

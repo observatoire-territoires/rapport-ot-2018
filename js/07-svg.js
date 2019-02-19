@@ -172,6 +172,7 @@ function graph7(){
 			//Text label xAxis
 			svg
 				.append("text")       
+				.attr("fill", "#f0f0f0")
 				.attr("class","extra label-change")      
 				.attr("x",margin.left)
 				.attr("y",25)
@@ -200,6 +201,7 @@ function graph7(){
 			//Text label yAxis
 			svg
 				.append("text")       
+				.attr("fill", "#f0f0f0")
 				.attr("class","label")      
 				.attr("y",margin.top/2+25)
 				.attr("x", margin.left/2)
@@ -209,6 +211,7 @@ function graph7(){
 			//Text label yAxis
 			svg
 				.append("text")       
+				.attr("fill", "#f0f0f0")
 				.attr("class","label")      
 				.attr("y",margin.top/2+40)
 				.attr("x", margin.left/2)
@@ -223,6 +226,7 @@ function graph7(){
 				.attr("transform",
 					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3) + ")")
 				.style("text-anchor", "end")
+				.attr("fill", "#f0f0f0")
 				.text("Taux d'évolution de la population");
 
 			//Text label xAxis
@@ -232,6 +236,7 @@ function graph7(){
 				.attr("transform",
 					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3+15) + ")")
 				.style("text-anchor", "end")
+				.attr("fill", "#f0f0f0")
 				.text("due au solde naturel");
 
 
@@ -274,6 +279,7 @@ function graph7(){
 			.attr("y", margin.top/2+40)
 			.attr("dy", "0.5em")
 			.attr("text-anchor", "middle")
+			.attr("fill", "#f0f0f0")
 			.text(function (d, i) {
 				return format(colorsFill.domain()[i]);
 			});
@@ -285,6 +291,7 @@ function graph7(){
 			.attr("y", margin.top/2+40)
 			.attr("dy", "0.5em")
 			.attr("text-anchor", "middle")
+			.attr("fill", "#f0f0f0")
 			.text(format(colorsFill.domain()[5]));
 
 		svg
@@ -292,6 +299,7 @@ function graph7(){
 			.attr("x",3*width/7-40)
 			.attr("y",margin.top/2+5)
 			.attr("text-anchor", "start")
+			.attr("fill", "#f0f0f0")
 			.text("Taux de croissance annuel moyen (%)");
 
 
@@ -417,6 +425,7 @@ function graph7(){
 			.attr("class", "label-circle")  
 			.attr("x",6*width/7)
 			.attr("y",20)
+			.attr("fill", "#f0f0f0")
 			.text("Population");
 
 

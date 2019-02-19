@@ -79,7 +79,6 @@ function graph2() {
 			.selectAll("text")
 			.attr("y", 10);
 
-
 		svg
 			.append("g")
 			.attr("class", "axis y_axis")
@@ -114,6 +113,7 @@ function graph2() {
 			.attr("transform",
 				"translate(" + (width - margin.right) + " ," + (height - margin.bottom / 4) + ")")
 			.style("text-anchor", "end")
+			.attr("fill", "#f0f0f0")
 			.text("Taux de mobilité résidentielle des ménages");
 
 
@@ -194,6 +194,7 @@ function graph2() {
 
 		legend
 			.append("text")
+			.attr("fill", "#f0f0f0")
 			.attr("x", 40 + margin.left) //leave 30 pixel space after the <rect>
 			.attr("y", function (d, i) {
 				return 10 + i * 20;

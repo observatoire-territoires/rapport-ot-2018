@@ -79,6 +79,7 @@ function graph03(){
 				.attr("class","extra label-change")      
 				.attr("x",20)
 				.attr("y",25)
+				.attr("fill", "#f0f0f0")
 				.text("Période");
 			
 			//Horizontal line
@@ -113,6 +114,7 @@ function graph03(){
 				.attr("class","label-change label-change2")      
 				.attr("x",90)
 				.attr("y",25)
+				.attr("fill", "#f0f0f0")
 				.text(label);
 
 
@@ -176,6 +178,7 @@ function graph03(){
 
 			legend
 				.append("text")
+				.attr("fill", "#f0f0f0")
 				.attr("x", function (d, i) {
 					return (width/2-100+30) + i * 30;
 				})
@@ -196,6 +199,7 @@ function graph03(){
 				.attr("x",width/2)
 				.attr("y",margin.top/2+5)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("Taux d'évolution de la population due au solde");
 
 			svgLegend
@@ -203,6 +207,7 @@ function graph03(){
 				.attr("x",width/2)
 				.attr("y",margin.top/2+20)
 				.attr("text-anchor", "middle")
+				.attr("fill", "#f0f0f0")
 				.text("migratoire apparent (moyenne annuelle, en %) ");
 		}
 
