@@ -40,6 +40,10 @@
     border-radius: 8px 8px 8px 8px;
   }
 
+  .help-button{
+    border: 2px solid white;
+		color: #ffadad;
+  }
 
   .help-body{
     display:none;

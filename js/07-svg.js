@@ -307,6 +307,7 @@ function graph7(){
 
 			svg
 				.append("text")       
+				.attr("fill", "#f0f0f0")
 				.attr("class","label-change label-change2")      
 				.attr("x",70+margin.left)
 				.attr("y",25)
