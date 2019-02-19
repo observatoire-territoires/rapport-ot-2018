@@ -145,6 +145,7 @@ function graph4(){
 				.attr("y2",35)
 				.attr("stroke", "#fff");
 
+			/*
 			//Text label xAxis
 			svg
 				.append("text")       
@@ -163,8 +164,8 @@ function graph4(){
 					"translate(" + ((width-margin.right)) + " ," + (height-margin.bottom/3+15) + ")")
 				.style("text-anchor", "end")
 				.attr("fill", "#f0f0f0")
-				.text("due a solde migratoire apparent");
-
+				.text("due au solde migratoire apparent");
+			*/
 
 		} //function addExtra
 

@@ -153,7 +153,7 @@ function graph5(){
 		let svgLegend = d3.select("#c-svg-05-legend")
 			.append("svg")
 			.attr("width", width)
-			.attr("height", 220);
+			.attr("height", 185);
 
 
 
@@ -169,7 +169,7 @@ function graph5(){
 			.append("rect")
 			.attr("x", width/3-100)
 			.attr("y", function (d, i) {
-				return i * 20+45;
+				return i * 20+10;
 			})
 			.attr("width", 23)
 			.attr("height", 12)
@@ -182,14 +182,14 @@ function graph5(){
 			.attr("fill", "#f0f0f0")
 			.attr("x", width/3 +30 - 100) //leave 30 pixel space after the <rect>
 			.attr("y", function (d, i) {
-				return 50 + i * 20;
+				return 15 + i * 20;
 			})
 			.attr("dy", "0.5em")
 			.text(function (d, i) {
 				return legendText[i];
 			});
 
-
+		/*
 		svgLegend
 			.append("text")
 			.attr("fill", "#f0f0f0")
@@ -205,7 +205,7 @@ function graph5(){
 			.attr("y", 25)
 			.attr("dy", "0.5em")
 			.text("sur 1999-2009 et sur 2009-2014");
-
+			*/
 
 
 
@@ -240,7 +240,7 @@ function graph5(){
 					.html(`
 						<div><strong>${d.properties.libdep}</strong></div>
 						<div>
-							<div>Croissance migratoire</div>
+							<div>Évolution migratoire</div>
 							<em>1999-2009</em> : <span>${format(d.properties.tx_19992009)} % </span>
 							<br>
 							<em>2009-2014</em> : <span>${format(d.properties.tx_20092014)} % </span>

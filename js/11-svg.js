@@ -55,6 +55,10 @@ function graph11(){
 					featureCollection.features[j].properties.cat_cs6 = data[2][i].cat_cs6;
 					featureCollection.features[j].properties.cat_cs7 = data[2][i].cat_cs7;
 					featureCollection.features[j].properties.cat_cs8 = data[2][i].cat_cs8;
+					featureCollection.features[j].properties.lib_cs3 = data[2][i].lib_cs3;
+					featureCollection.features[j].properties.lib_cs6 = data[2][i].lib_cs6;
+					featureCollection.features[j].properties.lib_cs7 = data[2][i].lib_cs7;
+					featureCollection.features[j].properties.lib_cs8 = data[2][i].lib_cs8;
 					break;
 				}
 			}
@@ -115,26 +119,33 @@ function graph11(){
 		}
 
 		function zoomend(){
-			epci
-				.on("mouseover",function(d){
-					popup
-						.transition()
-						.duration(50)
-						.style("left", d3.event.pageX - 20 + "px")
-						.style("top", d3.event.pageY - 30 + "px")
-						.style("opacity", 1)
-						.style("text-align", "left");
-	
-					popup
-						.html(`
-							<div><strong>${d.properties.libepci}</strong></div>
-							`);
-	
-					//geographical unit
-					d3.select(this)
-						.attr("fill-opacity",0.7);
+			
+			let marker = document.querySelector("#label-change-csp");
 
-				});
+			switch (marker.textContent) {
+			case "Groupes socioprofessionnels":
+				testtest("");
+				break;
+			case "Étudiants":
+				testtest("lib_cs8");
+				break;
+			case "Retraités":
+				testtest("lib_cs7");
+				break;
+			case "Ouvriers et employés":
+				testtest("lib_cs6");
+				break;
+			case "Cadres et prof. int. sup.":
+				testtest("lib_cs3");
+				break;
+					
+
+			}
+
+	
+			
+
+
 		}
 		
 
@@ -178,7 +189,7 @@ function graph11(){
 		let svgLegend = d3.select("#c-svg-11-legend")
 			.append("svg")
 			.attr("width", width)
-			.attr("height", 120);
+			.attr("height", 85);
 
 		let legend = svgLegend.selectAll(".legend")
 			.data(colors.range())
@@ -187,7 +198,7 @@ function graph11(){
 			.attr("class", "legend");
 
 
-
+		/*
 		svgLegend
 			.append("text")
 			.attr("fill", "#f0f0f0")
@@ -205,7 +216,7 @@ function graph11(){
 			.attr("dy", "0.5em")
 			.attr("text-anchor", "middle")
 			.text("et évolution de cette part due aux mobilités résidentielles");
-
+		*/
 
 
 
@@ -213,7 +224,7 @@ function graph11(){
 			.append("rect")
 			.attr("x", width/3 -20)
 			.attr("y", function (d, i) {
-				return i * 20+45;
+				return i * 20+10;
 			})
 			.attr("width", 23)
 			.attr("height", 12)
@@ -226,7 +237,7 @@ function graph11(){
 			.attr("fill", "#f0f0f0")
 			.attr("x", width/3+10) //leave 30 pixel space after the <rect>
 			.attr("y", function (d, i) {
-				return 50 + i * 20;
+				return 15 + i * 20;
 			})
 			.attr("dy", "0.5em")
 			.text(function (d, i) {
@@ -248,48 +259,50 @@ function graph11(){
 
 		
 
+		function testtest(lib_cs){
+			epci
+				.on("mouseover", function(d){
+					popup
+						.transition()
+						.duration(50)
+						.style("left", d3.event.pageX - 20 + "px")
+						.style("top", d3.event.pageY - 30 + "px")
+						.style("opacity", 1)
+						.style("text-align", "left");
 
-		epci
-			.on("mouseover", function(d){
-				popup
-					.transition()
-					.duration(50)
-					.style("left", d3.event.pageX - 20 + "px")
-					.style("top", d3.event.pageY - 30 + "px")
-					.style("opacity", 1)
-					.style("text-align", "left");
+					popup
+						.html(`
+							<div><strong>${d.properties.libepci}</strong></div>
+							<div><strong>${d.properties[lib_cs]}</strong></div>
+							`);
 
-				popup
-					.html(`
-						<div><strong>${d.properties.libepci}</strong></div>
-						`);
-
-				//geographical unit
-				d3.select(this)
-					.attr("fill-opacity",0.7);
-
-
-			})
-			.on("mouseout", function(d){
-				popup
-					.transition()
-					.duration(100)
-					.style("opacity", 0);
-
-				//geographical unit
-				d3.select(this)
-					.attr("fill-opacity",1);
+					//geographical unit
+					d3.select(this)
+						.attr("fill-opacity",0.7);
 
 
+				})
+				.on("mouseout", function(d){
+					popup
+						.transition()
+						.duration(100)
+						.style("opacity", 0);
 
-			});
+					//geographical unit
+					d3.select(this)
+						.attr("fill-opacity",1);
+
+				});
+
+		}
 
 
 		//Text label xAxis
 		function changeLabel(label){
 			svg
 				.append("text")       
-				.attr("class","extra label-change")      
+				.attr("class","extra label-change")  
+				.attr("id", "label-change-csp")    
 				.attr("x",margin.left)
 				.attr("y",25)
 				.attr("fill", "#fff")
@@ -307,6 +320,7 @@ function graph11(){
 			case 0:
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Groupes socioprofessionnels");
+				testtest("");
 				epci
 					.transition()
          			.duration(250)
@@ -314,7 +328,8 @@ function graph11(){
 				break;
 			case 1:
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
-				changeLabel("Etudiants");
+				changeLabel("Étudiants");
+				testtest("lib_cs8");
 				epci
 					.transition()
            			.duration(250)
@@ -323,6 +338,7 @@ function graph11(){
 			case 2:
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Retraités");
+				testtest("lib_cs7");
 				epci
 					.transition()
            			.duration(250)
@@ -331,6 +347,7 @@ function graph11(){
 			case 3:
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Ouvriers et employés");
+				testtest("lib_cs6");
 				epci
 					.transition()
            			.duration(250)
@@ -339,6 +356,7 @@ function graph11(){
 			case 4:
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Cadres et prof. int. sup.");
+				testtest("lib_cs3");
 				epci
 					.transition()
            			.duration(250)

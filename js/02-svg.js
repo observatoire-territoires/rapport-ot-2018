@@ -114,7 +114,7 @@ function graph2() {
 				"translate(" + (width - margin.right) + " ," + (height - margin.bottom / 4) + ")")
 			.style("text-anchor", "end")
 			.attr("fill", "#f0f0f0")
-			.text("Taux de mobilité résidentielle des ménages");
+			.text("Part des ménages ayant changé de logement");
 
 
 		//create div popup
@@ -137,13 +137,13 @@ function graph2() {
 				popup
 					.html(`
 						<div>
-							<em>Mobilité intra-communale</em> : <span>${format(d.data.meme_com)} % </span>
+							<em>Chgt de logement dans la même commune/em> : <span>${format(d.data.meme_com)} % </span>
 							<br>
-							<em>Mobilité inter-communale</em> : <span>${format(d.data.change_com)} % </span>
+							<em>Chgt de commune dans le même département</em> : <span>${format(d.data.change_com)} % </span>
 							<br>
-							<em>Mobilité inter-départementale</em> : <span>${format(d.data.change_dep)} % </span>
+							<emChgt de département dans la même région</em> : <span>${format(d.data.change_dep)} % </span>
 							<br>
-							<em>Mobilité inter-régionale</em> : <span>${format(d.data.change_reg)} % </span>
+							<em>Chgt de région en France</em> : <span>${format(d.data.change_reg)} % </span>
 							<br>
 							<em>Arrivée depuis l'étranger</em> : <span>${format(d.data.change_int)} % </span>
 						</div>

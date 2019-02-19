@@ -234,7 +234,7 @@ function graph6(){
 		
 
 
-
+		/*
 		//Text label yAxis
 		svg
 			.append("text")       
@@ -254,7 +254,7 @@ function graph6(){
 			.attr("x", margin.left/2)
 			.style("text-anchor", "start")
 			.text("due a solde migratoire apparent");
-
+		*/
 
 
 		//add popup

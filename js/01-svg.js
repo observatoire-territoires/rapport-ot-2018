@@ -19,7 +19,7 @@ function graph1(){
 		
 
 	let g = svg.append("g")
-		.attr("transform", "translate(" + width/2 +  "," + height/2 + ")");
+		.attr("transform", "translate(" + width/2 +  ","  + height/2 + ")");
 
 	//initiate format number
 	/*Initiate format number*/
@@ -91,7 +91,7 @@ function graph1(){
 		function ticked(){
 			circles
 				.attr("cx", ((d)=>{return d.x;}))
-				.attr("cy", ((d)=>{return d.y;}));
+				.attr("cy", ((d)=>{return d.y+20;}));
 		}
 
 		//event click circles
@@ -114,6 +114,38 @@ function graph1(){
 		}
 
 
+		function addExtra(){
+			//Text label xAxis
+			svg
+				.append("text")       
+				.attr("class","extra label-change")      
+				.attr("x",20)
+				.attr("y",25)
+				.attr("fill", "#f0f0f0")
+				.text("En 2014, en France");
+			
+			//Horizontal line
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",20)
+				.attr("y1",5)
+				.attr("x2",180)
+				.attr("y2",5)
+				.attr("stroke", "#fff");
+
+			svg
+				.append("line")
+				.attr("class","extra line-extra")
+				.attr("x1",20)
+				.attr("y1",35)
+				.attr("x2",180)
+				.attr("y2",35)
+				.attr("stroke", "#fff");
+		} //function addExtra
+
+
+		addExtra();
 
 
 		//GroupCircles
@@ -143,37 +175,41 @@ function graph1(){
 			simulation.alpha(1).restart();
 
 
-			d3.select("#c-svg-01").selectAll("text").remove();
-			d3.select("#c-svg-01").selectAll("line").remove();
+			d3.select("#c-svg-01").selectAll(".label-text").remove();
+			d3.select("#c-svg-01").selectAll(".label-line").remove();
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 50+width/4) //leave 30 pixel space after the <rect>
-				.attr("y", 10)
+				.attr("y", 70)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
-				.text("89 % de la population");
+				.text("89 % des individus");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 50+width/4) //leave 30 pixel space after the <rect>
-				.attr("y", 25)
+				.attr("y", 85)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("n'ont pas changé de logement");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 55+3*width/4) //leave 30 pixel space after the <rect>
-				.attr("y", 90)
+				.attr("y", 150)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
-				.text("11 % de la population");
+				.text("11 % des individus");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 55+3*width/4) //leave 30 pixel space after the <rect>
-				.attr("y", 105)
+				.attr("y", 165)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("ont changé de logement");
@@ -185,85 +221,95 @@ function graph1(){
 		function fiveCircles(){
 
 
-			d3.select("#c-svg-01").selectAll("text").remove();
-			d3.select("#c-svg-01").selectAll("line").remove();
+			d3.select("#c-svg-01").selectAll(".label-text").remove();
+			d3.select("#c-svg-01").selectAll(".label-line").remove();
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 10+width/6) //leave 30 pixel space after the <rect>
-				.attr("y", 110)
+				.attr("y", 120)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("4 % sont restées");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 10+width/6) //leave 30 pixel space after the <rect>
-				.attr("y", 125)
+				.attr("y", 135)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("dans la même commune");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 10+2*width/6) //leave 30 pixel space after the <rect>
-				.attr("y", 290)
+				.attr("y", 300)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("4,1 % ont changé de commune");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 10+2*width/6) //leave 30 pixel space after the <rect>
-				.attr("y", 305)
+				.attr("y", 315)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("au sein du même département");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 10+width/2) //leave 30 pixel space after the <rect>
-				.attr("y", 110)
+				.attr("y", 120)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("1,2 % ont changé de département");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 10+width/2) //leave 30 pixel space after the <rect>
-				.attr("y", 125)
+				.attr("y", 135)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("au sein de la même région");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 5+2*width/3) //leave 30 pixel space after the <rect>
-				.attr("y", 290)
+				.attr("y", 300)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("1,6 % ont changé");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 5+2*width/3) //leave 30 pixel space after the <rect>
-				.attr("y", 305)
+				.attr("y", 315)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("de région");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 5*width/6) //leave 30 pixel space after the <rect>
-				.attr("y", 110)
+				.attr("y", 120)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("0,4 % sont arrivés");
 
 			svg
 				.append("text")
+				.attr("class","label-text")
 				.attr("x", 5*width/6) //leave 30 pixel space after the <rect>
-				.attr("y", 125)
+				.attr("y", 135)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
 				.text("de l'étranger");
@@ -272,10 +318,11 @@ function graph1(){
 			//Vertical Line
 			svg
 				.append("line")
+				.attr("class", "label-line")
 				.attr("x1", 10+width/6)
 				.attr("x2", 10+width/6)
-				.attr("y1",135)
-				.attr("y2", 155)
+				.attr("y1",155)
+				.attr("y2", 175)
 				.attr("stroke", "#f0f0f0")
 				.attr("stroke-width",1);
 
@@ -283,38 +330,42 @@ function graph1(){
 
 			svg
 				.append("line")
+				.attr("class", "label-line")
 				.attr("x1", 10+2*width/6)
 				.attr("x2", 10+2*width/6)
-				.attr("y1",240)
-				.attr("y2", 260)
+				.attr("y1",260)
+				.attr("y2", 280)
 				.attr("stroke", "#f0f0f0")
 				.attr("stroke-width",1);
 
 			svg
 				.append("line")
+				.attr("class", "label-line")
 				.attr("x1", 10+width/2)
 				.attr("x2", 10+width/2)
-				.attr("y1",135)
-				.attr("y2", 155)
+				.attr("y1",155)
+				.attr("y2", 175)
 				.attr("stroke", "#f0f0f0")
 				.attr("stroke-width",1);
 
 			svg
 				.append("line")
+				.attr("class", "label-line")
 				.attr("x1", 5+2*width/3)
 				.attr("x2", 5+2*width/3)
-				.attr("y1",240)
-				.attr("y2", 260)
+				.attr("y1",260)
+				.attr("y2", 280)
 				.attr("stroke", "#f0f0f0")
 				.attr("stroke-width",1);
 
 
 			svg
 				.append("line")
+				.attr("class", "label-line")
 				.attr("x1", 5*width/6)
 				.attr("x2", 5*width/6)
-				.attr("y1",135)
-				.attr("y2", 155)
+				.attr("y1",155)
+				.attr("y2", 175)
 				.attr("stroke", "#f0f0f0")
 				.attr("stroke-width",1);
 
@@ -372,10 +423,6 @@ function graph1(){
 
 
 		}
-
-
-
-
 
 
 		//initialize the scrollama
