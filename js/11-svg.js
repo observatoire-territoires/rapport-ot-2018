@@ -124,19 +124,19 @@ function graph11(){
 
 			switch (marker.textContent) {
 			case "Groupes socioprofessionnels":
-				testtest("");
+				showPopupCsp("");
 				break;
 			case "Étudiants":
-				testtest("lib_cs8");
+				showPopupCsp("lib_cs8");
 				break;
 			case "Retraités":
-				testtest("lib_cs7");
+				showPopupCsp("lib_cs7");
 				break;
 			case "Ouvriers et employés":
-				testtest("lib_cs6");
+				showPopupCsp("lib_cs6");
 				break;
 			case "Cadres et prof. int. sup.":
-				testtest("lib_cs3");
+				showPopupCsp("lib_cs3");
 				break;
 					
 
@@ -259,7 +259,7 @@ function graph11(){
 
 		
 
-		function testtest(lib_cs){
+		function showPopupCsp(lib_cs){
 			epci
 				.on("mouseover", function(d){
 					popup
@@ -273,7 +273,7 @@ function graph11(){
 					popup
 						.html(`
 							<div><strong>${d.properties.libepci}</strong></div>
-							<div><strong>${d.properties[lib_cs]}</strong></div>
+							<div>${d.properties[lib_cs]}</div>
 							`);
 
 					//geographical unit
@@ -320,7 +320,7 @@ function graph11(){
 			case 0:
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Groupes socioprofessionnels");
-				testtest("");
+				showPopupCsp("");
 				epci
 					.transition()
          			.duration(250)
@@ -329,7 +329,7 @@ function graph11(){
 			case 1:
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Étudiants");
-				testtest("lib_cs8");
+				showPopupCsp("lib_cs8");
 				epci
 					.transition()
            			.duration(250)
@@ -338,7 +338,7 @@ function graph11(){
 			case 2:
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Retraités");
-				testtest("lib_cs7");
+				showPopupCsp("lib_cs7");
 				epci
 					.transition()
            			.duration(250)
@@ -347,7 +347,7 @@ function graph11(){
 			case 3:
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Ouvriers et employés");
-				testtest("lib_cs6");
+				showPopupCsp("lib_cs6");
 				epci
 					.transition()
            			.duration(250)
@@ -356,7 +356,7 @@ function graph11(){
 			case 4:
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Cadres et prof. int. sup.");
-				testtest("lib_cs3");
+				showPopupCsp("lib_cs3");
 				epci
 					.transition()
            			.duration(250)
