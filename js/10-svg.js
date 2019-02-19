@@ -134,7 +134,27 @@ function graph10(){
 			let svgLegend = d3.select("#c-svg-10-legend")
 				.append("svg")
 				.attr("width", width)
-				.attr("height", 120);
+				.attr("height", 160);
+
+			svgLegend
+				.append("text")
+				.attr("fill", "#f0f0f0")
+				.attr("x", width/2) //leave 30 pixel space after the <rect>
+				.attr("y", 10)
+				.attr("dy", "0.5em")
+				.attr("text-anchor", "middle")
+				.text("Profil des individus surreprésentés");
+
+			svgLegend
+				.append("text")
+				.attr("fill", "#f0f0f0")
+				.attr("x", width/2) //leave 30 pixel space after the <rect>
+				.attr("y", 25)
+				.attr("dy", "0.5em")
+				.attr("text-anchor", "middle")
+				.text("parmi les nouveaux arrivants");
+
+
 
 
 
@@ -147,9 +167,9 @@ function graph10(){
 
 			legend
 				.append("rect")
-				.attr("x", width/3+10 + margin.left)
+				.attr("x", width/3+30)
 				.attr("y", function (d, i) {
-					return i * 20+5;
+					return i * 20+45;
 				})
 				.attr("width", 23)
 				.attr("height", 12)
@@ -160,9 +180,9 @@ function graph10(){
 			legend
 				.append("text")
 				.attr("fill", "#f0f0f0")
-				.attr("x", width/3+40 + margin.left) //leave 30 pixel space after the <rect>
+				.attr("x", width/3+60) //leave 30 pixel space after the <rect>
 				.attr("y", function (d, i) {
-					return 10 + i * 20;
+					return 50 + i * 20;
 				})
 				.attr("dy", "0.5em")
 				.text(function (d, i) {

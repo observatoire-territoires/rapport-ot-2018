@@ -168,7 +168,70 @@ function graph11(){
 		addExtra();
 
 
+		//LEGEND
+		
+		const legendText = ["Faible part du groupe et forte baisse de cette part",
+			"Forte part du groupe et forte baisse de cette part",
+			"Faible aprt du groupe et forte hausse de cette part",
+			"Forte part du groupe et forte hausse de cette part"];
 
+		let svgLegend = d3.select("#c-svg-11-legend")
+			.append("svg")
+			.attr("width", width)
+			.attr("height", 120);
+
+		let legend = svgLegend.selectAll(".legend")
+			.data(colors.range())
+			.enter()
+			.append("g")
+			.attr("class", "legend");
+
+
+
+		svgLegend
+			.append("text")
+			.attr("fill", "#f0f0f0")
+			.attr("x", width/2) //leave 30 pixel space after the <rect>
+			.attr("y", 10)
+			.attr("dy", "0.5em")
+			.attr("text-anchor", "middle")
+			.text("Part du groupe socioprofessionnel dans la population présente");
+
+		svgLegend
+			.append("text")
+			.attr("fill", "#f0f0f0")
+			.attr("x", width/2) //leave 30 pixel space after the <rect>
+			.attr("y", 25)
+			.attr("dy", "0.5em")
+			.attr("text-anchor", "middle")
+			.text("et évolution de cette part due aux mobilités résidentielles");
+
+
+
+
+		legend
+			.append("rect")
+			.attr("x", width/3 -20)
+			.attr("y", function (d, i) {
+				return i * 20+45;
+			})
+			.attr("width", 23)
+			.attr("height", 12)
+			.style("stroke", "black")
+			.style("stroke-width", 0.1)
+			.style("fill", function (d) { return d; });
+
+		legend
+			.append("text")
+			.attr("fill", "#f0f0f0")
+			.attr("x", width/3+10) //leave 30 pixel space after the <rect>
+			.attr("y", function (d, i) {
+				return 50 + i * 20;
+			})
+			.attr("dy", "0.5em")
+			.text(function (d, i) {
+				return legendText[i];
+			});
 
 
 
