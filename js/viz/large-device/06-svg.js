@@ -286,7 +286,7 @@ function graph6(){
 		//MOUSE EVENT
 
 
-		d3.selectAll(".line")
+		d3.selectAll(".lineZAU")
 			.on("mouseover", function(d,i){
 				popup
 					.transition()
