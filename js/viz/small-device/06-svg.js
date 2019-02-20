@@ -1,6 +1,6 @@
 //small device
 
-function graph6(position){
+function graph6Min(position){
 
 
 	//sizing
@@ -359,106 +359,6 @@ function graph6(position){
 
 
 
-		//Legend
-		const legendText = ["Grands pôles", "Couronnes de grands pôles", "Communes multipolarisées des grandes aires urbaines", "Pôles moyens", "Couronnes des pôles moyens", "Petits pôles", "Couronnes des petits pôles", "Autres communes multipolarisées", "Communes isolées, hors influence des pôles"];
-
-		let svgLegend = d3.select("#c-svg-06-legend")
-			.append("svg")
-			.attr("width", width)
-			.attr("height", 180);
-
-
-
-		let legend = svgLegend.selectAll(".legend")
-			.data(color)
-			.enter()
-			.append("g")
-			.attr("class", "legend");
-
-
-
-
-		legend
-			.append("rect")
-			.attr("x", 10 + margin.left)
-			.attr("y", function (d, i) {
-				return i * 20+5;
-			})
-			.attr("width", 23)
-			.attr("height", 12)
-			.style("stroke", "black")
-			.style("stroke-width", 0.1)
-			.style("fill", function (d) { return d; });
-
-		legend
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", 40 + margin.left) //leave 30 pixel space after the <rect>
-			.attr("y", function (d, i) {
-				return 10 + i * 20;
-			})
-			.attr("dy", "0.5em")
-			.text(function (d, i) {
-				return legendText[i];
-			});
-
-
-
-
-
-
-
-
-
-		/*Resize SVG, responsive*/
-
-		console.log("Etat du document : " + document.readyState);
-		if (document.readyState == "loading") {
-			document.addEventListener("DOMContentLoaded", ()=>{
-				resize();
-
-			});
-		} else {
-			resize();
-
-		}
-
-		d3.select(window)
-			.on("resize", ()=>{
-				resize();
-
-			});
-
-
-		/*Resize SVG*/
-		function resize(){
-
-			/*Update width and height*/
-			width = parseInt(d3.select("#c-svg-06").style("width"), 10);
-			height = parseInt(d3.select("#c-svg-06").style("height"),10);
-			console.log("width window : " + window.innerWidth);
-			/*Resize chart*/
-			xScale.range([margin.left, width-margin.right]);
-
-			yAxis.tickSize(width);
-
-			d3.select(svg.node().parentNode)
-				.style("width", width);
-
-			svg
-				.attr("width",width);
-		
-
-		}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -479,4 +379,4 @@ function graph6(position){
 } //function graph6
 
 
-graph6("#c-svg-06-min");
+graph6Min("#c-svg-06-min");

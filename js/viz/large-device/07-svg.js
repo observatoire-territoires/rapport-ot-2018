@@ -480,27 +480,27 @@ function graph7(){
 			deplaceOutputBullet3();
 			switch (e.target.value) {
 			case "0":
-				d3.selectAll(".label-change2").remove();
+				d3.select("#c-svg-07").selectAll(".label-change2").remove();
 				updateData("pop_1975", "tx_pop_1975", "tx_pop_sn_1975", "tx_pop_sm_1975", inputValues3[0]);
 				break;
 			case "1":
-				d3.selectAll(".label-change2").remove();
+				d3.select("#c-svg-07").selectAll(".label-change2").remove();
 				updateData("pop_1982", "tx_pop_1982", "tx_pop_sn_1982", "tx_pop_sm_1982", inputValues3[1]);
 				break;	
 			case "2":
-				d3.selectAll(".label-change2").remove();
+				d3.select("#c-svg-07").selectAll(".label-change2").remove();
 				updateData("pop_1990", "tx_pop_1990", "tx_pop_sn_1990", "tx_pop_sm_1990", inputValues3[2]);
 				break;
 			case "3":
-				d3.selectAll(".label-change2").remove();
+				d3.select("#c-svg-07").selectAll(".label-change2").remove();
 				updateData("pop_1999", "tx_pop_1999", "tx_pop_sn_1999", "tx_pop_sm_1999", inputValues3[3]);
 				break;
 			case "4":
-				d3.selectAll(".label-change2").remove();
+				d3.select("#c-svg-07").selectAll(".label-change2").remove();
 				updateData("pop_2009", "tx_pop_2009", "tx_pop_sn_2009", "tx_pop_sm_2009", inputValues3[4]);
 				break;
 			case "5":
-				d3.selectAll(".label-change2").remove();
+				d3.select("#c-svg-07").selectAll(".label-change2").remove();
 				updateData("pop_2014", "tx_pop_2014", "tx_pop_sn_2014", "tx_pop_sm_2014", inputValues3[5]);
 				break;
 				

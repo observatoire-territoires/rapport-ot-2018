@@ -1,6 +1,6 @@
 //small device
 
-function graph10(position){
+function graph10Min(position){
 	
 
 	//sizing
@@ -368,13 +368,13 @@ function graph10(position){
 } //function graph10
 
 
-graph10("#c-svg-10-min-1");
-graph10("#c-svg-10-min-2");
-graph10("#c-svg-10-min-3");
-graph10("#c-svg-10-min-4");
-graph10("#c-svg-10-min-5");
-graph10("#c-svg-10-min-6");
-graph10("#c-svg-10-min-7");
+graph10Min("#c-svg-10-min-1");
+graph10Min("#c-svg-10-min-2");
+graph10Min("#c-svg-10-min-3");
+graph10Min("#c-svg-10-min-4");
+graph10Min("#c-svg-10-min-5");
+graph10Min("#c-svg-10-min-6");
+graph10Min("#c-svg-10-min-7");
 
 
 

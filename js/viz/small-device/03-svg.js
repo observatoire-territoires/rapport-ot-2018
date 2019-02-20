@@ -18,7 +18,7 @@ output03Min.oninput = function(){
 //set the default value
 output03Min.oninput();
 
-function graph03(position){
+function graph3Min(position){
 
 
 	//sizing
@@ -285,7 +285,7 @@ function graph03(position){
 
 
 
-graph03("#c-svg-03-min");
+graph3Min("#c-svg-03-min");
 
 
 

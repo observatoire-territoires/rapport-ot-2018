@@ -278,9 +278,7 @@ function graph5(){
 
 } //fonction graph5
 
-
-
-
+d3.select("#c-svg-05-legend").selectAll("*").remove();
 
 
 const helpButton5 = document.querySelector("#help-button5");

@@ -3,7 +3,7 @@
 
 	
 
-function graph1(position){
+function graph1Min(position){
 
 
 	//sizing
@@ -415,5 +415,5 @@ function graph1(position){
 } //function graph1
 
 
-graph1("#c-svg-01-min-1");
-graph1("#c-svg-01-min-2");
+graph1Min("#c-svg-01-min-1");
+graph1Min("#c-svg-01-min-2");

@@ -1,6 +1,6 @@
 //small device
 
-function graph8(){
+function graph8Min(){
 	//change svg with clic button
 	let object08 = document.querySelector("#object-08-min");
 
@@ -116,172 +116,6 @@ function graph8(){
 	const width = document.querySelector("#c-svg-08").clientWidth;
 	const height = 90;
 
-	let svg = d3.select("#c-svg-08-legend")
-		.append("svg")
-		.attr("width", width)
-		.attr("height", height);
-
-
-	legendAllFlow();
-
-	function legendAllFlow(){
-
-		
-
-		let allFlow = svg.append("g")
-			.attr("class", "all-flow");
-		
-		
-		allFlow
-			.append("rect")
-			.attr("x", 30+width/3)
-			.attr("y", 25)
-			.attr("width", 7.2)
-			.attr("height",40)
-			.attr("fill", "#fff");
-
-		allFlow
-			.append("rect")
-			.attr("x", 80+width/3)
-			.attr("y", 25)
-			.attr("width", 2.55)
-			.attr("height",40)
-			.attr("fill", "#fff");
-
-		allFlow
-			.append("rect")
-			.attr("x", 130+width/3)
-			.attr("y", 25)
-			.attr("width", 1.79)
-			.attr("height",40)
-			.attr("fill", "#fff");
-
-		allFlow
-			.append("rect")
-			.attr("x", 180+width/3)
-			.attr("y", 25)
-			.attr("width", 1.09)
-			.attr("height",40)
-			.attr("fill", "#fff");
-
-		allFlow
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", 30+width/3)
-			.attr("y", 85)
-			.text("40 000");
-
-		allFlow
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", 80+width/3)
-			.attr("y", 85)
-			.text("5 000");
-
-
-		allFlow
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", 130+width/3)
-			.attr("y", 85)
-			.text("2 500");
-
-		allFlow
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", 180+width/3)
-			.attr("y", 85)
-			.text("1 000");
-	}
-
-
-
-
-
-	function legendByFlow(){
-
-		let byFlow = svg.append("g")
-			.attr("class", "by-flow");
-		
-		
-		byFlow
-			.append("rect")
-			.attr("x", 30+width/3)
-			.attr("y", 25)
-			.attr("width", 5.33)
-			.attr("height",40)
-			.attr("fill", "#fff");
-
-		byFlow
-			.append("rect")
-			.attr("x", 80+width/3)
-			.attr("y", 25)
-			.attr("width", 3.8)
-			.attr("height",40)
-			.attr("fill", "#fff");
-
-		byFlow
-			.append("rect")
-			.attr("x", 130+width/3)
-			.attr("y", 25)
-			.attr("width", 2.71)
-			.attr("height",40)
-			.attr("fill", "#fff");
-
-		byFlow
-			.append("rect")
-			.attr("x", 180+width/3)
-			.attr("y", 25)
-			.attr("width", 1.72)
-			.attr("height",40)
-			.attr("fill", "#fff");
-
-		byFlow
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", 30+width/3)
-			.attr("y", 85)
-			.text("10 000");
-
-		byFlow
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", 80+width/3)
-			.attr("y", 85)
-			.text("5 000");
-
-
-		byFlow
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", 130+width/3)
-			.attr("y", 85)
-			.text("2 000");
-
-		byFlow
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", 180+width/3)
-			.attr("y", 85)
-			.text("1 000");
-	}
-
-
-
-
-	let legendFlow = svg.append("g")
-		.attr("class", "legend-text");
-
-	legendFlow
-		.append("text")
-		.attr("x", width/2)
-		.attr("y", 10)
-		.attr("text-anchor", "middle")
-		.attr("fill", "#f0f0f0")
-		.text("Nombre d'individus");
-
-
-
 
 Array.from(document.querySelectorAll(".button-csp")).forEach((el,i)=>{
 		el.addEventListener("click", function(e){
@@ -325,4 +159,4 @@ Array.from(document.querySelectorAll(".button-csp")).forEach((el,i)=>{
 
 } //functiongraph08
 
-graph8();
+graph8Min();

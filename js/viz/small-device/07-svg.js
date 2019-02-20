@@ -37,7 +37,7 @@ window.addEventListener("resize",()=>{
 
 //d3 processing img
 
-function graph7(position){
+function graph7Min(position){
 
 
 	//sizing
@@ -482,27 +482,27 @@ function graph7(position){
 			deplaceOutputBullet3Min();
 			switch (e.target.value) {
 			case "0":
-				d3.selectAll(".label-change2").remove();
+				d3.select(position).selectAll(".label-change2").remove();
 				updateData("pop_1975", "tx_pop_1975", "tx_pop_sn_1975", "tx_pop_sm_1975", inputValues3Min[0]);
 				break;
 			case "1":
-				d3.selectAll(".label-change2").remove();
+				d3.select(position).selectAll(".label-change2").remove();
 				updateData("pop_1982", "tx_pop_1982", "tx_pop_sn_1982", "tx_pop_sm_1982", inputValues3Min[1]);
 				break;	
 			case "2":
-				d3.selectAll(".label-change2").remove();
+				d3.select(position).selectAll(".label-change2").remove();
 				updateData("pop_1990", "tx_pop_1990", "tx_pop_sn_1990", "tx_pop_sm_1990", inputValues3Min[2]);
 				break;
 			case "3":
-				d3.selectAll(".label-change2").remove();
+				d3.select(position).selectAll(".label-change2").remove();
 				updateData("pop_1999", "tx_pop_1999", "tx_pop_sn_1999", "tx_pop_sm_1999", inputValues3Min[3]);
 				break;
 			case "4":
-				d3.selectAll(".label-change2").remove();
+				d3.select(position).selectAll(".label-change2").remove();
 				updateData("pop_2009", "tx_pop_2009", "tx_pop_sn_2009", "tx_pop_sm_2009", inputValues3Min[4]);
 				break;
 			case "5":
-				d3.selectAll(".label-change2").remove();
+				d3.select(position).selectAll(".label-change2").remove();
 				updateData("pop_2014", "tx_pop_2014", "tx_pop_sn_2014", "tx_pop_sm_2014", inputValues3Min[5]);
 				break;
 				
@@ -532,5 +532,5 @@ function graph7(position){
 } //function graph7
 
 
-graph7("#c-svg-07-min");
+graph7Min("#c-svg-07-min");
 

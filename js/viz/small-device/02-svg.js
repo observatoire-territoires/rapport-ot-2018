@@ -1,6 +1,6 @@
 //small device
 
-function graph2(position) {
+function graph2Min(position) {
 
 
 
@@ -175,5 +175,5 @@ function graph2(position) {
 
 } //fonction graph2
 
-graph2("#c-svg-02-min");
+graph2Min("#c-svg-02-min");
 

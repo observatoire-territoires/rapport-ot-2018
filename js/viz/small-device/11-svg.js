@@ -1,4 +1,4 @@
-function graph11(position){
+function graph11Min(position){
 
 
 	//sizing
@@ -356,10 +356,10 @@ function graph11(position){
 
 
 
-graph11("#c-svg-11-min-1");
-graph11("#c-svg-11-min-2");
-graph11("#c-svg-11-min-3");
-graph11("#c-svg-11-min-4");
+graph11Min("#c-svg-11-min-1");
+graph11Min("#c-svg-11-min-2");
+graph11Min("#c-svg-11-min-3");
+graph11Min("#c-svg-11-min-4");
 
 
 

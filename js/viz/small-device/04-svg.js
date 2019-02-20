@@ -38,7 +38,7 @@ window.addEventListener("resize",()=>{
 
 //d3 processing img
 
-function graph4(position){
+function graph4Min(position){
 
 
 	//sizing
@@ -69,7 +69,6 @@ function graph4(position){
 	//let pop_data = "pop_sm_68_75";
 
 	d3.csv("data/csv/data-04.csv").then(function(data){
-
 
 
 		data.forEach((d)=>{
@@ -412,5 +411,5 @@ function graph4(position){
 
 
 
-graph4("#c-svg-04-min");
+graph4Min("#c-svg-04-min");
 

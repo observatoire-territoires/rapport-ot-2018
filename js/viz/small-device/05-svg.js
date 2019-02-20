@@ -1,6 +1,6 @@
 //small device
 
-function graph5(position){
+function graph5Min(position){
 
 
 	//sizing
@@ -140,77 +140,6 @@ function graph5(position){
 
 
 
-
-		//Legend
-		const legendText = ["Décroissance migratoire sur 1999-2009 et sur 2009-2014",
-			"Décroissance migratoire sur 1999-2009 et croissance faible sur 2009-2014",
-			"Décroissance migratoire sur 1999-2009 et croissance forte sur 2009-2014",
-			"Croissance faible sur 1999-2009 et décroissance sur 2009-2014",
-			"Croissance faible sur 1999-2009 et sur 2009-2014",
-			"Croissance faible sur 1999-2009 et croissance forte sur 2009-2014",
-			"Croissance forte sur 1999-2009 et décroissance sur 2009-2014",
-			"Croissance forte sur 1999-2009 et croissance faible sur 2009-2014",
-			"Croissance forte sur 1999-2009 et sur 2009-2014"];
-
-		let svgLegend = d3.select("#c-svg-05-legend")
-			.append("svg")
-			.attr("width", width)
-			.attr("height", 185);
-
-
-
-		let legend = svgLegend.selectAll(".legend")
-			.data(colors.range())
-			.enter()
-			.append("g")
-			.attr("class", "legend");
-
-
-
-		legend
-			.append("rect")
-			.attr("x", width/3-100)
-			.attr("y", function (d, i) {
-				return i * 20+10;
-			})
-			.attr("width", 23)
-			.attr("height", 12)
-			.style("stroke", "black")
-			.style("stroke-width", 0.1)
-			.style("fill", function (d) { return d; });
-
-		legend
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", width/3 +30 - 100) //leave 30 pixel space after the <rect>
-			.attr("y", function (d, i) {
-				return 15 + i * 20;
-			})
-			.attr("dy", "0.5em")
-			.text(function (d, i) {
-				return legendText[i];
-			});
-
-		/*
-		svgLegend
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", width/3-100) //leave 30 pixel space after the <rect>
-			.attr("y", 10)
-			.attr("dy", "0.5em")
-			.text("Typologie de l'évolution de la croissance migratoire");
-
-		svgLegend
-			.append("text")
-			.attr("fill", "#f0f0f0")
-			.attr("x", width/3-100) //leave 30 pixel space after the <rect>
-			.attr("y", 25)
-			.attr("dy", "0.5em")
-			.text("sur 1999-2009 et sur 2009-2014");
-			*/
-
-
-
 		//add popup
 
 		//create div popup
@@ -274,5 +203,5 @@ function graph5(position){
 } //fonction graph5
 
 
-graph5("#c-svg-05-min");
+graph5Min("#c-svg-05-min");
 

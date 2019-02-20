@@ -42,7 +42,7 @@ function graph6(){
 		//select key values
 		let keys = data.columns.slice(1,10);
 
-		//return min & max values
+		// turn min & max values
 		let max = d3.max(data, (d)=>{return d3.max(keys,(key)=>{return d[key];});});
 		let min = d3.min(data, (d)=>{return d3.min(keys,(key)=>{return d[key];});});
 
@@ -167,55 +167,73 @@ function graph6(){
 		svg
 			.append("path")
 			.datum(data)
-			.attr("class", "line")
+			.attr("class", "lineZAU")
+			.attr("fill", "none")
+			.attr("stroke-width", 2)
 			.attr("d", line);
 
 		svg
 			.append("path")
 			.datum(data)
-			.attr("class", "line")
+			.attr("class", "lineZAU")
+			.attr("fill", "none")
+			.attr("stroke-width", 2)
 			.attr("d", line2);
 
 		svg
 			.append("path")
 			.datum(data)
-			.attr("class", "line")
+			.attr("class", "lineZAU")
+			.attr("fill", "none")
+			.attr("stroke-width", 2)
 			.attr("d", line3);
 
 		svg
 			.append("path")
 			.datum(data)
-			.attr("class", "line")
+			.attr("class", "lineZAU")
+			.attr("fill", "none")
+			.attr("stroke-width", 2)
 			.attr("d", line4);
 
 		svg
 			.append("path")
 			.datum(data)
-			.attr("class", "line")
+			.attr("class", "lineZAU")
+			.attr("fill", "none")
+			.attr("stroke-width", 2)
 			.attr("d", line5);
 
 		svg
 			.append("path")
 			.datum(data)
-			.attr("class", "line")
+			.attr("class", "lineZAU")
+			.attr("fill", "none")
+			.attr("stroke-width", 2)
 			.attr("d", line6);
 
 		svg
 			.append("path")
 			.datum(data)
-			.attr("class", "line")
+			.attr("class", "lineZAU")
+			.attr("fill", "none")
+			.attr("stroke-width", 2)
 			.attr("d", line7);
 
 		svg
 			.append("path")
 			.datum(data)
-			.attr("class", "line")
+			.attr("class", "lineZAU")
+			.attr("fill", "none")
+			.attr("stroke-width", 2)
 			.attr("d", line8);
 
 		svg
 			.append("path")
 			.datum(data)
-			.attr("class", "line")
+			.attr("class", "lineZAU")
+			.attr("fill", "none")
+			.attr("stroke-width", 2)
 			.attr("d", line9);
 
 
@@ -223,7 +241,8 @@ function graph6(){
 		const color = ["#c90c10","#f49829","#f9d333","#a31876",
 			"#ca75ad","#0a9ba2","#8acdd2","#ccc1da","#f2f4ee"];
 
-		let lines = document.querySelectorAll(".line");
+		let lines = document.querySelectorAll(".lineZAU");
+
 
 		Array.from(lines).forEach((el,i)=>{
 			el.setAttribute("stroke",color[i]);
@@ -399,60 +418,6 @@ function graph6(){
 			.text(function (d, i) {
 				return legendText[i];
 			});
-
-
-
-
-
-
-
-
-
-		/*Resize SVG, responsive*/
-
-		console.log("Etat du document : " + document.readyState);
-		if (document.readyState == "loading") {
-			document.addEventListener("DOMContentLoaded", ()=>{
-				resize();
-
-			});
-		} else {
-			resize();
-
-		}
-
-		d3.select(window)
-			.on("resize", ()=>{
-				resize();
-
-			});
-
-
-		/*Resize SVG*/
-		function resize(){
-
-			/*Update width and height*/
-			width = parseInt(d3.select("#c-svg-06").style("width"), 10);
-			height = parseInt(d3.select("#c-svg-06").style("height"),10);
-			console.log("width window : " + window.innerWidth);
-			/*Resize chart*/
-			xScale.range([margin.left, width-margin.right]);
-
-			yAxis.tickSize(width);
-
-			d3.select(svg.node().parentNode)
-				.style("width", width);
-
-			svg
-				.attr("width",width);
-		
-
-		}
-
-
-
-
-
 
 
 
