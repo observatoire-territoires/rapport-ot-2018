@@ -42,7 +42,7 @@ function graph4(){
 	//sizing
 	let margin = {top:60, right:20, bottom:70, left: 20};
 
-	let width = document.querySelector("#c-svg-04").clientWidth;
+	let width = document.querySelector(".niv2 p").clientWidth;
 	let height = 400;
 
 	//initiate svg

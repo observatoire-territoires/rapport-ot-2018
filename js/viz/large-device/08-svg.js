@@ -7,7 +7,7 @@ function graph08(){
 	object08.addEventListener("load", function() {
 
 
-		let widthO = document.querySelector("#c-svg-08").clientWidth;
+		let widthO = document.querySelector(".niv2 p").clientWidth;
 		let heightO = 440;
 
 

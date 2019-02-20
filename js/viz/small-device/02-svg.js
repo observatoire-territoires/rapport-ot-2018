@@ -7,7 +7,7 @@ function graph2(position) {
 	//sizing
 	let margin = { top: 20, right: 20, bottom: 60, left: 100 };
 
-	let width = document.querySelector(".c-graphic-min").clientWidth;
+	let width = document.querySelector(".niv2 p").clientWidth;
 	let height = 400;
 
 	//initiate svg
@@ -176,3 +176,4 @@ function graph2(position) {
 } //fonction graph2
 
 graph2("#c-svg-02-min");
+

@@ -4,7 +4,7 @@ function graph1(){
 
 
 	//sizing
-	let width = document.querySelector("#c-svg-01").clientWidth;
+	let width = document.querySelector(".niv2 p").clientWidth;
 	const height = 400;
 
 	//center location mobility type

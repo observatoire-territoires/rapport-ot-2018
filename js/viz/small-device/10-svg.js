@@ -6,7 +6,7 @@ function graph10(position){
 	//sizing
 	let margin = {top:20, right:20, bottom:40, left: 20};
 
-	let width = document.querySelector(".c-graphic-min").clientWidth;
+	let width = document.querySelector(".niv2 p").clientWidth;
 	let height = 400;
 
 
@@ -375,6 +375,7 @@ graph10("#c-svg-10-min-4");
 graph10("#c-svg-10-min-5");
 graph10("#c-svg-10-min-6");
 graph10("#c-svg-10-min-7");
+
 
 
 

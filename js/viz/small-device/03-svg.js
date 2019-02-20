@@ -24,7 +24,7 @@ function graph03(position){
 	//sizing
 	let margin = {top:20, right:20, bottom:20, left: 20};
 
-	let width = document.querySelector(".c-graphic-min").clientWidth;
+	let width = document.querySelector(".niv2 p").clientWidth;
 	let height = 400;
 
 
@@ -286,6 +286,8 @@ function graph03(position){
 
 
 graph03("#c-svg-03-min");
+
+
 
 
 

@@ -6,7 +6,7 @@ function graph5(position){
 	//sizing
 	let margin = {top:20, right:0, bottom:40, left: 20};
 
-	let width = document.querySelector(".c-graphic-min").clientWidth;
+	let width = document.querySelector(".niv2 p").clientWidth;
 	let height = 400;
 
 
@@ -273,4 +273,6 @@ function graph5(position){
 
 } //fonction graph5
 
+
 graph5("#c-svg-05-min");
+

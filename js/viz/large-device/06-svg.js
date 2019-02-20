@@ -4,7 +4,7 @@ function graph6(){
 	//sizing
 	let margin = {top:35, right:20, bottom:30, left: 50};
 
-	let width = document.querySelector("#c-svg-06").clientWidth;
+	let width = document.querySelector(".niv2 p").clientWidth;
 	let height = 400;
 
 	//initiate svg

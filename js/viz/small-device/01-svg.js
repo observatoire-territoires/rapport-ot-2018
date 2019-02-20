@@ -1,10 +1,13 @@
 //small device
 
+
+	
+
 function graph1(position){
 
 
 	//sizing
-	let width = document.querySelector(".c-graphic-min").clientWidth;
+	let width = document.querySelector(".niv2 p").clientWidth;
 	const height = 400;
 
 	//center location mobility type
@@ -410,7 +413,6 @@ function graph1(position){
 
 
 } //function graph1
-
 
 
 graph1("#c-svg-01-min-1");

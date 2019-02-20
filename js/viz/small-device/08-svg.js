@@ -7,7 +7,7 @@ function graph8(){
 	object08.addEventListener("load", function() {
 
 
-		let widthO = document.querySelector(".c-graphic-min").clientWidth;
+		let widthO = document.querySelector(".niv2 p").clientWidth;
 		let heightO = 440;
 
 

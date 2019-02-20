@@ -44,7 +44,7 @@ function graph4(position){
 	//sizing
 	let margin = {top:60, right:20, bottom:70, left: 20};
 
-	let width = document.querySelector(".c-graphic-min").clientWidth;
+	let width = document.querySelector(".niv2 p").clientWidth;
 	let height = 400;
 
 	//initiate svg
@@ -410,4 +410,7 @@ function graph4(position){
 
 } //function graph4
 
+
+
 graph4("#c-svg-04-min");
+
