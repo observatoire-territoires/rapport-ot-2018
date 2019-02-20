@@ -1,6 +1,6 @@
 console.log("Etat du document : " + document.readyState);
 
-
+/*
 const breakC01Section1 = document.querySelector("#break-c-01-section1");
 const breakC02Section2 = document.querySelector("#break-c-02-section2");
 const breakC03Section3 = document.querySelector("#break-c-03-section3");
@@ -31,6 +31,10 @@ const scrollGraphic5 = document.querySelector("#scroll-graphic5");
 const scrollGraphic6 = document.querySelector("#scroll-graphic6");
 const scrollGraphic7 = document.querySelector("#scroll-graphic7");
 const scrollGraphic8 = document.querySelector("#scroll-graphic8");
+*/
+
+const cGraphic = document.querySelectorAll(".c-graphic");
+const cGraphicMin = document.querySelectorAll(".c-graphic-min");
 
 
 //FOOTER NOTE
@@ -135,6 +139,7 @@ function deplaceElementSmallDevice() {
 
 	if (largeMedia==false){
 
+		/*
 		breakC01Section1.parentNode.insertBefore(c01Section1,breakC01Section1.nextSibling);			
 		breakC02Section2.parentNode.insertBefore(c02Section2,breakC02Section2.nextSibling);
 		breakC03Section3.parentNode.insertBefore(c03Section3,breakC03Section3.nextSibling);
@@ -145,17 +150,24 @@ function deplaceElementSmallDevice() {
 		breakC08Section6.parentNode.insertBefore(c08Section6,breakC08Section6.nextSibling);
 		breakC10Section7.parentNode.insertBefore(c10Section7,breakC10Section7.nextSibling);
 		breakC11Section8.parentNode.insertBefore(c11Section8,breakC11Section8.nextSibling);
+		*/
 
-		
-		console.log("petit écran");
-		
+		Array.from(cGraphic).forEach((el)=>{
+			el.style.display = "none";
+		});
 
+		Array.from(cGraphicMin).forEach((el)=>{
+			el.style.display = "block";
+		});
+		console.log(cGraphicMin)
 
+		firstVisit(largeMedia);
 		
 	}
 
 	if (largeMedia==true){
 		
+		/*
 		scrollGraphic1.appendChild(c01Section1);
 		scrollGraphic2.appendChild(c02Section2);
 		scrollGraphic3.appendChild(c03Section3);
@@ -166,14 +178,21 @@ function deplaceElementSmallDevice() {
 		scrollGraphic6.appendChild(c08Section6);
 		scrollGraphic7.appendChild(c10Section7);
 		scrollGraphic8.appendChild(c11Section8);
+		*/
 
-
+		Array.from(cGraphic).forEach((el)=>{
+			el.style.display = "block";
+		});
+		console.log(cGraphicMin)
+		Array.from(cGraphicMin).forEach((el)=>{
+			el.style.display = "none";
+		});
 		
 
 		//POP-UP ALERT------------------------
 		//------------------------------------
 		
-		firstVisit();
+		firstVisit(largeMedia);
 
 		console.log("grand écran");
 	}
@@ -205,24 +224,30 @@ document.onreadystatechange = function(){
 //-------------------------------------
 
 
-const alert = document.querySelector("#alert");
+const alertLargeDevice = document.querySelector("#alert-large-device");
+const alertSmallDevice = document.querySelector("#alert-small-device");
 const body = document.querySelector("body");
 const selectionGlobal = document.querySelector(".global");
 const selectionHtml = document.querySelector("html");
 
 
-function firstVisit(){
+
+function firstVisit(match){
 
 
 
-	document.querySelector("#button-alert").addEventListener("click",function(){
-		hideAlert();
+	Array.from(document.querySelectorAll(".button-alert")).forEach((el,i)=>{
+		el.addEventListener("click",function(){
+			i == 0 ? hideAlertLargeDevice() : hideAlertSmallDevice();
+		});
+
 	});
 
 	document.onkeydown = function (e) {
 		e = e || window.event;
 		if (e.keyCode == 27 || e.keyCode == 13 || e.keyCode == 8) {
-			hideAlert();
+			match ? hideAlertLargeDevice(): hideAlertSmallDevice();
+
 
 			Array.from(helpButton).forEach((d,i)=>{
 				hideHelpButton(i);
@@ -233,20 +258,20 @@ function firstVisit(){
 	if (window.sessionStorage.getItem("nouvelleSession")){
 
 		console.log("ce n'est pas la première visite");
-		hideAlert();
+		match ? hideAlertLargeDevice(): hideAlertSmallDevice();
+
 		
 	} else {
 
 		window.sessionStorage.setItem("nouvelleSession","true");
 		console.log("c'est la première visite");
-		showAlert();
-		
+		match ? showAlertLargeDevice() : showAlertSmallDevice();
 	}
 }
 
 
-function showAlert(){
-	alert.style.display = "flex";
+function showAlertLargeDevice(){
+	alertLargeDevice.style.display = "flex";
 	body.style.overflow = "hidden";
 	selectionHtml.style.overflow = "hidden";
 	selectionGlobal.style.opacity = 0.2;
@@ -254,8 +279,26 @@ function showAlert(){
 	selectionGlobal.style.userSelect = "none";
 }
 
-function hideAlert(){
-	alert.style.display = "none";
+function hideAlertLargeDevice(){
+	alertLargeDevice.style.display = "none";
+	body.style.overflow = "initial";
+	selectionHtml.style.overflow = "initial";
+	selectionGlobal.style.opacity = 1;
+	selectionGlobal.style.pointerEvents = "initial";
+	selectionGlobal.style.userSelect = "initial";
+}
+
+function showAlertSmallDevice(){
+	alertSmallDevice.style.display = "flex";
+	body.style.overflow = "hidden";
+	selectionHtml.style.overflow = "hidden";
+	selectionGlobal.style.opacity = 0.2;
+	selectionGlobal.style.pointerEvents = "none";
+	selectionGlobal.style.userSelect = "none";
+}
+
+function hideAlertSmallDevice(){
+	alertSmallDevice.style.display = "none";
 	body.style.overflow = "initial";
 	selectionHtml.style.overflow = "initial";
 	selectionGlobal.style.opacity = 1;

@@ -137,7 +137,7 @@ function graph2() {
 				popup
 					.html(`
 						<div>
-							<em>Chgt de logement dans la même commune/em> : <span>${format(d.data.meme_com)} % </span>
+							<em>Chgt de logement dans la même commune</em> : <span>${format(d.data.meme_com)} % </span>
 							<br>
 							<em>Chgt de commune dans le même département</em> : <span>${format(d.data.change_com)} % </span>
 							<br>

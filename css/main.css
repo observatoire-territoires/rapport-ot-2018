@@ -442,7 +442,9 @@
 
 		#c-extra img{
 			border-radius: 50%;
-			width:10em;
+			width:100%;
+			height:auto;
+			max-width: 10em;
 		}
 
 		.c-extra1{
@@ -599,6 +601,8 @@
 		min-width: "320px";
 		max-width: "1024px";
 	}
+
+
 	
 	#c-04-section3 .svg-title{
 		display:none;
@@ -680,6 +684,9 @@
 		width: 80%;
 	}
 
+	.scroll-graphic-min{
+		min-width: 570px;
+	}
 
 
   }
