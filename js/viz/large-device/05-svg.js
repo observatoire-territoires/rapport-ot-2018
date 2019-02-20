@@ -314,6 +314,13 @@ function graph5(){
 	function handleStepExit(response){
 		const selectionTitle = document.querySelector("#c-05-section3 .svg-title");
 		switch(response.index){
+		case 0:
+			d3.select("#c-svg-05-legend").selectAll("*").remove();
+			break;
+		case 1:
+			d3.select("#c-svg-05-legend").selectAll("*").remove();
+			break;
+
 		case 2:
 			d3.select("#c-svg-05").selectAll("*").remove();
 			d3.select("#c-svg-05-legend").selectAll("*").remove();
