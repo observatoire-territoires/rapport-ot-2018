@@ -73,7 +73,9 @@
     margin-top:0;
   }
 
-
+#svg-title-4, #svg-title-5{
+  display: none;
+}
 
 
 

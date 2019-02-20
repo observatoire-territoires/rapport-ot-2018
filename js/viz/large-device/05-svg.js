@@ -152,6 +152,9 @@ function graph5(){
 				"Croissance forte sur 1999-2009 et croissance faible sur 2009-2014",
 				"Croissance forte sur 1999-2009 et sur 2009-2014"];
 
+			d3.select("#c-svg-05-legend").selectAll("*").remove();
+
+
 			let svgLegend = d3.select("#c-svg-05-legend")
 				.append("svg")
 				.attr("width", width)
