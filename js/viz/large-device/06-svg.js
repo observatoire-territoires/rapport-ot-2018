@@ -24,7 +24,7 @@ function graph6(){
 	let format2 = d3.format("");
 
 	//Initiate data
-	d3.csv("data/data-06.csv").then(function(data){
+	d3.csv("data/csv/data-06.csv").then(function(data){
 
 		//Conversion number
 		data.forEach((d)=>{

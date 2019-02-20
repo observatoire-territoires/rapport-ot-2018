@@ -1,15 +1,15 @@
-function graph11(){
+function graph11(position){
 
 
 	//sizing
 	let margin = {top:20, right:20, bottom:40, left: 20};
 
-	let width = document.querySelector("#c-svg-11").clientWidth;
+	let width = document.querySelector(".c-graphic-min").clientWidth;
 	let height = 400;
 
 
 	//initiate svg
-	let svg = d3.select("#c-svg-11")
+	let svg = d3.select(position)
 		.append("svg")
 		.attr("height", height)
 		.attr("width", width);
@@ -28,7 +28,7 @@ function graph11(){
 	Promise.all([
 		d3.json("data/map/epci.json"),
 		d3.json("data/map/epci_reg.json"),
-		d3.csv("data/data-11.csv")
+		d3.csv("data/csv/data-11.csv")
 	]).then(function(data){
 
 
@@ -310,83 +310,42 @@ function graph11(){
 		}
 
 
-		//initialize the scrollama
-		//Parallax
-		const scroller = scrollama();
+	
+		switch(position){
+		case "#c-svg-11-min-1":
+			d3.select("#c-svg-11").selectAll(".label-change").remove();
+			changeLabel("Étudiants");
+			showPopupCsp("lib_cs8");
+			epci
+				.attr("fill", ((d)=>{ return colors(d.properties.cat_cs8); }));
+			break;
+		case "#c-svg-11-min-2":
+			d3.select("#c-svg-11").selectAll(".label-change").remove();
+			changeLabel("Retraités");
+			showPopupCsp("lib_cs7");
+			epci
+				.attr("fill", ((d)=>{ return colors(d.properties.cat_cs7); }));
+			break;
+		case "#c-svg-11-min-3":
+			d3.select("#c-svg-11").selectAll(".label-change").remove();
+			changeLabel("Ouvriers et employés");
+			showPopupCsp("lib_cs6");
+			epci
+				.attr("fill", ((d)=>{ return colors(d.properties.cat_cs6); }));
+			break;
+		case "#c-svg-11-min-4":
+			d3.select("#c-svg-11").selectAll(".label-change").remove();
+			changeLabel("Cadres et prof. int. sup.");
+			showPopupCsp("lib_cs3");
+			epci
+				.attr("fill", ((d)=>{ return colors(d.properties.cat_cs3); }));
+			break;
 
-		function handleStepEnter(response) {
-
-			switch(response.index){
-			case 0:
-				d3.select("#c-svg-11").selectAll(".label-change").remove();
-				changeLabel("Groupes socioprofessionnels");
-				showPopupCsp("");
-				epci
-					.transition()
-         			.duration(250)
-					.attr("fill", "#646464");
-				break;
-			case 1:
-				d3.select("#c-svg-11").selectAll(".label-change").remove();
-				changeLabel("Étudiants");
-				showPopupCsp("lib_cs8");
-				epci
-					.transition()
-           			.duration(250)
-					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs8); }));
-				break;
-			case 2:
-				d3.select("#c-svg-11").selectAll(".label-change").remove();
-				changeLabel("Retraités");
-				showPopupCsp("lib_cs7");
-				epci
-					.transition()
-           			.duration(250)
-					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs7); }));
-				break;
-			case 3:
-				d3.select("#c-svg-11").selectAll(".label-change").remove();
-				changeLabel("Ouvriers et employés");
-				showPopupCsp("lib_cs6");
-				epci
-					.transition()
-           			.duration(250)
-					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs6); }));
-				break;
-			case 4:
-				d3.select("#c-svg-11").selectAll(".label-change").remove();
-				changeLabel("Cadres et prof. int. sup.");
-				showPopupCsp("lib_cs3");
-				epci
-					.transition()
-           			.duration(250)
-					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs3); }));
-				break;
-
-			}
 		}
-
-		function handleStepExit(response){
-		
-		}
+	
 
 
-		scroller
-			.setup({
-				container: ".scroll",
-				graphic: ".scroll-graphic",
-				text: ".scroll-text",
-				step: ".break-11",
-				debug: false,
-				offset: 0.6
-			})
-			.onStepEnter(handleStepEnter)
-			.onStepExit(handleStepExit);
-
-
-
-
-}); //read csv
+	}); //read csv
 
 
 
@@ -398,7 +357,10 @@ function graph11(){
 } //fonction graph11
 
 
-graph11();
+graph11("#c-svg-11-min-1");
+graph11("#c-svg-11-min-2");
+graph11("#c-svg-11-min-3");
+graph11("#c-svg-11-min-4");
 
 
 

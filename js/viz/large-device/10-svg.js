@@ -28,7 +28,7 @@ function graph10(){
 	Promise.all([
 		d3.json("data/map/epci.json"),
 		d3.json("data/map/epci_reg.json"),
-		d3.csv("data/data-10.csv")
+		d3.csv("data/csv/data-10.csv")
 	]).then(function(data){
 
 

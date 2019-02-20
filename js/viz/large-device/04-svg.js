@@ -66,7 +66,7 @@ function graph4(){
 	//let tx_data = "tx_sm_68_75";
 	//let pop_data = "pop_sm_68_75";
 
-	d3.csv("data/data-04.csv").then(function(data){
+	d3.csv("data/csv/data-04.csv").then(function(data){
 
 
 

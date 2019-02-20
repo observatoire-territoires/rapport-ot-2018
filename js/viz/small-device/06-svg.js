@@ -1,14 +1,16 @@
-function graph6(){
+//small device
+
+function graph6(position){
 
 
 	//sizing
 	let margin = {top:35, right:20, bottom:30, left: 50};
 
-	let width = document.querySelector("#c-svg-06").clientWidth;
+	let width = document.querySelector(".c-graphic-min").clientWidth;
 	let height = 400;
 
 	//initiate svg
-	let svg = d3.select("#c-svg-06")
+	let svg = d3.select(position)
 		.append("svg")
 		.attr("height", height)
 		.attr("width", width);
@@ -24,7 +26,7 @@ function graph6(){
 	let format2 = d3.format("");
 
 	//Initiate data
-	d3.csv("data/data-06.csv").then(function(data){
+	d3.csv("data/csv/data-06.csv").then(function(data){
 
 		//Conversion number
 		data.forEach((d)=>{
@@ -477,4 +479,4 @@ function graph6(){
 } //function graph6
 
 
-graph6();
+graph6("#c-svg-06-min");

@@ -1,15 +1,17 @@
-function graph5(){
+//small device
+
+function graph5(position){
 
 
 	//sizing
 	let margin = {top:20, right:0, bottom:40, left: 20};
 
-	let width = document.querySelector("#c-svg-05").clientWidth;
+	let width = document.querySelector(".c-graphic-min").clientWidth;
 	let height = 400;
 
 
 	//initiate svg
-	let svg = d3.select("#c-svg-05")
+	let svg = d3.select(position)
 		.append("svg")
 		.attr("height", height)
 		.attr("width", width);
@@ -28,7 +30,7 @@ function graph5(){
 	Promise.all([
 		d3.json("data/map/dep.json"),
 		d3.json("data/map/dep_reg.json"),
-		d3.csv("data/data-05.csv")
+		d3.csv("data/csv/data-05.csv")
 	]).then(function(data){
 
 
@@ -209,13 +211,6 @@ function graph5(){
 
 
 
-
-
-
-
-
-
-
 		//add popup
 
 		//create div popup
@@ -278,54 +273,4 @@ function graph5(){
 
 } //fonction graph5
 
-
-
-
-
-
-const helpButton5 = document.querySelector("#help-button5");
-
-//initialize the scrollama
-//Parallax
-const scroller2 = scrollama();
-
-function handleStepEnter(response) {
-
-	switch(response.index){
-	case 1:
-		break;
-	case 2:
-		graph5();
-		helpButton5.style.display = "inline";
-		break;
-	}
-}
-
-function handleStepExit(response){
-	switch(response.index){
-	case 0:
-		d3.select("#c-svg-05-legend").selectAll("*").remove();
-		break;
-	case 1:
-		d3.select("#c-svg-05-legend").selectAll("*").remove();
-		break;
-	case 2:
-		d3.select("#c-svg-05").selectAll("*").remove();
-		d3.select("#c-svg-05-legend").selectAll("*").remove();
-		helpButton5.style.display = "none";
-		break;
-	}
-}
-
-
-scroller2
-	.setup({
-		container: ".scroll",
-		graphic: ".scroll-graphic",
-		text: ".scroll-text",
-		step: ".break-section3",
-		debug: false,
-		offset: 0.33
-	})
-	.onStepEnter(handleStepEnter)
-	.onStepExit(handleStepExit);
+graph5("#c-svg-05-min");

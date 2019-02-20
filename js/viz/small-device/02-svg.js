@@ -14,7 +14,7 @@ function graph2(position) {
 	let svg = d3.select(position)
 		.append("svg")
 		.attr("height", height)
-		.attr("width", width)
+		.attr("width", width);
 
 	//initiate format number
 	/*Initiate format number*/
@@ -26,7 +26,7 @@ function graph2(position) {
 
 	let format = d3.format(".2n");
 
-	d3.csv("data/data-02.csv").then(function (data) {
+	d3.csv("data/csv/data-02.csv").then(function (data) {
 
 
 		//Conversion number

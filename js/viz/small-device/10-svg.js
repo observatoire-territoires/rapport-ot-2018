@@ -1,15 +1,17 @@
-function graph10(){
+//small device
+
+function graph10(position){
 	
 
 	//sizing
 	let margin = {top:20, right:20, bottom:40, left: 20};
 
-	let width = document.querySelector("#c-svg-10").clientWidth;
+	let width = document.querySelector(".c-graphic-min").clientWidth;
 	let height = 400;
 
 
 	//initiate svg
-	let svg = d3.select("#c-svg-10")
+	let svg = d3.select(position)
 		.append("svg")
 		.attr("height", height)
 		.attr("width", width);
@@ -28,7 +30,7 @@ function graph10(){
 	Promise.all([
 		d3.json("data/map/epci.json"),
 		d3.json("data/map/epci_reg.json"),
-		d3.csv("data/data-10.csv")
+		d3.csv("data/csv/data-10.csv")
 	]).then(function(data){
 
 
@@ -276,124 +278,83 @@ function graph10(){
 				.attr("fill", color);
 		}
 
-
 		
-		//initialize the scrollama
-		//Parallax
-		const scroller = scrollama();
+	
 
-		function handleStepEnter(response) {
+		switch(position){
+		case "#c-svg-10-min-1":
+			addLegend();
+			d3.select(position).selectAll(".label-change").remove();
+			changeLabel("Toutes catégories","#fff");
+			epci
+				.attr("fill", ((d)=>{ return colors(d.properties.clust); }));
+			break;
+		case "#c-svg-10-min-2":
+			d3.select(position).selectAll(".label-change").remove();
+			changeLabel("Jeunes adultes, étudiants et cadres", colors.range()[4]);
+			epci
+				.attr("fill", ((d)=>{ 
+					let value = d.properties.clust;
+					return value == 5 ?  colors.range()[4]
+						: "#646464";
+				}));
+			break;
+		case "#c-svg-10-min-3":
+			d3.select(position).selectAll(".label-change").remove();
+			changeLabel("Trentenaires, cadres et prof. int.", colors.range()[5]);
+			epci
+				.attr("fill", ((d)=>{ 
+					let value = d.properties.clust;
+					return value == 6 ? colors.range()[5]
+						: "#646464";
+				}));
+			break;
+		case "#c-svg-10-min-4":	
+			d3.select(position).selectAll(".label-change").remove();
+			changeLabel("Employés et ouvriers", colors.range()[3]);
+			epci
+				.attr("fill", ((d)=>{ 
+					let value = d.properties.clust;
+					return value == 4 ? colors.range()[3]
+						: "#646464";
+				}));
+			break;
+		case "#c-svg-10-min-5":
+			d3.select(position).selectAll(".label-change").remove();
+			changeLabel("Ouvriers et jeunes enfants", colors.range()[2]);
+			epci
+				.attr("fill", ((d)=>{ 
+					let value = d.properties.clust;
+					return value == 3 ? colors.range()[2]
+						: "#646464";
+				}));
+			break;
 
-			switch(response.index){
-			case 0:
-				addLegend();
-				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Toutes catégories","#fff");
-				epci
-					.transition()
-					.duration(250)
-					.attr("fill", ((d)=>{ return colors(d.properties.clust); }));
-				break;
-			case 1:
-				d3.select("#c-svg-10-legend").selectAll("*").remove();
-				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Jeunes adultes, étudiants et cadres", colors.range()[4]);
-				epci
-					.transition()
-					.duration(250)
-					.attr("fill", ((d)=>{ 
-						let value = d.properties.clust;
-						return value == 5 ?  colors.range()[4]
-							: "#646464";
-					}));
-				break;
-			case 2:
-				d3.select("#c-svg-10-legend").selectAll("*").remove();
-				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Trentenaires, cadres et prof. int.", colors.range()[5]);
-				epci
-					.transition()
-					.duration(250)
-					.attr("fill", ((d)=>{ 
-						let value = d.properties.clust;
-						return value == 6 ? colors.range()[5]
-							: "#646464";
-					}));
-				break;
-			case 3:
-				d3.select("#c-svg-10-legend").selectAll("*").remove();
-				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Employés et ouvriers", colors.range()[3]);
-				epci
-					.transition()
-					.duration(250)
-					.attr("fill", ((d)=>{ 
-						let value = d.properties.clust;
-						return value == 4 ? colors.range()[3]
-							: "#646464";
-					}));
-				break;
-			case 4:
-				d3.select("#c-svg-10-legend").selectAll("*").remove();
-				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Ouvriers et jeunes enfants", colors.range()[2]);
-				epci
-					.transition()
-					.duration(250)
-					.attr("fill", ((d)=>{ 
-						let value = d.properties.clust;
-						return value == 3 ? colors.range()[2]
-							: "#646464";
-					}));
-				break;
-
-			case 5:
-				d3.select("#c-svg-10-legend").selectAll("*").remove();
-				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Profil diversifié, plutôt âgé", colors.range()[1]);
-				epci
-					.transition()
-					.duration(250)
-					.attr("fill", ((d)=>{ 
-						let value = d.properties.clust;
-						return value == 2 ? colors.range()[1]
-							: "#646464";
-					}));
-				break;		
-				
-			case 6:
-				d3.select("#c-svg-10-legend").selectAll("*").remove();
-				d3.select("#c-svg-10").selectAll(".label-change").remove();
-				changeLabel("Retraités", colors.range()[0]);
-				epci
-					.transition()
-					.duration(250)
-					.attr("fill", ((d)=>{ 
-						let value = d.properties.clust;
-						return value == 1 ? colors.range()[0]
-							: "#646464";
-					}));
-				break;
-
-			}
-		}
-
-		function handleStepExit(response){
+		case "#c-svg-10-min-6":
+			d3.select(position).selectAll(".label-change").remove();
+			changeLabel("Profil diversifié, plutôt âgé", colors.range()[1]);
+			epci
+				.attr("fill", ((d)=>{ 
+					let value = d.properties.clust;
+					return value == 2 ? colors.range()[1]
+						: "#646464";
+				}));
+			break;		
 			
+		case "#c-svg-10-min-7":
+			d3.select("#c-svg-10-legend").selectAll("*").remove();
+			d3.select("#c-svg-10").selectAll(".label-change").remove();
+			changeLabel("Retraités", colors.range()[0]);
+			epci
+				.attr("fill", ((d)=>{ 
+					let value = d.properties.clust;
+					return value == 1 ? colors.range()[0]
+						: "#646464";
+				}));
+			break;
+
 		}
-
-
-		scroller
-			.setup({
-				container: ".scroll",
-				graphic: ".scroll-graphic",
-				text: ".scroll-text",
-				step: ".break-10",
-				debug: false,
-				offset: 0.6
-			})
-			.onStepEnter(handleStepEnter)
-			.onStepExit(handleStepExit);
+	
 
 	}); //read csv
 
@@ -407,8 +368,13 @@ function graph10(){
 } //function graph10
 
 
-graph10();
-
+graph10("#c-svg-10-min-1");
+graph10("#c-svg-10-min-2");
+graph10("#c-svg-10-min-3");
+graph10("#c-svg-10-min-4");
+graph10("#c-svg-10-min-5");
+graph10("#c-svg-10-min-6");
+graph10("#c-svg-10-min-7");
 
 
 

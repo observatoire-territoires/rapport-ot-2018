@@ -28,7 +28,7 @@ function graph5(){
 	Promise.all([
 		d3.json("data/map/dep.json"),
 		d3.json("data/map/dep_reg.json"),
-		d3.csv("data/data-05.csv")
+		d3.csv("data/csv/data-05.csv")
 	]).then(function(data){
 
 

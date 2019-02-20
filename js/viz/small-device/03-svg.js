@@ -1,29 +1,35 @@
+//small device
+
+
 //storing values in an array
-let inputValues = ["1968-1975", "1975-1982", "1982-1990", "1990-1999", "1999-2009", "2009-2014"];
+let inputValuesMin = ["1968-1975", "1975-1982", "1982-1990", "1990-1999", "1999-2009", "2009-2014"];
 
-let input03 = document.querySelector("#input-03");
-let output03 = document.querySelector("#c-output-03");
+let input03Min = document.querySelector("#input-03");
+let output03Min = document.querySelector("#c-output-03");
 
-let output03Bullet = document.querySelector("#output-03-bullet");
+let output03BulletMin = document.querySelector("#output-03-bullet");
 
-input03.oninput = function(){
+output03Min.oninput = function(){
 	//output03.innerHTML = inputValues[this.value];
-	output03Bullet.innerHTML = inputValues[this.value];
+	output03BulletMin.innerHTML = inputValuesMin[this.value];
 };
 
 
-function graph03(){
+//set the default value
+output03Min.oninput();
+
+function graph03(position){
 
 
 	//sizing
 	let margin = {top:20, right:20, bottom:20, left: 20};
 
-	let width = document.querySelector("#c-svg-03").clientWidth;
+	let width = document.querySelector(".c-graphic-min").clientWidth;
 	let height = 400;
 
 
 	//initiate svg
-	let svg = d3.select("#c-svg-03")
+	let svg = d3.select(position)
 		.append("svg")
 		.attr("height", height)
 		.attr("width", width);
@@ -219,107 +225,53 @@ function graph03(){
 
 
 		//set the default value
-		input03.oninput();
+		input03Min.oninput();
 
 
 		//deplace output bullet during slide
-		let deplaceOutputBullet = function(){
-			let bulletPosition = (input03.value / input03.max);
-			output03Bullet.style.left = (bulletPosition * input03.getBoundingClientRect().width)*0.9221018907 + "px";
+		let deplaceOutputBulletMin = function(){
+			let bulletPosition = (input03Min.value / input03Min.max);
+			output03BulletMin.style.left = (bulletPosition * input03Min.getBoundingClientRect().width)*0.9221018907 + "px";
 		};
 
-
-		deplaceOutputBullet();
+		render_raster(featureCollection0914.features,inputValuesMin[5]);
+		deplaceOutputBulletMin();
 
 		//on loading, first svg
 		//render_raster(featureCollection0914.features,inputValues[5]);
 
-		input03.addEventListener("input",function(e){
+		input03Min.addEventListener("input",function(e){
 
-			deplaceOutputBullet();
+			deplaceOutputBulletMin();
 
 			switch (e.target.value) {
 			case "0":
-				d3.selectAll(".label-change2").remove();
-				render_raster(featureCollection6875.features,inputValues[0]);
+				d3.select(position).selectAll(".label-change2").remove();
+				render_raster(featureCollection6875.features,inputValuesMin[0]);
 				break;
 			case "1":
-				d3.selectAll(".label-change2").remove();
-				render_raster(featureCollection7582.features,inputValues[1]);
+				d3.select(position).selectAll(".label-change2").remove();
+				render_raster(featureCollection7582.features,inputValuesMin[1]);
 				break;	
 			case "2":
-				d3.selectAll(".label-change2").remove();
-				render_raster(featureCollection8290.features,inputValues[2]);
+				d3.select(position).selectAll(".label-change2").remove();
+				render_raster(featureCollection8290.features,inputValuesMin[2]);
 				break;
 			case "3":
-				d3.selectAll(".label-change2").remove();
-				render_raster(featureCollection9099.features,inputValues[3]);
+				d3.select(position).selectAll(".label-change2").remove();
+				render_raster(featureCollection9099.features,inputValuesMin[3]);
 				break;
 			case "4":
-				d3.selectAll(".label-change2").remove();
-				render_raster(featureCollection9909.features,inputValues[4]);
+				d3.select(position).selectAll(".label-change2").remove();
+				render_raster(featureCollection9909.features,inputValuesMin[4]);
 				break;
 			case "5":
-				d3.selectAll(".label-change2").remove();
-				render_raster(featureCollection0914.features,inputValues[5]);
+				d3.select(position).selectAll(".label-change2").remove();
+				render_raster(featureCollection0914.features,inputValuesMin[5]);
 				break;
 				
 			}
 		});
-
-
-		const helpButton = document.querySelector("#help-button3");
-
-		//initialize the scrollama
-		//Parallax
-		const scroller = scrollama();
-
-		function handleStepEnter(response) {
-
-			switch(response.index){
-			case 0:
-				render_raster(featureCollection0914.features,inputValues[5]);
-				addExtra();
-				addLegend();
-				helpButton.style.display = "inline";
-				break;	
-			case 1:
-				
-
-				break;
-
-
-				
-			}
-		}
-
-		function handleStepExit(response){
-			switch(response.index){
-			case 0:
-				d3.select("#c-svg-03").selectAll(".label-change2").remove();
-				d3.select("#c-svg-03").selectAll(".rw").remove();
-				d3.select("#c-svg-03").selectAll(".extra").remove();
-				d3.select("#c-svg-03-legend").selectAll("*").remove();
-				helpButton.style.display = "none";
-				break;
-			}
-		}
-
-
-		scroller
-			.setup({
-				container: ".scroll",
-				graphic: ".scroll-graphic",
-				text: ".scroll-text",
-				step: ".break-section3",
-				debug: false,
-				offset: 0.33
-			})
-			.onStepEnter(handleStepEnter)
-			.onStepExit(handleStepExit);
-
-
-
 
 
 
@@ -333,7 +285,7 @@ function graph03(){
 
 
 
-graph03();
+graph03("#c-svg-03-min");
 
 
 

@@ -62,7 +62,7 @@ function graph7(){
 	let formatPop = d3.format(",.0f");
 	let format2 = d3.format("");
 
-	d3.csv("data/data-07.csv").then(function(data){
+	d3.csv("data/csv/data-07.csv").then(function(data){
 
 		//detect if a string contains only digits
 		data.forEach((d,i)=>{

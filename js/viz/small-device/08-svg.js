@@ -1,13 +1,13 @@
+//small device
 
-
-function graph08(){
+function graph8(){
 	//change svg with clic button
-	let object08 = document.querySelector("#object-08");
+	let object08 = document.querySelector("#object-08-min");
 
 	object08.addEventListener("load", function() {
 
 
-		let widthO = document.querySelector("#c-svg-08").clientWidth;
+		let widthO = document.querySelector(".c-graphic-min").clientWidth;
 		let heightO = 440;
 
 
@@ -325,4 +325,4 @@ Array.from(document.querySelectorAll(".button-csp")).forEach((el,i)=>{
 
 } //functiongraph08
 
-graph08();
+graph8();

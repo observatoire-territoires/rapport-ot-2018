@@ -1,34 +1,36 @@
+//small device
+
 //storing values in an array
-let inputValues2 = ["1968-1975", "1975-1982", "1982-1990", "1990-1999", "1999-2009", "2009-2014"];
+let inputValues2Min = ["1968-1975", "1975-1982", "1982-1990", "1990-1999", "1999-2009", "2009-2014"];
 
-let input04 = document.querySelector("#input-04");
-let output04 = document.querySelector("#c-output-04");
+let input04Min = document.querySelector("#input-04");
+let output04Min = document.querySelector("#c-output-04");
 
-let output04Bullet = document.querySelector("#output-04-bullet");
+let output04BulletMin = document.querySelector("#output-04-bullet");
 
-input04.oninput = function(){
+output04Min.oninput = function(){
 	//output03.innerHTML = inputValues[this.value];
-	output04Bullet.innerHTML = inputValues2[this.value];
+	output04BulletMin.innerHTML = inputValues2Min[this.value];
 };
 
 
 
 
 //set the default value
-input04.oninput();
 
+input04Min.oninput();
 
 //deplace output bullet during slide
-let deplaceOutputBullet2 = function(){
-	let bulletPosition = (input04.value / input04.max);
-	output04Bullet.style.left = (bulletPosition * input04.getBoundingClientRect().width)*0.9221018907 + "px";
+let deplaceOutputBullet2Min = function(){
+	let bulletPosition = (output04Min.value / output04Min.max);
+	output04BulletMin.style.left = (bulletPosition * output04Min.getBoundingClientRect().width)*0.9221018907 + "px";
 };
 
 
 
 //If windows is resized, real-time
 window.addEventListener("resize",()=>{
-	deplaceOutputBullet2();
+	deplaceOutputBullet2Min();
 
 });
 
@@ -36,17 +38,17 @@ window.addEventListener("resize",()=>{
 
 //d3 processing img
 
-function graph4(){
+function graph4(position){
 
 
 	//sizing
 	let margin = {top:60, right:20, bottom:70, left: 20};
 
-	let width = document.querySelector("#c-svg-04").clientWidth;
+	let width = document.querySelector(".c-graphic-min").clientWidth;
 	let height = 400;
 
 	//initiate svg
-	let svg = d3.select("#c-svg-04")
+	let svg = d3.select(position)
 		.append("svg")
 		.attr("height", height)
 		.attr("width", width);
@@ -66,7 +68,7 @@ function graph4(){
 	//let tx_data = "tx_sm_68_75";
 	//let pop_data = "pop_sm_68_75";
 
-	d3.csv("data/data-04.csv").then(function(data){
+	d3.csv("data/csv/data-04.csv").then(function(data){
 
 
 
@@ -359,35 +361,35 @@ function graph4(){
 			.text(formatPop(1000));
 
 
-		updateData("tx_sm_09_14", "pop_sm_09_14", inputValues2[5]);
-		deplaceOutputBullet2();
+		updateData("tx_sm_09_14", "pop_sm_09_14", inputValues2Min[5]);
+		deplaceOutputBullet2Min();
 
-		input04.addEventListener("input",function(e){
-			deplaceOutputBullet2();
+		input04Min.addEventListener("input",function(e){
+			deplaceOutputBullet2Min();
 			switch (e.target.value) {
 			case "0":
-				d3.selectAll(".label-change2").remove();
-				updateData("tx_sm_68_75", "pop_sm_68_75", inputValues2[0]);
+				d3.select(position).selectAll(".label-change2").remove();
+				updateData("tx_sm_68_75", "pop_sm_68_75", inputValues2Min[0]);
 				break;
 			case "1":
-				d3.selectAll(".label-change2").remove();
-				updateData("tx_sm_75_82", "pop_sm_75_82", inputValues2[1]);
+				d3.select(position).selectAll(".label-change2").remove();
+				updateData("tx_sm_75_82", "pop_sm_75_82", inputValues2Min[1]);
 				break;	
 			case "2":
-				d3.selectAll(".label-change2").remove();
-				updateData("tx_sm_82_90", "pop_sm_82_90", inputValues2[2]);
+				d3.select(position).selectAll(".label-change2").remove();
+				updateData("tx_sm_82_90", "pop_sm_82_90", inputValues2Min[2]);
 				break;
 			case "3":
-				d3.selectAll(".label-change2").remove();
-				updateData("tx_sm_90_99", "pop_sm_90_99", inputValues2[3]);
+				d3.select(position).selectAll(".label-change2").remove();
+				updateData("tx_sm_90_99", "pop_sm_90_99", inputValues2Min[3]);
 				break;
 			case "4":
-				d3.selectAll(".label-change2").remove();
-				updateData("tx_sm_99_09", "pop_sm_99_09", inputValues2[4]);
+				d3.select(position).selectAll(".label-change2").remove();
+				updateData("tx_sm_99_09", "pop_sm_99_09", inputValues2Min[4]);
 				break;
 			case "5":
-				d3.selectAll(".label-change2").remove();
-				updateData("tx_sm_09_14", "pop_sm_09_14", inputValues2[5]);
+				d3.select(position).selectAll(".label-change2").remove();
+				updateData("tx_sm_09_14", "pop_sm_09_14", inputValues2Min[5]);
 				break;
 				
 			}
@@ -408,48 +410,4 @@ function graph4(){
 
 } //function graph4
 
-const helpButton4 = document.querySelector("#help-button4");
-
-//initialize the scrollama
-//Parallax
-const scroller = scrollama();
-
-function handleStepEnter(response) {
-	const selectionTitle = document.querySelector("#c-04-section3 .svg-title");
-	switch(response.index){
-	case 0:
-
-		break;
-	case 1:
-		selectionTitle.style.display = "block";
-		graph4();
-		helpButton4.style.display = "inline";
-		break;
-	}
-}
-
-function handleStepExit(response){
-	const selectionTitle = document.querySelector("#c-04-section3 .svg-title");
-	switch(response.index){
-	case 1:
-		selectionTitle.style.display = "none";
-		d3.select("#c-svg-04").selectAll("*").remove();
-		helpButton4.style.display = "none";
-		break;
-	}
-}
-
-
-scroller
-	.setup({
-		container: ".scroll",
-		graphic: ".scroll-graphic",
-		text: ".scroll-text",
-		step: ".break-section3",
-		debug: false,
-		offset: 0.33
-	})
-	.onStepEnter(handleStepEnter)
-	.onStepExit(handleStepExit);
-
-	
+graph4("#c-svg-04-min");

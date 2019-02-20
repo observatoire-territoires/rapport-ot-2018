@@ -1,41 +1,5 @@
 console.log("Etat du document : " + document.readyState);
 
-/*
-const breakC01Section1 = document.querySelector("#break-c-01-section1");
-const breakC02Section2 = document.querySelector("#break-c-02-section2");
-const breakC03Section3 = document.querySelector("#break-c-03-section3");
-const breakC04Section3 = document.querySelector("#break-c-04-section3");
-const breakC05Section3 = document.querySelector("#break-c-05-section3");
-const breakC06Section4 = document.querySelector("#break-c-06-section4");
-const breakC07Section5 = document.querySelector("#break-c-07-section5");
-const breakC08Section6 = document.querySelector("#break-c-08-section6");
-const breakC10Section7 = document.querySelector("#break-c-10-section7");
-const breakC11Section8 = document.querySelector("#break-c-11-section8");
-
-const c01Section1 = document.querySelector("#c-01-section1");
-const c02Section2 = document.querySelector("#c-02-section2");
-const c03Section3 = document.querySelector("#c-03-section3");
-const c04Section3 = document.querySelector("#c-04-section3");
-const c05Section3 = document.querySelector("#c-05-section3");
-const c06Section4 = document.querySelector("#c-06-section4");
-const c07Section5 = document.querySelector("#c-07-section5");
-const c08Section6 = document.querySelector("#c-08-section6");
-const c10Section7 = document.querySelector("#c-10-section7");
-const c11Section8 = document.querySelector("#c-11-section8");
-
-const scrollGraphic1 = document.querySelector("#scroll-graphic1");
-const scrollGraphic2 = document.querySelector("#scroll-graphic2");
-const scrollGraphic3 = document.querySelector("#scroll-graphic3");
-const scrollGraphic4 = document.querySelector("#scroll-graphic4");
-const scrollGraphic5 = document.querySelector("#scroll-graphic5");
-const scrollGraphic6 = document.querySelector("#scroll-graphic6");
-const scrollGraphic7 = document.querySelector("#scroll-graphic7");
-const scrollGraphic8 = document.querySelector("#scroll-graphic8");
-*/
-
-const cGraphic = document.querySelectorAll(".c-graphic");
-const cGraphicMin = document.querySelectorAll(".c-graphic-min");
-
 
 //FOOTER NOTE
 
@@ -139,27 +103,6 @@ function deplaceElementSmallDevice() {
 
 	if (largeMedia==false){
 
-		/*
-		breakC01Section1.parentNode.insertBefore(c01Section1,breakC01Section1.nextSibling);			
-		breakC02Section2.parentNode.insertBefore(c02Section2,breakC02Section2.nextSibling);
-		breakC03Section3.parentNode.insertBefore(c03Section3,breakC03Section3.nextSibling);
-		breakC04Section3.parentNode.insertBefore(c04Section3,breakC04Section3.nextSibling);
-		breakC05Section3.parentNode.insertBefore(c05Section3,breakC05Section3.nextSibling);
-		breakC06Section4.parentNode.insertBefore(c06Section4,breakC06Section4.nextSibling);
-		breakC07Section5.parentNode.insertBefore(c07Section5,breakC07Section5.nextSibling);
-		breakC08Section6.parentNode.insertBefore(c08Section6,breakC08Section6.nextSibling);
-		breakC10Section7.parentNode.insertBefore(c10Section7,breakC10Section7.nextSibling);
-		breakC11Section8.parentNode.insertBefore(c11Section8,breakC11Section8.nextSibling);
-		*/
-
-		Array.from(cGraphic).forEach((el)=>{
-			el.style.display = "none";
-		});
-
-		Array.from(cGraphicMin).forEach((el)=>{
-			el.style.display = "block";
-		});
-		console.log(cGraphicMin)
 
 		firstVisit(largeMedia);
 		
@@ -167,28 +110,6 @@ function deplaceElementSmallDevice() {
 
 	if (largeMedia==true){
 		
-		/*
-		scrollGraphic1.appendChild(c01Section1);
-		scrollGraphic2.appendChild(c02Section2);
-		scrollGraphic3.appendChild(c03Section3);
-		scrollGraphic3.appendChild(c04Section3);
-		scrollGraphic3.appendChild(c05Section3);
-		scrollGraphic4.appendChild(c06Section4);
-		scrollGraphic5.appendChild(c07Section5);
-		scrollGraphic6.appendChild(c08Section6);
-		scrollGraphic7.appendChild(c10Section7);
-		scrollGraphic8.appendChild(c11Section8);
-		*/
-
-		Array.from(cGraphic).forEach((el)=>{
-			el.style.display = "block";
-		});
-		console.log(cGraphicMin)
-		Array.from(cGraphicMin).forEach((el)=>{
-			el.style.display = "none";
-		});
-		
-
 		//POP-UP ALERT------------------------
 		//------------------------------------
 		

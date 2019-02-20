@@ -27,67 +27,6 @@
 	}
 
 
-	#alert-small-device{
-		display:none;
-	  }
-	  #alert-large-device{
-		display:none;
-	  }
-
-
-
-
-	/*Alert*/
-	.alert{
-		flex-direction: column;
-		justify-content: space-between;
-		position:fixed;
-		top:25vh;
-		left: 25%;
-		width:50vw;
-		height:auto;
-		background:white;
-		color: black;
-		text-align: center;
-		z-index:1000;
-		border-radius:0.5em;
-	}
-
-
-	.alert-text{
-		padding: 1em 1.5em 1em 1.5em;
-	}
-
-	.alert p{
-		line-height: 1.5em;
-	}
-
-	.alert button{
-		cursor: pointer;
-		border: 2px solid #646464;
-		text-decoration: none;
-		color: #ffadad;
-		padding: 0.3em 0.5em 0.3em 0.5em;
-		cursor: pointer;
-		text-transform: uppercase;
-		border-radius:1em;
-		background: none;
-		font-family: "MontserratWebMedium";
-		font-style: normal;
-		margin-bottom:2em;
-	}
-
-	.alert button:hover{
-		border: 2px solid black;
-		color: #ff3333;
-	  }
-
-	.alert hr{
-		width: 80%;
-	}
-
-
-
 
 
 

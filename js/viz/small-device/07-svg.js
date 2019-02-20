@@ -1,33 +1,35 @@
+//small device
+
 //storing values in an array
-let inputValues3 = ["1968-1975", "1975-1982", "1982-1990", "1990-1999", "1999-2009", "2009-2014"];
+let inputValues3Min = ["1968-1975", "1975-1982", "1982-1990", "1990-1999", "1999-2009", "2009-2014"];
 
-let input07 = document.querySelector("#input-07");
-let output07 = document.querySelector("#c-output-07");
+let input07Min = document.querySelector("#input-07");
+let output07Min = document.querySelector("#c-output-07");
 
-let output07Bullet = document.querySelector("#output-07-bullet");
+let output07BulletMin = document.querySelector("#output-07-bullet");
 
-input07.oninput = function(){
-	output07Bullet.innerHTML = inputValues3[this.value];
+input07Min.oninput = function(){
+	output07BulletMin.innerHTML = inputValues3Min[this.value];
 };
 
 
 
 
 //set the default value
-input07.oninput();
+input07Min.oninput();
 
 
 //deplace output bullet during slide
-let deplaceOutputBullet3 = function(){
-	let bulletPosition = (input07.value / input07.max);
-	output07Bullet.style.left = (bulletPosition * input07.getBoundingClientRect().width)*0.9221018907 + "px";
+let deplaceOutputBullet3Min = function(){
+	let bulletPosition = (input07Min.value / input07Min.max);
+	output07BulletMin.style.left = (bulletPosition * input07Min.getBoundingClientRect().width)*0.9221018907 + "px";
 };
 
 
 
 //If windows is resized, real-time
 window.addEventListener("resize",()=>{
-	deplaceOutputBullet3();
+	deplaceOutputBullet3Min();
 
 });
 
@@ -35,17 +37,17 @@ window.addEventListener("resize",()=>{
 
 //d3 processing img
 
-function graph7(){
+function graph7(position){
 
 
 	//sizing
 	let margin = {top:110, right:40, bottom:60, left: 50};
 
-	let width = document.querySelector("#c-svg-07").clientWidth;
+	let width = document.querySelector(".c-graphic-min").clientWidth;
 	let height = 500;
 
 	//initiate svg
-	let svg = d3.select("#c-svg-07")
+	let svg = d3.select(position)
 		.append("svg")
 		.attr("height", height)
 		.attr("width", width);
@@ -62,7 +64,7 @@ function graph7(){
 	let formatPop = d3.format(",.0f");
 	let format2 = d3.format("");
 
-	d3.csv("data/data-07.csv").then(function(data){
+	d3.csv("data/csv/data-07.csv").then(function(data){
 
 		//detect if a string contains only digits
 		data.forEach((d,i)=>{
@@ -473,35 +475,35 @@ function graph7(){
 
 
 
-		updateData("pop_2014", "tx_pop_2014", "tx_pop_sn_2014", "tx_pop_sm_2014", inputValues3[5]);
-		deplaceOutputBullet3();
+		updateData("pop_2014", "tx_pop_2014", "tx_pop_sn_2014", "tx_pop_sm_2014", inputValues3Min[5]);
+		deplaceOutputBullet3Min();
 
-		input07.addEventListener("input",function(e){
-			deplaceOutputBullet3();
+		input07Min.addEventListener("input",function(e){
+			deplaceOutputBullet3Min();
 			switch (e.target.value) {
 			case "0":
 				d3.selectAll(".label-change2").remove();
-				updateData("pop_1975", "tx_pop_1975", "tx_pop_sn_1975", "tx_pop_sm_1975", inputValues3[0]);
+				updateData("pop_1975", "tx_pop_1975", "tx_pop_sn_1975", "tx_pop_sm_1975", inputValues3Min[0]);
 				break;
 			case "1":
 				d3.selectAll(".label-change2").remove();
-				updateData("pop_1982", "tx_pop_1982", "tx_pop_sn_1982", "tx_pop_sm_1982", inputValues3[1]);
+				updateData("pop_1982", "tx_pop_1982", "tx_pop_sn_1982", "tx_pop_sm_1982", inputValues3Min[1]);
 				break;	
 			case "2":
 				d3.selectAll(".label-change2").remove();
-				updateData("pop_1990", "tx_pop_1990", "tx_pop_sn_1990", "tx_pop_sm_1990", inputValues3[2]);
+				updateData("pop_1990", "tx_pop_1990", "tx_pop_sn_1990", "tx_pop_sm_1990", inputValues3Min[2]);
 				break;
 			case "3":
 				d3.selectAll(".label-change2").remove();
-				updateData("pop_1999", "tx_pop_1999", "tx_pop_sn_1999", "tx_pop_sm_1999", inputValues3[3]);
+				updateData("pop_1999", "tx_pop_1999", "tx_pop_sn_1999", "tx_pop_sm_1999", inputValues3Min[3]);
 				break;
 			case "4":
 				d3.selectAll(".label-change2").remove();
-				updateData("pop_2009", "tx_pop_2009", "tx_pop_sn_2009", "tx_pop_sm_2009", inputValues3[4]);
+				updateData("pop_2009", "tx_pop_2009", "tx_pop_sn_2009", "tx_pop_sm_2009", inputValues3Min[4]);
 				break;
 			case "5":
 				d3.selectAll(".label-change2").remove();
-				updateData("pop_2014", "tx_pop_2014", "tx_pop_sn_2014", "tx_pop_sm_2014", inputValues3[5]);
+				updateData("pop_2014", "tx_pop_2014", "tx_pop_sn_2014", "tx_pop_sm_2014", inputValues3Min[5]);
 				break;
 				
 			}
@@ -530,4 +532,4 @@ function graph7(){
 } //function graph7
 
 
-graph7();
+graph7("#c-svg-07-min");
