@@ -6,6 +6,7 @@
 function graph1Min(position){
 
 
+
 	//sizing
 	let width = document.querySelector(".niv2 p").clientWidth;
 	const height = 400;
@@ -381,31 +382,6 @@ function graph1Min(position){
 		}
 
 	
-		
-
-
-
-		//Resize SVG, responsive
-		d3.select(window)
-			.on("resize", ()=>{
-				resize();
-
-
-			});
-
-
-
-		function resize(){
-			console.log(width);
-
-			svg
-				.attr("width", "100%");
-
-			g
-				.attr("transform", "translate(" + width/2 +  "," + height/2 + ")");
-
-
-		}
 
 
 
@@ -415,10 +391,9 @@ function graph1Min(position){
 } //function graph1
 
 
-window.addEventListener("resize", function(){
-	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
-	{
-		graph1Min("#c-svg-01-min-1");
-		graph1Min("#c-svg-01-min-2");
-	}
-});
+
+if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
+{
+	graph1Min("#c-svg-01-min-1");
+	graph1Min("#c-svg-01-min-2");
+}

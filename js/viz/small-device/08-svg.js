@@ -115,7 +115,7 @@ function graph8Min(){
 } //functiongraph08
 
 
-		graph8Min();
+graph8Min();
 
 
 
