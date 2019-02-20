@@ -151,6 +151,9 @@
 		border-top: 1px solid rgb(255,255,255);
 	  }
 
+	.note-end{
+		padding: 0.5em;
+	}
 
 	  c-notes-number{
 		  font-size:0em;
@@ -196,7 +199,7 @@
 		  background-color: #282828;
 		  margin-left: -5em;
 		  padding-left: 5em;
-		  font-size: 0.85em;
+		  font-size: 0.9em;
 		  width: 100%;
 	  }
 
@@ -209,7 +212,7 @@
 		  display: none;
 		  color: #fff;
 		  margin-right: 13vw;
-		  
+		  padding:0.35em;	  
 	  }
 
 	  .notes-box .c-notes-number{
@@ -614,7 +617,7 @@
   
 @media only screen and (min-width:1024px){
   
-	article{
+	main{
 		padding-left:2em;
 	}
 
