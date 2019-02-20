@@ -102,25 +102,32 @@
 		padding: 3em;
 	}
 
-	#interlude-text1 p:first-child{
+	#interlude-text1 h6:first-child{
 		border-top: 1px solid #000;
 		padding-top: 20px;
 
 	}
 
-	#interlude-text1 p:last-child{
+	#interlude-text1 h6:last-child{
 		border-bottom: 1px solid #000;
 		padding-bottom: 20px;
 	}
 
-	#interlude-text2 p{
+	#interlude-text2 h6{
 		border-top: 1px solid #000;
 		padding-top: 20px;
 		border-bottom: 1px solid #000;
 		padding-bottom: 20px;
 	}
 
-
+	h6{
+		font-size: 1em;
+		line-height: 1.5;
+		font-family: "MontserratWebMedium";
+		font-weight: normal;
+		padding:0;
+		margin:0;
+	}
 	/*Application style sur le niveau 2*/
 	/*--------------------------------*/
 
