@@ -93,7 +93,7 @@
 	}
 
 	.interlude-text{
-		background: rgba(254, 254, 254, 08);
+		background: rgba(254, 254, 254, 0.8);
 		color: black;
 		font-family: "MontserratWebMedium";
 		font-weight: normal;
@@ -440,7 +440,7 @@
 
 
 		#c-extra{
-			background: rgba(254, 254, 254, 08);
+			background: rgba(254, 254, 254, 0.8);
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
@@ -488,7 +488,7 @@
 
 		.c-extra-image{
 			width:20%;
-			align-self: middle;
+			align-self: center;
 		}
 
 		.c-extra-texte{
@@ -688,8 +688,8 @@
 	#c-svg-01, #c-svg-02, #c-svg-03, #c-svg-04, #c-svg-05,
 	#c-svg-06, #c-svg-07, #c-svg-08, #c-svg-10,
 	#c-svg-11{
-		min-width: "320px";
-		max-width: "1024px";
+		min-width: 320px;
+		max-width: 1024px;
 	}
 
 
