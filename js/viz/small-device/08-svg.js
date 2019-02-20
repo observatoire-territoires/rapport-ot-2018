@@ -114,11 +114,8 @@ function graph8Min(){
 
 } //functiongraph08
 
-window.addEventListener("load", function(){
-	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
-	{
+
 		graph8Min();
-	}
-});
+
 
 

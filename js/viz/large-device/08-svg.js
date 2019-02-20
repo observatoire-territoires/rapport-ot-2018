@@ -283,7 +283,7 @@ function graph8(){
 
 
 
-Array.from(document.querySelectorAll(".button-csp")).forEach((el,i)=>{
+	Array.from(document.querySelectorAll(".button-csp")).forEach((el,i)=>{
 		el.addEventListener("click", function(e){
 
 			switch (el.id) {
@@ -313,8 +313,8 @@ Array.from(document.querySelectorAll(".button-csp")).forEach((el,i)=>{
 				legendByFlow();
 				break;
 			}
-		})
-})
+		});
+	});
 	
 
 
@@ -326,9 +326,5 @@ Array.from(document.querySelectorAll(".button-csp")).forEach((el,i)=>{
 } //functiongraph08
 
 
-window.addEventListener("load", function(){
-	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "none")
-	{
+
 		graph8();
-	}
-});
