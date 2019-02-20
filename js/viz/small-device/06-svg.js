@@ -378,5 +378,9 @@ function graph6Min(position){
 
 } //function graph6
 
-
-graph6Min("#c-svg-06-min");
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
+	{
+		graph6Min("#c-svg-06-min");
+	}
+});

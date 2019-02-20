@@ -409,7 +409,11 @@ function graph4Min(position){
 
 } //function graph4
 
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
+	{
+		graph4Min("#c-svg-04-min");
+	}
+});
 
-
-graph4Min("#c-svg-04-min");
 

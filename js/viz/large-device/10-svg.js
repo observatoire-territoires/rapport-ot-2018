@@ -406,8 +406,13 @@ function graph10(){
 
 } //function graph10
 
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "none")
+	{
+		graph10();
+	}
+});
 
-graph10();
 
 
 

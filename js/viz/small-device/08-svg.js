@@ -111,52 +111,14 @@ function graph8Min(){
 	}); //load listener
 
 
-	//Legend
-
-	const width = document.querySelector("#c-svg-08").clientWidth;
-	const height = 90;
-
-
-Array.from(document.querySelectorAll(".button-csp")).forEach((el,i)=>{
-		el.addEventListener("click", function(e){
-
-			switch (el.id) {
-			case "csp-all":
-				d3.select("#c-svg-08-legend").selectAll(".all-flow").remove();
-				d3.select("#c-svg-08-legend").selectAll(".by-flow").remove();
-				legendAllFlow();
-				break;					
-			case "csp-cadres":
-				d3.select("#c-svg-08-legend").selectAll(".all-flow").remove();
-				d3.select("#c-svg-08-legend").selectAll(".by-flow").remove();
-				legendByFlow();
-				break;
-			case "csp-retraites":
-				d3.select("#c-svg-08-legend").selectAll(".all-flow").remove();
-				d3.select("#c-svg-08-legend").selectAll(".by-flow").remove();
-				legendByFlow();
-				break;
-			case "csp-etudiants":
-				d3.select("#c-svg-08-legend").selectAll(".all-flow").remove();
-				d3.select("#c-svg-08-legend").selectAll(".by-flow").remove();
-				legendByFlow();
-				break;
-			case "csp-ouvriers":
-				d3.select("#c-svg-08-legend").selectAll(".all-flow").remove();
-				d3.select("#c-svg-08-legend").selectAll(".by-flow").remove();
-				legendByFlow();
-				break;
-			}
-		})
-})
-	
-
-
-
-
-
-
 
 } //functiongraph08
 
-graph8Min();
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
+	{
+		graph8Min();
+	}
+});
+
+

@@ -397,8 +397,12 @@ function graph11(){
 
 } //fonction graph11
 
-
-graph11();
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "none")
+	{
+		graph11();
+	}
+});
 
 
 

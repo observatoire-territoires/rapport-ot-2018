@@ -531,6 +531,10 @@ function graph7Min(position){
 
 } //function graph7
 
-
-graph7Min("#c-svg-07-min");
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
+	{
+		graph7Min("#c-svg-07-min");
+	}
+});
 

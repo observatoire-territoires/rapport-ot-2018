@@ -441,5 +441,9 @@ function graph6(){
 
 } //function graph6
 
-
-graph6();
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "none")
+	{
+		graph6();
+	}
+});

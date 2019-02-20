@@ -1,6 +1,6 @@
 
 
-function graph08(){
+function graph8(){
 	//change svg with clic button
 	let object08 = document.querySelector("#object-08");
 
@@ -325,4 +325,10 @@ Array.from(document.querySelectorAll(".button-csp")).forEach((el,i)=>{
 
 } //functiongraph08
 
-graph08();
+
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "none")
+	{
+		graph8();
+	}
+});

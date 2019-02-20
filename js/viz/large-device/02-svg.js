@@ -220,4 +220,10 @@ function graph2() {
 
 } //fonction graph2
 
-graph2();
+
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "none")
+	{
+		graph2();
+	}
+});

@@ -284,8 +284,13 @@ function graph3Min(position){
 } //function graph03
 
 
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
+	{
+		graph3Min("#c-svg-03-min");
+	}
+});
 
-graph3Min("#c-svg-03-min");
 
 
 

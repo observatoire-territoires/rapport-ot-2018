@@ -368,13 +368,19 @@ function graph10Min(position){
 } //function graph10
 
 
-graph10Min("#c-svg-10-min-1");
-graph10Min("#c-svg-10-min-2");
-graph10Min("#c-svg-10-min-3");
-graph10Min("#c-svg-10-min-4");
-graph10Min("#c-svg-10-min-5");
-graph10Min("#c-svg-10-min-6");
-graph10Min("#c-svg-10-min-7");
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
+	{
+		graph10Min("#c-svg-10-min-1");
+		graph10Min("#c-svg-10-min-2");
+		graph10Min("#c-svg-10-min-3");
+		graph10Min("#c-svg-10-min-4");
+		graph10Min("#c-svg-10-min-5");
+		graph10Min("#c-svg-10-min-6");
+		graph10Min("#c-svg-10-min-7");
+	}
+});
+
 
 
 

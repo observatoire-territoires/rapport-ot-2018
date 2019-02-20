@@ -202,6 +202,11 @@ function graph5Min(position){
 
 } //fonction graph5
 
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
+	{
+		graph5Min("#c-svg-05-min");
+	}
+});
 
-graph5Min("#c-svg-05-min");
 

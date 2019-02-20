@@ -529,5 +529,9 @@ function graph7(){
 
 } //function graph7
 
-
-graph7();
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "none")
+	{
+		graph7();
+	}
+});

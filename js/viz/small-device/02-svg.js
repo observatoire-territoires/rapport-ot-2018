@@ -175,5 +175,10 @@ function graph2Min(position) {
 
 } //fonction graph2
 
-graph2Min("#c-svg-02-min");
 
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
+	{
+		graph2Min("#c-svg-02-min");
+	}
+});

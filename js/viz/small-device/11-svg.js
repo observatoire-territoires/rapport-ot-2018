@@ -356,13 +356,16 @@ function graph11Min(position){
 
 
 
-graph11Min("#c-svg-11-min-1");
-graph11Min("#c-svg-11-min-2");
-graph11Min("#c-svg-11-min-3");
-graph11Min("#c-svg-11-min-4");
 
-
-
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
+	{
+		graph11Min("#c-svg-11-min-1");
+		graph11Min("#c-svg-11-min-2");
+		graph11Min("#c-svg-11-min-3");
+		graph11Min("#c-svg-11-min-4");
+	}
+});
 
 
 

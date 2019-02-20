@@ -400,31 +400,6 @@ function graph1(){
 
 
 
-
-
-		//Resize SVG, responsive
-		d3.select(window)
-			.on("resize", ()=>{
-				resize();
-
-
-			});
-
-
-
-		function resize(){
-			console.log(width);
-
-			svg
-				.attr("width", "100%");
-
-			g
-				.attr("transform", "translate(" + width/2 +  "," + height/2 + ")");
-
-
-		}
-
-
 		//initialize the scrollama
 		//Parallax
 		const scroller = scrollama();
@@ -482,4 +457,10 @@ function graph1(){
 
 
 
-graph1();
+
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "none")
+	{
+		graph1();
+	}
+});

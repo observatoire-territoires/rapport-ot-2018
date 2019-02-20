@@ -275,7 +275,6 @@ function graph03(){
 		const scroller = scrollama();
 
 		function handleStepEnter(response) {
-
 			switch(response.index){
 			case 0:
 				render_raster(featureCollection0914.features,inputValues[5]);
@@ -283,13 +282,6 @@ function graph03(){
 				addLegend();
 				helpButton.style.display = "inline";
 				break;	
-			case 1:
-				
-
-				break;
-
-
-				
 			}
 		}
 
@@ -333,7 +325,13 @@ function graph03(){
 
 
 
-graph03();
+window.addEventListener("load", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "none")
+	{
+		graph03();
+	}
+});
+
 
 
 

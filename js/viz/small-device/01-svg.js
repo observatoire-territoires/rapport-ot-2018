@@ -415,5 +415,10 @@ function graph1Min(position){
 } //function graph1
 
 
-graph1Min("#c-svg-01-min-1");
-graph1Min("#c-svg-01-min-2");
+window.addEventListener("resize", function(){
+	if(getComputedStyle(document.querySelector(".c-graphic-min")).display == "block")
+	{
+		graph1Min("#c-svg-01-min-1");
+		graph1Min("#c-svg-01-min-2");
+	}
+});
