@@ -240,7 +240,7 @@ function graph1Min(position){
 				.attr("y", 120)
 				.attr("text-anchor", "middle")
 				.attr("fill", "#f0f0f0")
-				.text("4 % sont restées");
+				.text("4 % sont restés");
 
 			svg
 				.append("text")

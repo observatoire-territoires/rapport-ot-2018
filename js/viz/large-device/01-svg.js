@@ -175,7 +175,7 @@ function graph1(){
 			.attr("y", height/6-margin.top)
 			.attr("text-anchor", "middle")
 			.attr("fill", "#f0f0f0")
-			.text("4 % sont restées");
+			.text("4 % sont restés");
 
 		svg
 			.append("text")
