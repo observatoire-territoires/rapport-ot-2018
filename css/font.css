@@ -8,7 +8,7 @@
     font-style: normal;
 	font-weight: normal;
 	unicode-range: U+000-5FF;
-    text-rendering: optimizeLegibility;
+    
 }
 
 
@@ -23,7 +23,7 @@
     font-style: normal;
 	font-weight: normal;
 	unicode-range: U+000-5FF;
-    text-rendering: optimizeLegibility;
+    
 }
 
 
@@ -37,7 +37,7 @@
     font-style: normal;
 	font-weight: normal;
 	unicode-range: U+000-5FF;
-    text-rendering: optimizeLegibility;
+    
 }
 
 
@@ -51,7 +51,7 @@
     font-style: normal;
 	font-weight: normal;
 	unicode-range: U+000-5FF;
-    text-rendering: optimizeLegibility;
+    
 }
 
 
@@ -65,7 +65,7 @@
     font-style: normal;
 	font-weight: normal;
 	unicode-range: U+000-5FF;
-    text-rendering: optimizeLegibility;
+    
 }
 
 /* Webfont: Montserrat-Italic */@font-face {
@@ -78,7 +78,7 @@
     font-style: italic;
 	font-weight: normal;
 	unicode-range: U+000-5FF;
-    text-rendering: optimizeLegibility;
+    
 }
 
 
@@ -92,7 +92,7 @@
     font-style: italic;
 	font-weight: normal;
 	unicode-range: U+000-5FF;
-    text-rendering: optimizeLegibility;
+    
 }
 
 /* Webfont: Montserrat-Medium */@font-face {
@@ -105,7 +105,7 @@
     font-style: normal;
 	font-weight: normal;
 	unicode-range: U+000-5FF;
-    text-rendering: optimizeLegibility;
+    
 }
 
 
@@ -119,5 +119,5 @@
     font-style: normal;
 	font-weight: normal;
 	unicode-range: U+000-5FF;
-    text-rendering: optimizeLegibility;
+    
 }
