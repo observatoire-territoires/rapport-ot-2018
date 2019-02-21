@@ -228,7 +228,7 @@ function graph4(){
 
 				newCircles.exit()
 					.transition()
-					.duration(1000)
+					.duration(200)
 					.attr("cx", 0)
 					.attr("cy", height/2 - margin.bottom/2)
 					.remove();

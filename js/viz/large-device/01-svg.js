@@ -47,7 +47,7 @@ function graph1(){
 
 	
 	
-	d3.csv("data/csv/data-01.csv").then(function(data){
+	d3.csv("data/csv/data-01-ld.csv").then(function(data){
 	
 		
 
@@ -93,23 +93,22 @@ function graph1(){
 				.attr("cy", ((d)=>{return d.y+20;}));
 		}
 
-		//event click circles
-		circles
-			.on("click", ((d)=>{
-				console.log(d);
-			}));
 
-		let propMobilityCenters = {
-			"0":{x: 50-width/4, y: height/2},
-			"1":{x: 50+width/4, y: height/2}
-		};
 
-		/*
-		* Provides a x value for each node to be used with the split by year
-		* x force.
-		*/
-		function nodePropMobilityPos(d) {
-			return propMobilityCenters[d.value].x;
+
+		
+		//GroupCircles
+		function groupCircles(){
+
+			updateData(data);
+			//reset the 'x' force to draw the circles to the center
+			simulation.force("x", d3.forceX().strength(0.05));
+			simulation.force("charge", d3.forceManyBody().strength(-1));
+			//reset the alpha value and restart the simulation
+			simulation.alpha(1).restart();
+
+
+
 		}
 
 
@@ -146,21 +145,19 @@ function graph1(){
 
 		addExtra();
 
+	
 
-		//GroupCircles
-		function groupCircles(){
+		let propMobilityCenters = {
+			"0":{x: 50-width/4, y: height/2},
+			"1":{x: 50+width/4, y: height/2}
+		};
 
-			updateData(data);
-			//reset the 'x' force to draw the circles to the center
-			simulation.force("x", d3.forceX().strength(0.05));
-			simulation.force("charge", d3.forceManyBody().strength(-1));
-			//reset the alpha value and restart the simulation
-			simulation.alpha(1).restart();
-
-
-			
-
-
+		/*
+		* Provides a x value for each node to be used with the split by year
+		* x force.
+		*/
+		function nodePropMobilityPos(d) {
+			return propMobilityCenters[d.value].x;
 		}
 
 
@@ -171,7 +168,8 @@ function graph1(){
 			//reset the 'x' force to draw the circles to their year centers
 			simulation.force("x", d3.forceX().strength(0.05).x(nodePropMobilityPos));
 			//reset the alpha value and restart the simulation
-			simulation.alpha(1).restart();
+			simulation.alpha(1).restart()
+			simulation.force("charge", d3.forceManyBody().strength(-3));
 
 
 			d3.select("#c-svg-01").selectAll(".label-text").remove();
@@ -437,8 +435,8 @@ function graph1(){
 			.onStepEnter(handleStepEnter)
 			.onStepExit(handleStepExit);
 
-
-		updateData(data);
+		splitCircles();
+		//updateData(data);
 
 
 	}) //import data
