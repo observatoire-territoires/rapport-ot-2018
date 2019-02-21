@@ -141,7 +141,7 @@ function graph2() {
 							<br>
 							<em>Chgt de commune dans le même département</em> : <span>${format(d.data.change_com)} % </span>
 							<br>
-							<emChgt de département dans la même région</em> : <span>${format(d.data.change_dep)} % </span>
+							<em>Chgt de département dans la même région</em> : <span>${format(d.data.change_dep)} % </span>
 							<br>
 							<em>Chgt de région en France</em> : <span>${format(d.data.change_reg)} % </span>
 							<br>

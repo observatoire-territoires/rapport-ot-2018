@@ -93,7 +93,7 @@
 	}
 
 	.interlude-text{
-		background: rgba(254, 254, 254, 08);
+		background: rgba(254, 254, 254, 0.8);
 		color: black;
 		font-family: "MontserratWebMedium";
 		font-weight: normal;
@@ -102,25 +102,32 @@
 		padding: 3em;
 	}
 
-	#interlude-text1 p:first-child{
+	#interlude-text1 h6:first-child{
 		border-top: 1px solid #000;
 		padding-top: 20px;
 
 	}
 
-	#interlude-text1 p:last-child{
+	#interlude-text1 h6:last-child{
 		border-bottom: 1px solid #000;
 		padding-bottom: 20px;
 	}
 
-	#interlude-text2 p{
+	#interlude-text2 h6{
 		border-top: 1px solid #000;
 		padding-top: 20px;
 		border-bottom: 1px solid #000;
 		padding-bottom: 20px;
 	}
 
-
+	h6{
+		font-size: 1em;
+		line-height: 1.5;
+		font-family: "MontserratWebMedium";
+		font-weight: normal;
+		padding:0;
+		margin:0;
+	}
 	/*Application style sur le niveau 2*/
 	/*--------------------------------*/
 
@@ -151,6 +158,9 @@
 		border-top: 1px solid rgb(255,255,255);
 	  }
 
+	.note-end{
+		padding: 0.5em;
+	}
 
 	  c-notes-number{
 		  font-size:0em;
@@ -196,7 +206,7 @@
 		  background-color: #282828;
 		  margin-left: -5em;
 		  padding-left: 5em;
-		  font-size: 0.85em;
+		  font-size: 0.9em;
 		  width: 100%;
 	  }
 
@@ -209,7 +219,7 @@
 		  display: none;
 		  color: #fff;
 		  margin-right: 13vw;
-		  
+		  padding:0.35em;	  
 	  }
 
 	  .notes-box .c-notes-number{
@@ -429,7 +439,7 @@
 
 
 		#c-extra{
-			background: rgba(254, 254, 254, 08);
+			background: rgba(254, 254, 254, 0.8);
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
@@ -477,7 +487,7 @@
 
 		.c-extra-image{
 			width:20%;
-			align-self: middle;
+			align-self: center;
 		}
 
 		.c-extra-texte{
@@ -613,7 +623,7 @@
   
 @media only screen and (min-width:1024px){
   
-	article{
+	main{
 		padding-left:2em;
 	}
 
@@ -677,8 +687,8 @@
 	#c-svg-01, #c-svg-02, #c-svg-03, #c-svg-04, #c-svg-05,
 	#c-svg-06, #c-svg-07, #c-svg-08, #c-svg-10,
 	#c-svg-11{
-		min-width: "320px";
-		max-width: "1024px";
+		min-width: 320px;
+		max-width: 1024px;
 	}
 
 
