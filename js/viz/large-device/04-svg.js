@@ -404,6 +404,7 @@ function graph4(){
 	}
 
 	const helpButton4 = document.querySelector("#help-button4");
+	const breakSection = document.querySelectorAll(".break-section3");
 
 	//initialize the scrollama
 	//Parallax
@@ -416,6 +417,7 @@ function graph4(){
 			selectionTitle.style.display = "block";
 			scrollGraph4();
 			helpButton4.style.display = "inline";
+			breakSection[1].style.opacity = "1";
 			break;
 		}
 	}
@@ -427,6 +429,7 @@ function graph4(){
 			d3.select("#c-svg-04").selectAll("*").remove();
 			selectionTitle.style.display = "none";
 			helpButton4.style.display = "none";
+			breakSection[1].style.opacity = "0.4";
 			break;
 		}
 	}
@@ -438,7 +441,7 @@ function graph4(){
 			text: ".scroll-text",
 			step: ".break-section3",
 			debug: false,
-			offset: 0.33
+			offset: 0.6
 		})
 		.onStepEnter(handleStepEnter)
 		.onStepExit(handleStepExit);

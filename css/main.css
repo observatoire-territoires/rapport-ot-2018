@@ -93,7 +93,7 @@
 	}
 
 	.interlude-text{
-		background: rgba(254, 254, 254, 0.8);
+		background: rgba(254, 254, 254, 0.95);
 		color: black;
 		font-family: "MontserratWebMedium";
 		font-weight: normal;
@@ -439,7 +439,7 @@
 
 
 		#c-extra{
-			background: rgba(254, 254, 254, 0.8);
+			background: rgba(254, 254, 254, 1);
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
@@ -508,7 +508,6 @@
 			flex-wrap: wrap;
 			justify-content: space-between;
 			align-items: center;
-			height:3em;
 			padding-top:1em;
 		}
 
@@ -660,11 +659,9 @@
 
 	.niv2-c-section{
 		padding: 3em 0.5em 3em 5em;
-	}
-
-	.niv2-c-section:last-child{
 		min-height: 100vh;
 	}
+
 
 	/*All section*/
 
@@ -699,6 +696,17 @@
 
 
 		/*Text break scroll image*/
+
+
+	.break-section3{
+		min-height: 100vh;
+	}
+
+	.break-section3, .break-10, .break-11{
+		opacity: 0.4;
+	}
+
+
 		.section7-text{
 			min-height: 100vh;
 		}

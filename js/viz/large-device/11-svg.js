@@ -313,11 +313,13 @@ function graph11(){
 		//initialize the scrollama
 		//Parallax
 		const scroller = scrollama();
+		const break11 = document.querySelectorAll(".break-11");
 
 		function handleStepEnter(response) {
 
 			switch(response.index){
 			case 0:
+				break11[0].style.opacity = 1;
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Groupes socioprofessionnels");
 				showPopupCsp("");
@@ -327,6 +329,7 @@ function graph11(){
 					.attr("fill", "#646464");
 				break;
 			case 1:
+				break11[1].style.opacity = 1;
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Étudiants");
 				showPopupCsp("lib_cs8");
@@ -336,6 +339,7 @@ function graph11(){
 					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs8); }));
 				break;
 			case 2:
+				break11[2].style.opacity = 1;
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Retraités");
 				showPopupCsp("lib_cs7");
@@ -345,6 +349,7 @@ function graph11(){
 					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs7); }));
 				break;
 			case 3:
+				break11[3].style.opacity = 1;
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Ouvriers et employés");
 				showPopupCsp("lib_cs6");
@@ -354,6 +359,7 @@ function graph11(){
 					.attr("fill", ((d)=>{ return colors(d.properties.cat_cs6); }));
 				break;
 			case 4:
+				break11[4].style.opacity = 1;
 				d3.select("#c-svg-11").selectAll(".label-change").remove();
 				changeLabel("Cadres et prof. int. sup.");
 				showPopupCsp("lib_cs3");
@@ -368,6 +374,23 @@ function graph11(){
 
 		function handleStepExit(response){
 		
+			switch(response.index){
+			case 0:
+				break11[0].style.opacity = 0.4;
+				break;
+			case 1:
+				break11[1].style.opacity = 0.4;
+				break;
+			case 2:
+				break11[2].style.opacity = 0.4;
+				break;
+			case 3:
+				break11[3].style.opacity = 0.4;
+				break;
+			case 4:
+				break11[4].style.opacity = 0.4;
+				break;
+			}
 		}
 
 

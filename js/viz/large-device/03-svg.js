@@ -269,7 +269,7 @@ function graph03(){
 
 
 		const helpButton = document.querySelector("#help-button3");
-
+		const breakSection = document.querySelectorAll(".break-section3");
 		//initialize the scrollama
 		//Parallax
 		const scroller = scrollama();
@@ -281,6 +281,7 @@ function graph03(){
 				addExtra();
 				addLegend();
 				helpButton.style.display = "inline";
+				breakSection[0].style.opacity = "1";
 				break;	
 			}
 		}
@@ -293,6 +294,7 @@ function graph03(){
 				d3.select("#c-svg-03").selectAll(".extra").remove();
 				d3.select("#c-svg-03-legend").selectAll("*").remove();
 				helpButton.style.display = "none";
+				breakSection[0].style.opacity = "0.4";
 				break;
 			}
 		}
@@ -305,7 +307,7 @@ function graph03(){
 				text: ".scroll-text",
 				step: ".break-section3",
 				debug: false,
-				offset: 0.33
+				offset: 0.6
 			})
 			.onStepEnter(handleStepEnter)
 			.onStepExit(handleStepExit);

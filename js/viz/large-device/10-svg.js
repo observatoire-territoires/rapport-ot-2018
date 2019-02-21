@@ -281,11 +281,13 @@ function graph10(){
 		//initialize the scrollama
 		//Parallax
 		const scroller = scrollama();
+		const break10 = document.querySelectorAll(".break-10");
 
 		function handleStepEnter(response) {
 
 			switch(response.index){
 			case 0:
+				break10[0].style.opacity = 1;
 				addLegend();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Toutes catégories","#fff");
@@ -295,6 +297,7 @@ function graph10(){
 					.attr("fill", ((d)=>{ return colors(d.properties.clust); }));
 				break;
 			case 1:
+				break10[1].style.opacity = 1;
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Jeunes adultes, étudiants et cadres", colors.range()[4]);
@@ -308,6 +311,7 @@ function graph10(){
 					}));
 				break;
 			case 2:
+				break10[2].style.opacity = 1;
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Trentenaires, cadres et prof. int.", colors.range()[5]);
@@ -321,6 +325,7 @@ function graph10(){
 					}));
 				break;
 			case 3:
+				break10[3].style.opacity = 1;
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Employés et ouvriers", colors.range()[3]);
@@ -334,6 +339,7 @@ function graph10(){
 					}));
 				break;
 			case 4:
+				break10[4].style.opacity = 1;
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Ouvriers et jeunes enfants", colors.range()[2]);
@@ -348,6 +354,7 @@ function graph10(){
 				break;
 
 			case 5:
+				break10[5].style.opacity = 1;
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Profil diversifié, plutôt âgé", colors.range()[1]);
@@ -362,6 +369,7 @@ function graph10(){
 				break;		
 				
 			case 6:
+				break10[6].style.opacity = 1;
 				d3.select("#c-svg-10-legend").selectAll("*").remove();
 				d3.select("#c-svg-10").selectAll(".label-change").remove();
 				changeLabel("Retraités", colors.range()[0]);
@@ -380,8 +388,31 @@ function graph10(){
 
 		function handleStepExit(response){
 			
+			switch(response.index){
+			case 0:
+				break10[0].style.opacity = 0.4;
+				break;
+			case 1:
+				break10[1].style.opacity = 0.4;
+				break;
+			case 2:
+				break10[2].style.opacity = 0.4;
+				break;
+			case 3:
+				break10[3].style.opacity = 0.4;
+				break;
+			case 4:
+				break10[4].style.opacity = 0.4;
+				break;
+			case 5:
+				break10[5].style.opacity = 0.4;
+				break;
+			case 6:
+				break10[6].style.opacity = 0.4;
+				break;
+			
+			}
 		}
-
 
 		scroller
 			.setup({
