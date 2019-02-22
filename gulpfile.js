@@ -8,11 +8,24 @@ let rename = require("gulp-rename");
 let pump = require("pump");
  
 
+
+
+
+let paths = {
+	src: "src/**/*",
+	srcHTML: "index.html"
+	srcCSS:"src/**/*.css",
+	srcJS:"src/**/*.js",
+
+	dist: "dist",
+}
+
+
+
 gulp.task("js", (cb) =>
 	pump([
 		gulp.src([
-			"src/js/nav.js",
-			"src/js/main.js",
+			"src/js/*.js",
 			"src/js/viz/large-device/*.js",
 			"src/js/viz/small-device/*.js"]),
 		sourcemaps.init(),
