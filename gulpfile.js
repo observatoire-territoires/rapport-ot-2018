@@ -23,7 +23,7 @@ gulp.task("js", (cb) =>
 		uglify(),
 		rename("script-min.js"),
 		sourcemaps.write("../maps"),
-		gulp.dest("dist/js")
+		gulp.dest("dist")
 	],
 	cb
 	)
@@ -32,11 +32,11 @@ gulp.task("js", (cb) =>
 
 gulp.task("css", (cb) => 
 	pump([
-		gulp.src("src/css/*.css"),
+		gulp.src("src/*.css"),
 		sourcemaps.init(),
 		cleanCSS({compatibility: "ie8"}),
 		sourcemaps.write("../maps"),
-		gulp.dest("dist/css")
+		gulp.dest("dist")
 	],
 	cb
 	)
