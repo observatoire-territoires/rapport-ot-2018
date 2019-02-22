@@ -79,7 +79,7 @@
 	}
 
 	#section-interlude-wallpaper1{
-		background: url(../img/interlude.jpg) center 0 no-repeat fixed;
+		background: url(../img/interlude-min.jpg) center 0 no-repeat fixed;
 		min-height:100vh;
 		overflow: hidden;
 		background-size:cover;
@@ -87,7 +87,7 @@
 
 
 	#section-interlude-wallpaper2{
-		background: url(../img/interlude.jpg) center 0 no-repeat fixed;
+		background: url(../img/interlude-min.jpg) center 0 no-repeat fixed;
 		min-height:100vh;
 		overflow: hidden;
 		background-size:cover;
