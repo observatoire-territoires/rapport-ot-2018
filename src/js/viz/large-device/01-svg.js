@@ -44,7 +44,7 @@ function graph1(){
 
 	
 	
-	d3.csv("data/csv/data-01-ld.csv").then(function(data){
+	d3.csv("data/csv/data-01.csv").then(function(data){
 	
 		let simulation = d3.forceSimulation()
 			.force("x", d3.forceX().strength(0.05).x(nodeXTypeMobilityPos))
